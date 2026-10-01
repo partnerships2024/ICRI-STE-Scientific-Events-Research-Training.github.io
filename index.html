@@ -8,12 +8,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-          content="ICRI-STE Programme and Events — Research, Innovation, Scientific Programmes, Symposia, Seminars and Workshops">
+          content="ICRI-STE Events — Symposia, Seminars, Webinars and Scientific Research Events">
 
     <meta name="author"
           content="International Council for Research & Innovation in Science, Technology & Engineering (ICRI-STE)">
 
-    <title>Programme & Events | ICRI-STE</title>
+    <title>Events | ICRI-STE</title>
 
 
     <style>
@@ -33,11 +33,7 @@
         }
 
         body {
-            font-family:
-                Arial,
-                Helvetica,
-                sans-serif;
-
+            font-family: Arial, Helvetica, sans-serif;
             background: #f5f7fa;
             color: #202020;
             line-height: 1.65;
@@ -53,12 +49,11 @@
         ============================== */
 
         header {
-            background:
-                linear-gradient(
-                    135deg,
-                    #082b49,
-                    #0d426b
-                );
+            background: linear-gradient(
+                135deg,
+                #082b49,
+                #0d426b
+            );
 
             color: #ffffff;
             text-align: center;
@@ -155,7 +150,7 @@
         ============================== */
 
         section {
-            margin-bottom: 70px;
+            margin-bottom: 50px;
         }
 
         .section-heading {
@@ -190,88 +185,6 @@
 
 
         /* ==============================
-           PROGRAMME GRID
-        ============================== */
-
-        .programme-grid {
-            display: grid;
-
-            grid-template-columns:
-                repeat(2, 1fr);
-
-            gap: 25px;
-        }
-
-
-        /* ==============================
-           PROGRAMME CARD
-        ============================== */
-
-        .programme-card {
-            background: #ffffff;
-
-            border-radius: 10px;
-
-            padding: 30px;
-
-            border-top: 4px solid #0b426b;
-
-            box-shadow:
-                0 4px 18px
-                rgba(0,0,0,0.07);
-
-            transition:
-                transform 0.25s,
-                box-shadow 0.25s;
-        }
-
-        .programme-card:hover {
-            transform: translateY(-4px);
-
-            box-shadow:
-                0 8px 25px
-                rgba(0,0,0,0.12);
-        }
-
-        .programme-number {
-            color: #b17b1e;
-
-            font-size: 13px;
-            font-weight: bold;
-
-            margin-bottom: 8px;
-        }
-
-        .programme-card h3 {
-            color: #0b3557;
-
-            font-size: 20px;
-
-            margin-bottom: 12px;
-        }
-
-        .programme-card p {
-            color: #555;
-            font-size: 15px;
-        }
-
-        .programme-link {
-            display: inline-block;
-
-            margin-top: 18px;
-
-            color: #0b426b;
-
-            font-size: 14px;
-            font-weight: 700;
-        }
-
-        .programme-link:hover {
-            color: #b17b1e;
-        }
-
-
-        /* ==============================
            EVENTS
         ============================== */
 
@@ -298,10 +211,24 @@
             box-shadow:
                 0 4px 18px
                 rgba(0,0,0,0.07);
+
+            transition:
+                transform 0.25s,
+                box-shadow 0.25s;
+        }
+
+        .event-card:hover {
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 8px 25px
+                rgba(0,0,0,0.11);
         }
 
 
-        /* EVENT DATE */
+        /* ==============================
+           EVENT DATE
+        ============================== */
 
         .event-date {
             text-align: center;
@@ -340,7 +267,9 @@
         }
 
 
-        /* EVENT CONTENT */
+        /* ==============================
+           EVENT CONTENT
+        ============================== */
 
         .event-type {
             display: inline-block;
@@ -457,12 +386,8 @@
             }
 
             nav a {
-                padding: 7px 10px;
+                padding: 7px 12px;
                 font-size: 12px;
-            }
-
-            .programme-grid {
-                grid-template-columns: 1fr;
             }
 
             .event-card {
@@ -495,7 +420,6 @@
                 padding: 40px 15px;
             }
 
-            .programme-card,
             .event-card {
                 padding: 22px;
             }
@@ -520,11 +444,11 @@
         International Council for Research & Innovation in STE
     </div>
 
-    <h1>Programme & Events</h1>
+    <h1>Events</h1>
 
     <p>
-        Research programmes, scientific events, symposia,
-        seminars, workshops and innovation activities.
+        Scientific symposia, seminars, webinars and
+        research events organised by ICRI-STE.
     </p>
 
 </header>
@@ -538,18 +462,17 @@
 
     <div class="nav-container">
 
-        <a href="#programmes">
-            Programmes
-        </a>
-
         <a href="#events">
             Events
         </a>
 
-        <a href="https://icriste.com/"
-           target="_blank"
-           rel="noopener">
+        <a
+            href="https://icriste.com/"
+            target="_blank"
+            rel="noopener">
+
             ICRI-STE
+
         </a>
 
     </div>
@@ -565,196 +488,6 @@
 
 
     <!-- ==================================================
-         PROGRAMMES
-    ================================================== -->
-
-    <section id="programmes">
-
-        <div class="section-heading">
-
-            <div class="small-title">
-                ICRI-STE
-            </div>
-
-            <h2>
-                Research & Innovation Programmes
-            </h2>
-
-            <p>
-                Interdisciplinary programmes supporting research,
-                computational science, artificial intelligence,
-                scientific machine learning and STEM innovation.
-            </p>
-
-        </div>
-
-
-        <div class="programme-grid">
-
-
-            <!-- PROGRAMME 01 -->
-
-            <article class="programme-card">
-
-                <div class="programme-number">
-                    PROGRAMME 01
-                </div>
-
-                <h3>
-                    CSE – AI/ML:
-                    Intelligent Computational Modelling
-                </h3>
-
-                <p>
-                    Research in intelligent computational modelling,
-                    artificial intelligence, machine learning and
-                    interdisciplinary computational systems.
-                </p>
-
-                <a
-                    class="programme-link"
-                    href="https://icriste.com/"
-                    target="_blank"
-                    rel="noopener">
-
-                    Explore Programme →
-
-                </a>
-
-            </article>
-
-
-            <!-- PROGRAMME 02 -->
-
-            <article class="programme-card">
-
-                <div class="programme-number">
-                    PROGRAMME 02
-                </div>
-
-                <h3>
-                    Scientific Machine Learning (SciML)
-                </h3>
-
-                <p>
-                    Integrating scientific theory, mathematical
-                    modelling and machine learning for computational
-                    discovery and scientific innovation.
-                </p>
-
-                <a
-                    class="programme-link"
-                    href="https://icriste.com/"
-                    target="_blank"
-                    rel="noopener">
-
-                    Explore Programme →
-
-                </a>
-
-            </article>
-
-
-            <!-- PROGRAMME 03 -->
-
-            <article class="programme-card">
-
-                <div class="programme-number">
-                    PROGRAMME 03
-                </div>
-
-                <h3>
-                    Intelligent Innovation in AI
-                </h3>
-
-                <p>
-                    Supporting AI research, applied machine learning,
-                    computational prototypes and innovation-oriented
-                    research and development.
-                </p>
-
-                <a
-                    class="programme-link"
-                    href="https://icriste.com/"
-                    target="_blank"
-                    rel="noopener">
-
-                    Explore Programme →
-
-                </a>
-
-            </article>
-
-
-            <!-- PROGRAMME 04 -->
-
-            <article class="programme-card">
-
-                <div class="programme-number">
-                    PROGRAMME 04
-                </div>
-
-                <h3>
-                    STEM Exploration & Outreach
-                </h3>
-
-                <p>
-                    STEM workshops, mentorship, scientific exploration
-                    and educational activities supporting the next
-                    generation of scientists and innovators.
-                </p>
-
-                <a
-                    class="programme-link"
-                    href="https://icriste.com/"
-                    target="_blank"
-                    rel="noopener">
-
-                    Explore Programme →
-
-                </a>
-
-            </article>
-
-
-            <!-- PROGRAMME 05 -->
-
-            <article class="programme-card">
-
-                <div class="programme-number">
-                    PROGRAMME 05
-                </div>
-
-                <h3>
-                    Computational Healthcare Intelligence
-                </h3>
-
-                <p>
-                    Interdisciplinary research integrating systems
-                    biology, biomedical systems, artificial intelligence,
-                    machine learning and computational healthcare.
-                </p>
-
-                <a
-                    class="programme-link"
-                    href="https://icriste.com/computational-healthcare-intelligence-lab-chi-lab/"
-                    target="_blank"
-                    rel="noopener">
-
-                    Visit CHI Lab →
-
-                </a>
-
-            </article>
-
-
-        </div>
-
-    </section>
-
-
-
-    <!-- ==================================================
          EVENTS
     ================================================== -->
 
@@ -763,7 +496,7 @@
         <div class="section-heading">
 
             <div class="small-title">
-                Scientific Events
+                ICRI-STE
             </div>
 
             <h2>
@@ -781,7 +514,9 @@
         <div class="events">
 
 
-            <!-- EVENT 01 -->
+            <!-- ==========================================
+                 EVENT 01
+            =========================================== -->
 
             <article class="event-card">
 
@@ -831,8 +566,9 @@
             </article>
 
 
-
-            <!-- EVENT 02 -->
+            <!-- ==========================================
+                 EVENT 02
+            =========================================== -->
 
             <article class="event-card">
 
@@ -871,8 +607,9 @@
             </article>
 
 
-
-            <!-- EVENT 03 -->
+            <!-- ==========================================
+                 EVENT 03
+            =========================================== -->
 
             <article class="event-card">
 
@@ -938,6 +675,7 @@
     </p>
 
     <p>
+
         <a
             href="https://icriste.com/"
             target="_blank"
@@ -946,6 +684,7 @@
             icriste.com
 
         </a>
+
     </p>
 
 </footer>
