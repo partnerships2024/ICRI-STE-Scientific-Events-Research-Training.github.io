@@ -1,933 +1,1922 @@
-```html
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description"
-          content="ICRI-STE Events — International Symposia, Scientific Seminars, Research Training, Webinars, Early Career Researcher Development and Certificate Validation">
-
-    <meta name="author"
-          content="International Council for Research & Innovation in Science, Technology & Engineering (ICRI-STE)">
+<meta name="description"
+   content="ICRI-STE Scientific Events Portal — International Symposia, Scientific Seminars, Research Training, Webinars, Early Career Researcher Development and Certificate Validation.">
 
-    <title>Events | ICRI-STE</title>
+<meta name="author"
+   content="International Council for Research & Innovation in Science, Technology & Engineering (ICRI-STE)">
 
+<meta name="theme-color"
+   content="#082b49">
 
-    <style>
+<title>Scientific Events | ICRI-STE</title>
 
-        /* ==============================
-           GLOBAL
-        ============================== */
+<style>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+/* =========================================================
+   GLOBAL
+========================================================= */
 
-        html {
-            scroll-behavior: smooth;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f5f7fa;
-            color: #202020;
-            line-height: 1.65;
-        }
+html {
+    scroll-behavior: smooth;
+}
 
-        a {
-            text-decoration: none;
-        }
+body {
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
 
+    background:
+        linear-gradient(
+            180deg,
+            #f7f9fc 0%,
+            #eef3f8 100%
+        );
 
-        /* ==============================
-           HEADER
-        ============================== */
+    color: #202020;
 
-        header {
-            background: linear-gradient(
-                135deg,
-                #082b49,
-                #0d426b
-            );
+    line-height: 1.65;
+}
 
-            color: #ffffff;
-            text-align: center;
+a {
+    text-decoration: none;
+}
 
-            padding: 55px 20px 45px;
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
 
-            border-bottom: 4px solid #d59b32;
-        }
 
-        .logo-title {
-            font-size: 14px;
-            font-weight: 600;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            margin-bottom: 15px;
-            opacity: 0.9;
-        }
+/* =========================================================
+   TOP INSTITUTIONAL BAR
+========================================================= */
 
-        header h1 {
-            font-size: 38px;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
+.top-bar {
 
-        header p {
-            max-width: 850px;
-            margin: auto;
-            font-size: 16px;
-            opacity: 0.92;
-        }
+    background: #061f35;
 
+    color: rgba(255,255,255,0.88);
 
-        /* ==============================
-           NAVIGATION
-        ============================== */
+    font-size: 12px;
 
-        nav {
-            background: #ffffff;
+    border-bottom: 1px solid
+        rgba(255,255,255,0.08);
+}
 
-            box-shadow:
-                0 2px 10px
-                rgba(0,0,0,0.08);
+.top-bar-inner {
 
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+    max-width: 1200px;
 
-        .nav-container {
-            max-width: 1150px;
-            margin: auto;
+    margin: auto;
 
-            display: flex;
-            justify-content: center;
-            align-items: center;
+    padding: 9px 22px;
 
-            gap: 8px;
+    display: flex;
 
-            padding: 12px 20px;
-        }
+    justify-content: space-between;
 
-        nav a {
-            color: #0b3557;
+    align-items: center;
 
-            font-size: 14px;
-            font-weight: 600;
+    gap: 20px;
+}
 
-            padding: 8px 16px;
+.top-bar a {
 
-            border-radius: 5px;
+    color: #ffffff;
 
-            transition: 0.25s;
-        }
+    font-weight: 600;
+}
 
-        nav a:hover {
-            background: #0b3557;
-            color: #ffffff;
-        }
+.top-bar a:hover {
 
+    color: #d59b32;
+}
 
-        /* ==============================
-           MAIN CONTAINER
-        ============================== */
 
-        .container {
-            max-width: 1100px;
-            margin: auto;
-            padding: 55px 20px;
-        }
+/* =========================================================
+   HEADER
+========================================================= */
 
+header {
 
-        /* ==============================
-           SECTION
-        ============================== */
+    position: relative;
 
-        section {
-            margin-bottom: 60px;
-        }
+    overflow: hidden;
 
-        .section-heading {
-            text-align: center;
-            margin-bottom: 38px;
-        }
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(213,155,50,0.16),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #082b49,
+            #0d426b 65%,
+            #12577f
+        );
 
-        .section-heading .small-title {
-            color: #b17b1e;
+    color: #ffffff;
 
-            font-size: 13px;
-            font-weight: 700;
+    text-align: center;
 
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
+    padding: 62px 20px 70px;
 
-            margin-bottom: 8px;
-        }
+    border-bottom:
+        4px solid #d59b32;
+}
 
-        .section-heading h2 {
-            color: #0b3557;
-            font-size: 30px;
-            margin-bottom: 10px;
-        }
+header::before {
 
-        .section-heading p {
-            max-width: 800px;
-            margin: auto;
-            color: #666;
-            font-size: 15px;
-        }
+    content: "";
 
+    position: absolute;
 
-        /* ==============================
-           EVENTS
-        ============================== */
+    width: 300px;
+    height: 300px;
 
-        .events {
-            display: flex;
-            flex-direction: column;
-            gap: 22px;
-        }
+    border-radius: 50%;
 
-        .event-card {
-            background: #ffffff;
+    border: 1px solid
+        rgba(255,255,255,0.08);
 
-            border-radius: 10px;
+    top: -160px;
+    left: -100px;
+}
 
-            padding: 28px 30px;
+header::after {
 
-            display: grid;
+    content: "";
 
-            grid-template-columns:
-                150px 1fr;
+    position: absolute;
 
-            gap: 25px;
+    width: 420px;
+    height: 420px;
 
-            box-shadow:
-                0 4px 18px
-                rgba(0,0,0,0.07);
+    border-radius: 50%;
 
-            transition:
-                transform 0.25s,
-                box-shadow 0.25s;
-        }
+    border: 1px solid
+        rgba(255,255,255,0.06);
 
-        .event-card:hover {
-            transform: translateY(-3px);
+    right: -180px;
+    bottom: -240px;
+}
 
-            box-shadow:
-                0 8px 25px
-                rgba(0,0,0,0.11);
-        }
+.header-content {
 
+    position: relative;
 
-        /* ==============================
-           EVENT DATE
-        ============================== */
+    z-index: 2;
 
-        .event-date {
-            text-align: center;
+    max-width: 950px;
 
-            background: #0b3557;
+    margin: auto;
+}
 
-            color: #ffffff;
+.logo-mark {
 
-            border-radius: 8px;
+    width: 64px;
+    height: 64px;
 
-            padding: 18px 10px;
+    margin: 0 auto 18px;
 
-            align-self: start;
-        }
+    border-radius: 16px;
 
-        .event-date .month {
-            display: block;
+    display: flex;
 
-            font-size: 13px;
+    align-items: center;
 
-            font-weight: bold;
+    justify-content: center;
 
-            text-transform: uppercase;
+    background:
+        rgba(255,255,255,0.10);
 
-            letter-spacing: 1px;
-        }
+    border:
+        1px solid rgba(255,255,255,0.30);
 
-        .event-date .year {
-            display: block;
+    box-shadow:
+        0 8px 25px rgba(0,0,0,0.16);
 
-            font-size: 25px;
+    font-size: 20px;
 
-            font-weight: bold;
+    font-weight: 800;
 
-            margin-top: 3px;
-        }
+    letter-spacing: 1px;
+}
 
+.logo-title {
 
-        /* ==============================
-           EVENT CONTENT
-        ============================== */
+    font-size: 13px;
 
-        .event-type {
-            display: inline-block;
+    font-weight: 700;
 
-            background: #f0f4f7;
+    letter-spacing: 2px;
 
-            color: #0b426b;
+    text-transform: uppercase;
 
-            font-size: 11px;
+    margin-bottom: 14px;
 
-            font-weight: 700;
+    color: #e8c36d;
+}
 
-            letter-spacing: 0.8px;
+header h1 {
 
-            padding: 5px 10px;
+    font-size:
+        clamp(32px, 5vw, 48px);
 
-            border-radius: 20px;
+    line-height: 1.15;
 
-            margin-bottom: 9px;
-        }
+    font-weight: 800;
 
-        .event-card h3 {
-            color: #0b3557;
+    margin-bottom: 14px;
+}
 
-            font-size: 21px;
+header p {
 
-            margin-bottom: 9px;
-        }
+    max-width: 820px;
 
-        .event-card p {
-            color: #555;
+    margin: auto;
 
-            font-size: 15px;
-        }
+    font-size: 16px;
 
+    line-height: 1.75;
 
-        /* ==============================
-           BUTTONS
-        ============================== */
+    opacity: 0.92;
+}
 
-        .event-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 15px;
-        }
 
-        .event-button {
-            display: inline-block;
+/* =========================================================
+   NAVIGATION
+========================================================= */
 
-            background: #0b3557;
+nav {
 
-            color: #ffffff;
+    position: sticky;
 
-            padding: 9px 18px;
+    top: 0;
 
-            border-radius: 5px;
+    z-index: 1000;
 
-            font-size: 13px;
+    background:
+        rgba(255,255,255,0.96);
 
-            font-weight: 600;
+    backdrop-filter: blur(10px);
 
-            transition: 0.25s;
-        }
+    border-bottom:
+        1px solid #e4e8ed;
 
-        .event-button:hover {
-            background: #b17b1e;
-        }
+    box-shadow:
+        0 4px 16px
+        rgba(0,0,0,0.06);
+}
 
-        .event-button.secondary {
-            background: #b17b1e;
-        }
+.nav-container {
 
-        .event-button.secondary:hover {
-            background: #0b3557;
-        }
+    max-width: 1150px;
 
+    margin: auto;
 
-        /* ==============================
-           CERTIFICATE PORTAL
-        ============================== */
+    padding: 11px 20px;
 
-        .validation-card {
-            background: #ffffff;
+    display: flex;
 
-            border-radius: 12px;
+    justify-content: center;
 
-            padding: 38px 35px;
+    align-items: center;
 
-            text-align: center;
+    gap: 6px;
 
-            box-shadow:
-                0 4px 20px
-                rgba(0,0,0,0.08);
+    flex-wrap: wrap;
+}
 
-            border-top: 4px solid #d59b32;
-        }
+nav a {
 
-        .validation-card h3 {
-            color: #0b3557;
-            font-size: 22px;
-            margin-bottom: 10px;
-        }
+    color: #0b3557;
 
-        .validation-card p {
-            max-width: 760px;
-            margin: 0 auto;
-            color: #555;
-            font-size: 15px;
-        }
+    font-size: 13px;
 
-        .validation-button {
-            display: inline-block;
+    font-weight: 700;
 
-            margin-top: 20px;
+    padding: 9px 16px;
 
-            background: #0b3557;
+    border-radius: 6px;
 
-            color: #ffffff;
+    transition:
+        background 0.25s,
+        color 0.25s,
+        transform 0.25s;
+}
 
-            padding: 12px 24px;
+nav a:hover {
 
-            border-radius: 6px;
+    background: #0b3557;
 
-            font-size: 14px;
+    color: #ffffff;
 
-            font-weight: 700;
+    transform: translateY(-1px);
+}
 
-            transition: 0.25s;
-        }
+nav a.active {
 
-        .validation-button:hover {
-            background: #b17b1e;
-        }
+    background: #0b3557;
 
+    color: #ffffff;
+}
 
-        /* ==============================
-           FOOTER
-        ============================== */
 
-        footer {
-            background: #082b49;
+/* =========================================================
+   MAIN
+========================================================= */
 
-            color: #ffffff;
+.container {
 
-            text-align: center;
+    max-width: 1120px;
 
-            padding: 35px 20px;
+    margin: auto;
 
-            margin-top: 20px;
-        }
+    padding:
+        65px 20px 75px;
+}
 
-        footer .footer-title {
-            font-size: 16px;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
+section {
 
-        footer p {
-            font-size: 13px;
-            opacity: 0.85;
-            margin: 4px 0;
-        }
+    margin-bottom: 72px;
+}
 
-        footer a {
-            color: #ffffff;
-        }
 
-        footer a:hover {
-            color: #d59b32;
-        }
+/* =========================================================
+   SECTION HEADINGS
+========================================================= */
 
+.section-heading {
 
-        /* ==============================
-           MOBILE
-        ============================== */
+    text-align: center;
 
-        @media (max-width: 768px) {
+    margin-bottom: 42px;
+}
 
-            header {
-                padding: 40px 18px 35px;
-            }
+.section-heading .small-title {
 
-            header h1 {
-                font-size: 29px;
-            }
+    color: #b17b1e;
 
-            .nav-container {
-                gap: 2px;
-                flex-wrap: wrap;
-            }
+    font-size: 12px;
 
-            nav a {
-                padding: 7px 12px;
-                font-size: 12px;
-            }
+    font-weight: 800;
 
-            .event-card {
-                grid-template-columns: 1fr;
-                gap: 18px;
-            }
+    text-transform: uppercase;
 
-            .event-date {
-                max-width: 130px;
-            }
+    letter-spacing: 2px;
 
-        }
+    margin-bottom: 9px;
+}
 
+.section-heading h2 {
 
-        @media (max-width: 480px) {
+    color: #0b3557;
 
-            header h1 {
-                font-size: 25px;
-            }
+    font-size:
+        clamp(26px, 4vw, 34px);
 
-            .section-heading h2 {
-                font-size: 25px;
-            }
+    line-height: 1.25;
 
-            .container {
-                padding: 40px 15px;
-            }
+    margin-bottom: 12px;
+}
 
-            .event-card {
-                padding: 22px;
-            }
+.section-heading p {
 
-            .validation-card {
-                padding: 30px 20px;
-            }
+    max-width: 820px;
 
-            .event-actions {
-                flex-direction: column;
-                align-items: stretch;
-            }
+    margin: auto;
 
-            .event-button {
-                text-align: center;
-            }
+    color: #667085;
 
-        }
+    font-size: 15px;
+}
 
-    </style>
+
+/* =========================================================
+   EVENT INTRO STRIP
+========================================================= */
+
+.event-overview {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 16px;
+
+    margin-bottom: 35px;
+}
+
+.overview-card {
+
+    background: #ffffff;
+
+    border:
+        1px solid #e3e8ee;
+
+    border-radius: 10px;
+
+    padding: 20px;
+
+    text-align: center;
+
+    box-shadow:
+        0 4px 16px
+        rgba(15,35,60,0.05);
+}
+
+.overview-number {
+
+    color: #0b3557;
+
+    font-size: 27px;
+
+    font-weight: 800;
+
+    display: block;
+
+    margin-bottom: 2px;
+}
+
+.overview-label {
+
+    color: #687386;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.8px;
+}
+
+
+/* =========================================================
+   EVENTS
+========================================================= */
+
+.events {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 24px;
+}
+
+
+/* =========================================================
+   EVENT CARD
+========================================================= */
+
+.event-card {
+
+    position: relative;
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border:
+        1px solid #e3e8ee;
+
+    border-radius: 14px;
+
+    padding: 28px;
+
+    display: grid;
+
+    grid-template-columns:
+        145px 1fr;
+
+    gap: 28px;
+
+    box-shadow:
+        0 6px 22px
+        rgba(15,35,60,0.07);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.event-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+    bottom: 0;
+
+    width: 4px;
+
+    background: #d59b32;
+}
+
+.event-card:hover {
+
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        0 12px 32px
+        rgba(15,35,60,0.11);
+
+    border-color: #d7dee6;
+}
+
+
+/* =========================================================
+   FEATURED EVENT
+========================================================= */
+
+.event-card.featured {
+
+    border:
+        1px solid #d7b45c;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #fbfcfe
+        );
+}
+
+.featured-label {
+
+    position: absolute;
+
+    top: 15px;
+
+    right: 18px;
+
+    background: #d59b32;
+
+    color: #ffffff;
+
+    padding: 5px 10px;
+
+    border-radius: 20px;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.8px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   EVENT DATE
+========================================================= */
+
+.event-date {
+
+    align-self: start;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            #0b3557,
+            #0d4c75
+        );
+
+    color: #ffffff;
+
+    border-radius: 10px;
+
+    padding: 19px 10px;
+
+    min-height: 125px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    box-shadow:
+        0 7px 18px
+        rgba(11,53,87,0.16);
+}
+
+.event-date .day {
+
+    display: block;
+
+    font-size: 30px;
+
+    font-weight: 800;
+
+    line-height: 1;
+}
+
+.event-date .month {
+
+    display: block;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1.3px;
+
+    margin-top: 7px;
+}
+
+.event-date .year {
+
+    display: block;
+
+    font-size: 12px;
+
+    opacity: 0.78;
+
+    margin-top: 3px;
+}
+
+
+/* =========================================================
+   TBA DATE
+========================================================= */
+
+.event-date.tba {
+
+    background:
+        linear-gradient(
+            145deg,
+            #536577,
+            #718090
+        );
+}
+
+.event-date.tba .day {
+
+    font-size: 20px;
+}
+
+
+/* =========================================================
+   EVENT CONTENT
+========================================================= */
+
+.event-type {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    background: #eef4f8;
+
+    color: #0b426b;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.9px;
+
+    padding: 6px 11px;
+
+    border-radius: 20px;
+
+    margin-bottom: 11px;
+
+    text-transform: uppercase;
+}
+
+.event-type::before {
+
+    content: "";
+
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: #d59b32;
+}
+
+.event-card h3 {
+
+    color: #0b3557;
+
+    font-size: 21px;
+
+    line-height: 1.35;
+
+    margin-bottom: 10px;
+
+    padding-right: 70px;
+}
+
+.event-card p {
+
+    color: #596574;
+
+    font-size: 14px;
+
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   EVENT ACTIONS
+========================================================= */
+
+.event-actions {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-top: 18px;
+}
+
+.event-button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #0b3557;
+
+    color: #ffffff;
+
+    padding: 10px 17px;
+
+    border-radius: 6px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    border:
+        1px solid #0b3557;
+
+    transition:
+        background 0.25s,
+        transform 0.25s,
+        border-color 0.25s;
+}
+
+.event-button:hover {
+
+    background: #b17b1e;
+
+    border-color: #b17b1e;
+
+    transform:
+        translateY(-1px);
+}
+
+.event-button.secondary {
+
+    background: #ffffff;
+
+    color: #0b3557;
+
+    border-color: #cbd5df;
+}
+
+.event-button.secondary:hover {
+
+    background: #0b3557;
+
+    color: #ffffff;
+
+    border-color: #0b3557;
+}
+
+
+/* =========================================================
+   CERTIFICATE SECTION
+========================================================= */
+
+.certificate-section {
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #082b49,
+            #0d426b
+        );
+
+    border-radius: 16px;
+
+    padding: 48px 38px;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 12px 35px
+        rgba(8,43,73,0.15);
+}
+
+.certificate-section::after {
+
+    content: "✓";
+
+    position: absolute;
+
+    right: 40px;
+    top: 20px;
+
+    font-size: 150px;
+
+    font-weight: 900;
+
+    color:
+        rgba(255,255,255,0.035);
+}
+
+.certificate-inner {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 850px;
+
+    margin: auto;
+
+    text-align: center;
+}
+
+.certificate-label {
+
+    color: #e8c36d;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.7px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 9px;
+}
+
+.certificate-inner h2 {
+
+    font-size:
+        clamp(25px, 4vw, 34px);
+
+    margin-bottom: 12px;
+}
+
+.certificate-inner p {
+
+    color:
+        rgba(255,255,255,0.84);
+
+    font-size: 15px;
+
+    line-height: 1.75;
+}
+
+.validation-button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-top: 23px;
+
+    background: #d59b32;
+
+    color: #ffffff;
+
+    padding: 12px 24px;
+
+    border-radius: 6px;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    transition:
+        background 0.25s,
+        transform 0.25s;
+}
+
+.validation-button:hover {
+
+    background: #b17b1e;
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* =========================================================
+   INFORMATION GRID
+========================================================= */
+
+.info-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+
+    margin-top: 30px;
+}
+
+.info-card {
+
+    background: #ffffff;
+
+    border:
+        1px solid #e2e7ed;
+
+    border-radius: 10px;
+
+    padding: 23px;
+
+    box-shadow:
+        0 4px 15px
+        rgba(15,35,60,0.05);
+}
+
+.info-card h3 {
+
+    color: #0b3557;
+
+    font-size: 16px;
+
+    margin-bottom: 7px;
+}
+
+.info-card p {
+
+    color: #667085;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+
+    background:
+        linear-gradient(
+            135deg,
+            #061f35,
+            #082b49
+        );
+
+    color: #ffffff;
+
+    text-align: center;
+
+    padding: 42px 20px;
+}
+
+.footer-title {
+
+    font-size: 18px;
+
+    font-weight: 800;
+
+    margin-bottom: 8px;
+}
+
+.footer-subtitle {
+
+    color: #e8c36d;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 10px;
+}
+
+footer p {
+
+    font-size: 13px;
+
+    opacity: 0.82;
+
+    margin: 5px 0;
+}
+
+footer a {
+
+    color: #ffffff;
+
+    font-weight: 600;
+}
+
+footer a:hover {
+
+    color: #d59b32;
+}
+
+.footer-divider {
+
+    width: 55px;
+
+    height: 2px;
+
+    background: #d59b32;
+
+    margin: 20px auto;
+}
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+.reveal {
+
+    opacity: 0;
+
+    transform:
+        translateY(18px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+.reveal.visible {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .event-overview,
+    .info-grid {
+
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+    .event-card {
+
+        grid-template-columns:
+            120px 1fr;
+
+        gap: 20px;
+    }
+
+}
+
+
+@media (max-width: 680px) {
+
+    .top-bar-inner {
+
+        justify-content: center;
+
+        text-align: center;
+    }
+
+    .top-bar-inner span {
+
+        display: none;
+    }
+
+    header {
+
+        padding:
+            45px 18px 55px;
+    }
+
+    .logo-mark {
+
+        width: 56px;
+        height: 56px;
+    }
+
+    .nav-container {
+
+        padding: 9px 10px;
+
+        gap: 3px;
+    }
+
+    nav a {
+
+        font-size: 11px;
+
+        padding:
+            7px 10px;
+    }
+
+    .container {
+
+        padding:
+            45px 15px 55px;
+    }
+
+    .event-overview,
+    .info-grid {
+
+        grid-template-columns:
+            1fr;
+    }
+
+    .event-card {
+
+        grid-template-columns:
+            1fr;
+
+        padding: 24px;
+
+        gap: 18px;
+    }
+
+    .event-date {
+
+        max-width: 130px;
+
+        min-height: 105px;
+    }
+
+    .event-card h3 {
+
+        padding-right: 0;
+
+        font-size: 19px;
+    }
+
+    .featured-label {
+
+        top: 12px;
+        right: 12px;
+    }
+
+    .certificate-section {
+
+        padding:
+            38px 22px;
+    }
+
+}
+
+
+@media (max-width: 450px) {
+
+    header h1 {
+
+        font-size: 27px;
+    }
+
+    header p {
+
+        font-size: 14px;
+    }
+
+    .section-heading h2 {
+
+        font-size: 25px;
+    }
+
+    .event-actions {
+
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .event-button {
+
+        width: 100%;
+
+        text-align: center;
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
+    }
+
+}
+
+</style>
 
 </head>
 
-
 <body>
 
+<!-- ======================================================
+     TOP BAR
+====================================================== -->
 
-<!-- ==================================================
+<div class="top-bar">
+
+```
+<div class="top-bar-inner">
+
+    <span>
+        International Scientific Events & Research Training
+    </span>
+
+    <a
+        href="https://icriste.com/"
+        target="_blank"
+        rel="noopener">
+
+        Official ICRI-STE Website
+
+    </a>
+
+</div>
+```
+
+</div>
+
+<!-- ======================================================
      HEADER
-================================================== -->
+====================================================== -->
 
 <header>
+
+```
+<div class="header-content">
+
+    <div class="logo-mark">
+        ICRI
+    </div>
 
     <div class="logo-title">
         International Council for Research & Innovation in STE
     </div>
 
-    <h1>Events</h1>
+    <h1>
+        Scientific Events & Research Training
+    </h1>
 
     <p>
         International scientific symposia, seminars, research
-        training activities, webinars and Early Career Researcher
-        development events organised by ICRI-STE.
+        training programmes, webinars and Early Career Researcher
+        development activities organised through ICRI-STE.
     </p>
+
+</div>
+```
 
 </header>
 
-
-<!-- ==================================================
+<!-- ======================================================
      NAVIGATION
-================================================== -->
+====================================================== -->
 
 <nav>
 
-    <div class="nav-container">
+```
+<div class="nav-container">
 
-        <a href="#events">
-            Events
-        </a>
+    <a
+        href="#events"
+        class="active">
 
-        <a href="#certificate-validation">
-            Certificate Validation
-        </a>
+        Events
 
-        <a
-            href="https://icriste.com/"
-            target="_blank"
-            rel="noopener">
-            ICRI-STE
-        </a>
+    </a>
 
-    </div>
+    <a href="#certificate-validation">
+
+        Certificate Validation
+
+    </a>
+
+    <a
+        href="https://icriste.com/"
+        target="_blank"
+        rel="noopener">
+
+        ICRI-STE
+
+    </a>
+
+</div>
+```
 
 </nav>
 
-
-<!-- ==================================================
+<!-- ======================================================
      MAIN
-================================================== -->
+====================================================== -->
 
 <main class="container">
 
+<!-- ======================================================
+     EVENTS
+====================================================== -->
 
-    <!-- ==================================================
-         EVENTS
-    ================================================== -->
+<section id="events" class="reveal">
 
-    <section id="events">
+```
+<div class="section-heading">
 
-        <div class="section-heading">
+    <div class="small-title">
+        ICRI-STE Events
+    </div>
 
-            <div class="small-title">
-                ICRI-STE
-            </div>
+    <h2>
+        Scientific Events & Research Training
+    </h2>
 
-            <h2>
-                Scientific Events & Research Training
-            </h2>
+    <p>
+        A dedicated platform for international scientific
+        meetings, research training, seminars, webinars and
+        Early Career Researcher development activities.
+    </p>
 
-            <p>
-                International scientific meetings, symposia,
-                seminars, webinars and structured research
-                training activities supporting researchers,
-                scientists and Early Career Researchers.
-            </p>
+</div>
 
-        </div>
 
+<!-- EVENT OVERVIEW -->
 
-        <div class="events">
+<div class="event-overview">
 
+    <div class="overview-card">
 
-            <!-- ==========================================
-                 EVENT 01 — CHI LAB SYMPOSIUM
-            =========================================== -->
+        <span class="overview-number">
+            01
+        </span>
 
-            <article class="event-card">
+        <span class="overview-label">
+            International Symposium
+        </span>
 
-                <div class="event-date">
+    </div>
 
-                    <span class="month">
-                        October
-                    </span>
 
-                    <span class="year">
-                        2026
-                    </span>
+    <div class="overview-card">
 
-                </div>
+        <span class="overview-number">
+            01
+        </span>
 
+        <span class="overview-label">
+            Research Training Programme
+        </span>
 
-                <div>
+    </div>
 
-                    <span class="event-type">
-                        VIRTUAL INTERNATIONAL SYMPOSIUM
-                    </span>
 
-                    <h3>
-                        1st Virtual International Symposium of
-                        CHI Lab Scientists & Early Career Researchers 2026
-                    </h3>
+    <div class="overview-card">
 
-                    <p>
-                        A virtual international scientific symposium
-                        featuring research presentations, posters,
-                        prototypes and interdisciplinary research
-                        contributions from CHI Lab scientists and
-                        Early Career Researchers.
-                    </p>
+        <span class="overview-number">
+            02
+        </span>
 
+        <span class="overview-label">
+            Seminar & Webinar Series
+        </span>
 
-                    <div class="event-actions">
+    </div>
 
-                        <a
-                            class="event-button"
-                            href="https://partnerships2024.github.io/"
-                            target="_blank"
-                            rel="noopener">
+</div>
 
-                            Visit Symposium Website
 
-                        </a>
+<!-- EVENTS -->
 
-
-                        <a
-                            class="event-button secondary"
-                            href="https://partnerships2024.github.io/certificates.html"
-                            target="_blank"
-                            rel="noopener">
-
-                            Verify Certificates
-
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-
-            <!-- ==========================================
-                 EVENT 02 — RESEARCH TRAINING
-            =========================================== -->
-
-            <article class="event-card">
-
-                <div class="event-date">
-
-                    <span class="month">
-                        2026
-                    </span>
-
-                    <span class="year">
-                        TBA
-                    </span>
-
-                </div>
-
-
-                <div>
-
-                    <span class="event-type">
-                        RESEARCH TRAINING
-                    </span>
-
-                    <h3>
-                        Research Training Programme for Early Career Researchers
-                    </h3>
-
-                    <p>
-                        Structured research training for Early Career
-                        Researchers covering research methodology,
-                        scientific literature review, data analysis,
-                        computational research, artificial intelligence
-                        and machine learning, scientific writing,
-                        research documentation, reproducibility and
-                        responsible research practices.
-                    </p>
-
-
-                    <div class="event-actions">
-
-                        <a
-                            class="event-button"
-                            href="https://icriste.com/"
-                            target="_blank"
-                            rel="noopener">
-
-                            Learn More
-
-                        </a>
-
-
-                        <a
-                            class="event-button secondary"
-                            href="https://partnerships2024.github.io/certificates.html"
-                            target="_blank"
-                            rel="noopener">
-
-                            Certificate Validation
-
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-
-            <!-- ==========================================
-                 EVENT 03 — SCIENTIFIC SEMINAR
-            =========================================== -->
-
-            <article class="event-card">
-
-                <div class="event-date">
-
-                    <span class="month">
-                        2026
-                    </span>
-
-                    <span class="year">
-                        TBA
-                    </span>
-
-                </div>
-
-
-                <div>
-
-                    <span class="event-type">
-                        SCIENTIFIC SEMINAR
-                    </span>
-
-                    <h3>
-                        ICRI-STE Scientific Seminar Series
-                    </h3>
-
-                    <p>
-                        Expert-led scientific seminars addressing
-                        emerging research, computational science,
-                        artificial intelligence, data science and
-                        interdisciplinary innovation.
-                    </p>
-
-                </div>
-
-            </article>
-
-
-            <!-- ==========================================
-                 EVENT 04 — WEBINAR
-            =========================================== -->
-
-            <article class="event-card">
-
-                <div class="event-date">
-
-                    <span class="month">
-                        TBA
-                    </span>
-
-                    <span class="year">
-                        2026
-                    </span>
-
-                </div>
-
-
-                <div>
-
-                    <span class="event-type">
-                        RESEARCH & INNOVATION WEBINAR
-                    </span>
-
-                    <h3>
-                        Research & Innovation Webinar Series
-                    </h3>
-
-                    <p>
-                        Online research discussions and knowledge-sharing
-                        sessions connecting researchers, scientists,
-                        engineers and Early Career Researchers across
-                        computational science, artificial intelligence,
-                        healthcare and interdisciplinary research.
-                    </p>
-
-                </div>
-
-            </article>
-
-
-        </div>
-
-    </section>
+<div class="events">
 
 
     <!-- ==================================================
-         CERTIFICATE VALIDATION
+         EVENT 01
     ================================================== -->
 
-    <section id="certificate-validation">
+    <article class="event-card featured">
 
-        <div class="section-heading">
+        <span class="featured-label">
+            Featured Event
+        </span>
 
-            <div class="small-title">
-                ICRI-STE Certification
-            </div>
 
-            <h2>
-                Certificate Validation Portal
-            </h2>
+        <div class="event-date">
 
-            <p>
-                Verify certificates issued through ICRI-STE and the
-                Computational Healthcare Intelligence (CHI) Lab using
-                the official online certificate verification register.
-            </p>
+            <span class="day">
+                01
+            </span>
+
+            <span class="month">
+                October
+            </span>
+
+            <span class="year">
+                2026
+            </span>
 
         </div>
 
 
-        <div class="validation-card">
+        <div>
+
+            <span class="event-type">
+                Virtual International Symposium
+            </span>
 
             <h3>
-                Official Certificate Verification
+                1st Virtual International Symposium of
+                CHI Lab Scientists & Early Career Researchers 2026
             </h3>
 
             <p>
-                Certificate holders, institutions and other authorised
-                parties can verify certificate records using the unique
-                Certificate ID displayed on the issued certificate.
+                A virtual international scientific symposium
+                bringing together CHI Lab scientists and Early
+                Career Researchers for research presentations,
+                scientific posters, computational research
+                prototypes and interdisciplinary exchange.
             </p>
 
 
-            <a
-                class="validation-button"
-                href="https://partnerships2024.github.io/certificates.html"
-                target="_blank"
-                rel="noopener">
+            <div class="event-actions">
 
-                Open Certificate Validation Portal
+                <a
+                    class="event-button"
+                    href="https://partnerships2024.github.io/"
+                    target="_blank"
+                    rel="noopener">
 
-            </a>
+                    Visit Symposium Website
+
+                </a>
+
+
+                <a
+                    class="event-button secondary"
+                    href="certificates.html">
+
+                    Verify Certificates
+
+                </a>
+
+            </div>
 
         </div>
 
-    </section>
+    </article>
 
 
-</main>
+    <!-- ==================================================
+         EVENT 02
+    ================================================== -->
+
+    <article class="event-card">
+
+        <div class="event-date tba">
+
+            <span class="day">
+                TBA
+            </span>
+
+            <span class="month">
+                2026
+            </span>
+
+            <span class="year">
+                To Be Announced
+            </span>
+
+        </div>
 
 
-<!-- ==================================================
-     FOOTER
-================================================== -->
+        <div>
 
-<footer>
+            <span class="event-type">
+                Research Training
+            </span>
 
-    <div class="footer-title">
-        ICRI-STE
-    </div>
+            <h3>
+                Research Training Programme for
+                Early Career Researchers
+            </h3>
 
-    <p>
-        International Council for Research & Innovation
-        in Science, Technology & Engineering
-    </p>
+            <p>
+                Structured research training covering research
+                methodology, scientific literature review,
+                computational research, data analysis, artificial
+                intelligence and machine learning, scientific
+                writing, reproducibility and responsible research
+                practices.
+            </p>
 
-    <p>
-        Scientific Events • Research Training • Innovation
-    </p>
 
-    <p>
-        © 2026 ICRI-STE. All rights reserved.
-    </p>
+            <div class="event-actions">
 
-    <p>
+                <a
+                    class="event-button"
+                    href="https://icriste.com/"
+                    target="_blank"
+                    rel="noopener">
+
+                    Learn More
+
+                </a>
+
+
+                <a
+                    class="event-button secondary"
+                    href="certificates.html">
+
+                    Certificate Validation
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </article>
+
+
+    <!-- ==================================================
+         EVENT 03
+    ================================================== -->
+
+    <article class="event-card">
+
+        <div class="event-date tba">
+
+            <span class="day">
+                TBA
+            </span>
+
+            <span class="month">
+                2026
+            </span>
+
+            <span class="year">
+                To Be Announced
+            </span>
+
+        </div>
+
+
+        <div>
+
+            <span class="event-type">
+                Scientific Seminar
+            </span>
+
+            <h3>
+                ICRI-STE Scientific Seminar Series
+            </h3>
+
+            <p>
+                Expert-led scientific seminars addressing emerging
+                research, computational science, artificial
+                intelligence, data science and interdisciplinary
+                scientific innovation.
+            </p>
+
+        </div>
+
+    </article>
+
+
+    <!-- ==================================================
+         EVENT 04
+    ================================================== -->
+
+    <article class="event-card">
+
+        <div class="event-date tba">
+
+            <span class="day">
+                TBA
+            </span>
+
+            <span class="month">
+                2026
+            </span>
+
+            <span class="year">
+                To Be Announced
+            </span>
+
+        </div>
+
+
+        <div>
+
+            <span class="event-type">
+                Research & Innovation Webinar
+            </span>
+
+            <h3>
+                Research & Innovation Webinar Series
+            </h3>
+
+            <p>
+                Online scientific discussions and knowledge-sharing
+                sessions connecting researchers, scientists,
+                engineers and Early Career Researchers across
+                computational science, artificial intelligence,
+                healthcare and interdisciplinary research.
+            </p>
+
+        </div>
+
+    </article>
+
+
+</div>
+```
+
+</section>
+
+<!-- ======================================================
+     CERTIFICATE VALIDATION
+====================================================== -->
+
+<section
+    id="certificate-validation"
+    class="reveal">
+
+```
+<div class="certificate-section">
+
+    <div class="certificate-inner">
+
+        <div class="certificate-label">
+            Official ICRI-STE Certification
+        </div>
+
+        <h2>
+            Certificate Validation Portal
+        </h2>
+
+        <p>
+            Verify certificates issued through ICRI-STE scientific
+            events, research training programmes and associated
+            research activities using the official online
+            certificate verification register.
+        </p>
+
 
         <a
-            href="https://icriste.com/"
-            target="_blank"
-            rel="noopener">
+            class="validation-button"
+            href="certificates.html">
 
-            icriste.com
+            Open Certificate Verification Portal
 
         </a>
 
-    </p>
+    </div>
+
+</div>
+
+
+<!-- INFORMATION CARDS -->
+
+<div class="info-grid">
+
+    <div class="info-card">
+
+        <h3>
+            Certificate ID
+        </h3>
+
+        <p>
+            Use the unique Certificate ID printed on the
+            certificate to retrieve the corresponding public
+            verification record.
+        </p>
+
+    </div>
+
+
+    <div class="info-card">
+
+        <h3>
+            Online Verification
+        </h3>
+
+        <p>
+            Certificate records can be checked online through
+            the ICRI-STE certificate verification portal.
+        </p>
+
+    </div>
+
+
+    <div class="info-card">
+
+        <h3>
+            Public Information
+        </h3>
+
+        <p>
+            The verification portal displays only the public
+            information available in the official certificate
+            register.
+        </p>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+</main>
+
+<!-- ======================================================
+     FOOTER
+====================================================== -->
+
+<footer>
+
+```
+<div class="footer-title">
+    International Council for Research & Innovation in STE
+</div>
+
+<div class="footer-subtitle">
+    ICRI-STE Scientific Events & Research Training
+</div>
+
+<p>
+    International Scientific Events • Research Training •
+    Early Career Researcher Development
+</p>
+
+<div class="footer-divider"></div>
+
+<p>
+    © 2026 ICRI-STE. All rights reserved.
+</p>
+
+<p>
+
+    <a
+        href="https://icriste.com/"
+        target="_blank"
+        rel="noopener">
+
+        Official ICRI-STE Website
+
+    </a>
+
+</p>
+```
 
 </footer>
 
+<!-- ======================================================
+     SCROLL REVEAL
+====================================================== -->
+
+<script>
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        const elements =
+            document.querySelectorAll(
+                ".reveal"
+            );
+
+
+        if (
+            !("IntersectionObserver" in window)
+        ) {
+
+            elements.forEach(
+                element =>
+                    element.classList.add(
+                        "visible"
+                    )
+            );
+
+            return;
+        }
+
+
+        const observer =
+            new IntersectionObserver(
+                function (entries) {
+
+                    entries.forEach(
+                        function (entry) {
+
+                            if (
+                                entry.isIntersecting
+                            ) {
+
+                                entry.target
+                                    .classList
+                                    .add("visible");
+
+                                observer.unobserve(
+                                    entry.target
+                                );
+
+                            }
+
+                        }
+                    );
+
+                },
+                {
+                    threshold: 0.12
+                }
+            );
+
+
+        elements.forEach(
+            element =>
+                observer.observe(element)
+        );
+
+    }
+);
+
+</script>
 
 </body>
 
 </html>
-```
