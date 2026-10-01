@@ -1,22 +1,23 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
 
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <meta name="description"
-   content="ICRI-STE Scientific Events Portal — International Symposia, Scientific Seminars, Research Training, Webinars, Early Career Researcher Development and Certificate Validation.">
+    content="ICRI-STE Scientific Events Portal — International Symposia, Scientific Seminars, Research Training, Webinars, Early Career Researcher Development and Certificate Validation.">
 
 <meta name="author"
-   content="International Council for Research & Innovation in Science, Technology & Engineering (ICRI-STE)">
+    content="International Council for Research & Innovation in Science, Technology & Engineering (ICRI-STE)">
 
 <meta name="theme-color"
-   content="#082b49">
+    content="#082b49">
 
 <title>Scientific Events | ICRI-STE</title>
+
 
 <style>
 
@@ -35,6 +36,7 @@ html {
 }
 
 body {
+
     font-family:
         Arial,
         Helvetica,
@@ -74,8 +76,8 @@ a {
 
     font-size: 12px;
 
-    border-bottom: 1px solid
-        rgba(255,255,255,0.08);
+    border-bottom:
+        1px solid rgba(255,255,255,0.08);
 }
 
 .top-bar-inner {
@@ -152,8 +154,8 @@ header::before {
 
     border-radius: 50%;
 
-    border: 1px solid
-        rgba(255,255,255,0.08);
+    border:
+        1px solid rgba(255,255,255,0.08);
 
     top: -160px;
     left: -100px;
@@ -170,8 +172,8 @@ header::after {
 
     border-radius: 50%;
 
-    border: 1px solid
-        rgba(255,255,255,0.06);
+    border:
+        1px solid rgba(255,255,255,0.06);
 
     right: -180px;
     bottom: -240px;
@@ -188,14 +190,17 @@ header::after {
     margin: auto;
 }
 
+
+/* =========================================================
+   ICRI-STE LOGO
+========================================================= */
+
 .logo-mark {
 
-    width: 64px;
-    height: 64px;
+    width: 110px;
+    height: 110px;
 
-    margin: 0 auto 18px;
-
-    border-radius: 16px;
+    margin: 0 auto 20px;
 
     display: flex;
 
@@ -207,17 +212,26 @@ header::after {
         rgba(255,255,255,0.10);
 
     border:
-        1px solid rgba(255,255,255,0.30);
+        1px solid rgba(255,255,255,0.25);
+
+    border-radius: 16px;
+
+    padding: 10px;
 
     box-shadow:
         0 8px 25px rgba(0,0,0,0.16);
-
-    font-size: 20px;
-
-    font-weight: 800;
-
-    letter-spacing: 1px;
 }
+
+.logo-mark img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    display: block;
+}
+
 
 .logo-title {
 
@@ -406,6 +420,62 @@ section {
     color: #667085;
 
     font-size: 15px;
+}
+
+
+/* =========================================================
+   EVENT DIAGRAM
+========================================================= */
+
+.event-diagram {
+
+    max-width: 1000px;
+
+    margin:
+        0 auto 42px;
+
+    background: #ffffff;
+
+    border:
+        1px solid #e1e7ed;
+
+    border-radius: 14px;
+
+    padding: 18px;
+
+    box-shadow:
+        0 6px 22px
+        rgba(15,35,60,0.07);
+
+    text-align: center;
+}
+
+.event-diagram img {
+
+    width: 100%;
+
+    max-width: 950px;
+
+    height: auto;
+
+    display: block;
+
+    margin: 0 auto;
+
+    border-radius: 9px;
+}
+
+.event-diagram-caption {
+
+    margin-top: 13px;
+
+    color: #667085;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+
+    font-weight: 600;
 }
 
 
@@ -1150,8 +1220,10 @@ footer a:hover {
 
     .logo-mark {
 
-        width: 56px;
-        height: 56px;
+        width: 85px;
+        height: 85px;
+
+        padding: 8px;
     }
 
     .nav-container {
@@ -1218,6 +1290,18 @@ footer a:hover {
             38px 22px;
     }
 
+    .event-diagram {
+
+        padding: 10px;
+
+        border-radius: 10px;
+    }
+
+    .event-diagram-caption {
+
+        font-size: 11px;
+    }
+
 }
 
 
@@ -1270,11 +1354,14 @@ footer a:hover {
     *::before,
     *::after {
 
-        animation-duration: 0.01ms !important;
+        animation-duration:
+            0.01ms !important;
 
-        animation-iteration-count: 1 !important;
+        animation-iteration-count:
+            1 !important;
 
-        transition-duration: 0.01ms !important;
+        transition-duration:
+            0.01ms !important;
     }
 
 }
@@ -1283,7 +1370,9 @@ footer a:hover {
 
 </head>
 
+
 <body>
+
 
 <!-- ======================================================
      TOP BAR
@@ -1291,26 +1380,25 @@ footer a:hover {
 
 <div class="top-bar">
 
-```
-<div class="top-bar-inner">
+    <div class="top-bar-inner">
 
-    <span>
-        International Scientific Events & Research Training
-    </span>
+        <span>
+            International Scientific Events & Research Training
+        </span>
 
-    <a
-        href="https://icriste.com/"
-        target="_blank"
-        rel="noopener">
+        <a
+            href="https://icriste.com/"
+            target="_blank"
+            rel="noopener">
 
-        Official ICRI-STE Website
+            Official ICRI-STE Website
 
-    </a>
+        </a>
 
-</div>
-```
+    </div>
 
 </div>
+
 
 <!-- ======================================================
      HEADER
@@ -1318,31 +1406,47 @@ footer a:hover {
 
 <header>
 
-```
-<div class="header-content">
+    <div class="header-content">
 
-    <div class="logo-mark">
-        ICRI
+
+        <!-- ICRI-STE LOGO -->
+
+        <div class="logo-mark">
+
+            <img
+                src="assets/ICRI-STE-Logo.png"
+                alt="ICRI-STE Logo">
+
+        </div>
+
+
+        <div class="logo-title">
+
+            International Council for Research & Innovation in STE
+
+        </div>
+
+
+        <h1>
+
+            Scientific Events & Research Training
+
+        </h1>
+
+
+        <p>
+
+            International scientific symposia, seminars, research
+            training programmes, webinars and Early Career Researcher
+            development activities organised through ICRI-STE.
+
+        </p>
+
+
     </div>
-
-    <div class="logo-title">
-        International Council for Research & Innovation in STE
-    </div>
-
-    <h1>
-        Scientific Events & Research Training
-    </h1>
-
-    <p>
-        International scientific symposia, seminars, research
-        training programmes, webinars and Early Career Researcher
-        development activities organised through ICRI-STE.
-    </p>
-
-</div>
-```
 
 </header>
+
 
 <!-- ======================================================
      NAVIGATION
@@ -1350,36 +1454,37 @@ footer a:hover {
 
 <nav>
 
-```
-<div class="nav-container">
+    <div class="nav-container">
 
-    <a
-        href="#events"
-        class="active">
+        <a
+            href="#events"
+            class="active">
 
-        Events
+            Events
 
-    </a>
+        </a>
 
-    <a href="#certificate-validation">
 
-        Certificate Validation
+        <a href="#certificate-validation">
 
-    </a>
+            Certificate Validation
 
-    <a
-        href="https://icriste.com/"
-        target="_blank"
-        rel="noopener">
+        </a>
 
-        ICRI-STE
 
-    </a>
+        <a
+            href="https://icriste.com/"
+            target="_blank"
+            rel="noopener">
 
-</div>
-```
+            ICRI-STE
+
+        </a>
+
+    </div>
 
 </nav>
+
 
 <!-- ======================================================
      MAIN
@@ -1387,325 +1492,464 @@ footer a:hover {
 
 <main class="container">
 
+
 <!-- ======================================================
      EVENTS
 ====================================================== -->
 
-<section id="events" class="reveal">
-
-```
-<div class="section-heading">
-
-    <div class="small-title">
-        ICRI-STE Events
-    </div>
-
-    <h2>
-        Scientific Events & Research Training
-    </h2>
-
-    <p>
-        A dedicated platform for international scientific
-        meetings, research training, seminars, webinars and
-        Early Career Researcher development activities.
-    </p>
-
-</div>
+<section
+    id="events"
+    class="reveal">
 
 
-<!-- EVENT OVERVIEW -->
+    <div class="section-heading">
 
-<div class="event-overview">
+        <div class="small-title">
 
-    <div class="overview-card">
+            ICRI-STE Events
 
-        <span class="overview-number">
-            01
-        </span>
+        </div>
 
-        <span class="overview-label">
-            International Symposium
-        </span>
+
+        <h2>
+
+            Scientific Events & Research Training
+
+        </h2>
+
+
+        <p>
+
+            A dedicated platform for international scientific
+            meetings, research training, seminars, webinars and
+            Early Career Researcher development activities.
+
+        </p>
 
     </div>
-
-
-    <div class="overview-card">
-
-        <span class="overview-number">
-            01
-        </span>
-
-        <span class="overview-label">
-            Research Training Programme
-        </span>
-
-    </div>
-
-
-    <div class="overview-card">
-
-        <span class="overview-number">
-            02
-        </span>
-
-        <span class="overview-label">
-            Seminar & Webinar Series
-        </span>
-
-    </div>
-
-</div>
-
-
-<!-- EVENTS -->
-
-<div class="events">
 
 
     <!-- ==================================================
-         EVENT 01
+         PICTORIAL REPRESENTATION
     ================================================== -->
 
-    <article class="event-card featured">
+    <div class="event-diagram">
 
-        <span class="featured-label">
-            Featured Event
-        </span>
+        <img
+            src="assets/diagram_1.png"
+            alt="ICRI-STE Scientific Events and Research Training">
+
+        <div class="event-diagram-caption">
+
+            ICRI-STE Scientific Events, Research Training and
+            Early Career Researcher Development Framework
+
+        </div>
+
+    </div>
 
 
-        <div class="event-date">
+    <!-- ==================================================
+         EVENT OVERVIEW
+    ================================================== -->
 
-            <span class="day">
-                15
+    <div class="event-overview">
+
+
+        <div class="overview-card">
+
+            <span class="overview-number">
+
+                01
+
             </span>
 
-            <span class="month">
-                December
-            </span>
 
-            <span class="year">
-                2026
+            <span class="overview-label">
+
+                International Symposium
+
             </span>
 
         </div>
 
 
-        <div>
+        <div class="overview-card">
 
-            <span class="event-type">
-                Virtual International Symposium
+            <span class="overview-number">
+
+                01
+
             </span>
 
-            <h3>
-                1st Virtual International Symposium of
-                CHI Lab Scientists & Early Career Researchers 2026
-            </h3>
 
-            <p>
-                A virtual international scientific symposium
-                bringing together CHI Lab scientists and Early
-                Career Researchers for research presentations,
-                scientific posters, computational research
-                prototypes and interdisciplinary exchange.
-            </p>
+            <span class="overview-label">
+
+                Research Training Programme
+
+            </span>
+
+        </div>
 
 
-            <div class="event-actions">
+        <div class="overview-card">
 
-                <a
-                    class="event-button"
-                    href="https://partnerships2024.github.io/"
-                    target="_blank"
-                    rel="noopener">
+            <span class="overview-number">
 
-                    Visit Symposium Website
+                02
 
-                </a>
+            </span>
 
 
-                <a
-                    class="event-button secondary"
-                    href="certificates.html">
+            <span class="overview-label">
 
-                    Verify Certificates
+                Seminar & Webinar Series
 
-                </a>
+            </span>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- ==================================================
+         EVENTS
+    ================================================== -->
+
+    <div class="events">
+
+
+        <!-- ==============================================
+             EVENT 01
+        =============================================== -->
+
+        <article class="event-card featured">
+
+
+            <span class="featured-label">
+
+                Featured Event
+
+            </span>
+
+
+            <div class="event-date">
+
+                <span class="day">
+
+                    15
+
+                </span>
+
+
+                <span class="month">
+
+                    December
+
+                </span>
+
+
+                <span class="year">
+
+                    2026
+
+                </span>
 
             </div>
 
-        </div>
 
-    </article>
-
-
-    <!-- ==================================================
-         EVENT 02
-    ================================================== -->
-
-    <article class="event-card">
-
-        <div class="event-date tba">
-
-            <span class="day">
-                TBA
-            </span>
-
-            <span class="month">
-                2026
-            </span>
-
-            <span class="year">
-                To Be Announced
-            </span>
-
-        </div>
+            <div>
 
 
-        <div>
+                <span class="event-type">
 
-            <span class="event-type">
-                Research Training
-            </span>
+                    Virtual International Symposium
 
-            <h3>
-                Research Training Programme for
-                Early Career Researchers
-            </h3>
-
-            <p>
-                Structured research training covering research
-                methodology, scientific literature review,
-                computational research, data analysis, artificial
-                intelligence and machine learning, scientific
-                writing, reproducibility and responsible research
-                practices.
-            </p>
+                </span>
 
 
-            <div class="event-actions">
+                <h3>
 
-                <a
-                    class="event-button"
-                    href="https://icriste.com/"
-                    target="_blank"
-                    rel="noopener">
+                    1st Virtual International Symposium of
+                    CHI Lab Scientists & Early Career Researchers 2026
 
-                    Learn More
-
-                </a>
+                </h3>
 
 
-                <a
-                    class="event-button secondary"
-                    href="certificates.html">
+                <p>
 
-                    Certificate Validation
+                    A virtual international scientific symposium
+                    bringing together CHI Lab scientists and Early
+                    Career Researchers for research presentations,
+                    scientific posters, computational research
+                    prototypes and interdisciplinary exchange.
 
-                </a>
+                </p>
+
+
+                <div class="event-actions">
+
+
+                    <a
+                        class="event-button"
+                        href="https://partnerships2024.github.io/"
+                        target="_blank"
+                        rel="noopener">
+
+                        Visit Symposium Website
+
+                    </a>
+
+
+                    <a
+                        class="event-button secondary"
+                        href="certificates.html">
+
+                        Verify Certificates
+
+                    </a>
+
+
+                </div>
+
 
             </div>
 
-        </div>
 
-    </article>
-
-
-    <!-- ==================================================
-         EVENT 03
-    ================================================== -->
-
-    <article class="event-card">
-
-        <div class="event-date tba">
-
-            <span class="day">
-                TBA
-            </span>
-
-            <span class="month">
-                2026
-            </span>
-
-            <span class="year">
-                To Be Announced
-            </span>
-
-        </div>
+        </article>
 
 
-        <div>
+        <!-- ==============================================
+             EVENT 02
+        =============================================== -->
 
-            <span class="event-type">
-                Scientific Seminar
-            </span>
-
-            <h3>
-                ICRI-STE Scientific Seminar Series
-            </h3>
-
-            <p>
-                Expert-led scientific seminars addressing emerging
-                research, computational science, artificial
-                intelligence, data science and interdisciplinary
-                scientific innovation.
-            </p>
-
-        </div>
-
-    </article>
+        <article class="event-card">
 
 
-    <!-- ==================================================
-         EVENT 04
-    ================================================== -->
+            <div class="event-date tba">
 
-    <article class="event-card">
+                <span class="day">
 
-        <div class="event-date tba">
+                    TBA
 
-            <span class="day">
-                TBA
-            </span>
-
-            <span class="month">
-                2026
-            </span>
-
-            <span class="year">
-                To Be Announced
-            </span>
-
-        </div>
+                </span>
 
 
-        <div>
+                <span class="month">
 
-            <span class="event-type">
-                Research & Innovation Webinar
-            </span>
+                    2026
 
-            <h3>
-                Research & Innovation Webinar Series
-            </h3>
-
-            <p>
-                Online scientific discussions and knowledge-sharing
-                sessions connecting researchers, scientists,
-                engineers and Early Career Researchers across
-                computational science, artificial intelligence,
-                healthcare and interdisciplinary research.
-            </p>
-
-        </div>
-
-    </article>
+                </span>
 
 
-</div>
-```
+                <span class="year">
+
+                    To Be Announced
+
+                </span>
+
+            </div>
+
+
+            <div>
+
+
+                <span class="event-type">
+
+                    Research Training
+
+                </span>
+
+
+                <h3>
+
+                    Research Training Programme for
+                    Early Career Researchers
+
+                </h3>
+
+
+                <p>
+
+                    Structured research training covering research
+                    methodology, scientific literature review,
+                    computational research, data analysis, artificial
+                    intelligence and machine learning, scientific
+                    writing, reproducibility and responsible research
+                    practices.
+
+                </p>
+
+
+                <div class="event-actions">
+
+
+                    <a
+                        class="event-button"
+                        href="https://icriste.com/"
+                        target="_blank"
+                        rel="noopener">
+
+                        Learn More
+
+                    </a>
+
+
+                    <a
+                        class="event-button secondary"
+                        href="certificates.html">
+
+                        Certificate Validation
+
+                    </a>
+
+
+                </div>
+
+
+            </div>
+
+
+        </article>
+
+
+        <!-- ==============================================
+             EVENT 03
+        =============================================== -->
+
+        <article class="event-card">
+
+
+            <div class="event-date tba">
+
+                <span class="day">
+
+                    TBA
+
+                </span>
+
+
+                <span class="month">
+
+                    2026
+
+                </span>
+
+
+                <span class="year">
+
+                    To Be Announced
+
+                </span>
+
+            </div>
+
+
+            <div>
+
+
+                <span class="event-type">
+
+                    Scientific Seminar
+
+                </span>
+
+
+                <h3>
+
+                    ICRI-STE Scientific Seminar Series
+
+                </h3>
+
+
+                <p>
+
+                    Expert-led scientific seminars addressing
+                    emerging research, computational science,
+                    artificial intelligence, data science and
+                    interdisciplinary scientific innovation.
+
+                </p>
+
+
+            </div>
+
+
+        </article>
+
+
+        <!-- ==============================================
+             EVENT 04
+        =============================================== -->
+
+        <article class="event-card">
+
+
+            <div class="event-date tba">
+
+                <span class="day">
+
+                    TBA
+
+                </span>
+
+
+                <span class="month">
+
+                    2026
+
+                </span>
+
+
+                <span class="year">
+
+                    To Be Announced
+
+                </span>
+
+            </div>
+
+
+            <div>
+
+
+                <span class="event-type">
+
+                    Research & Innovation Webinar
+
+                </span>
+
+
+                <h3>
+
+                    Research & Innovation Webinar Series
+
+                </h3>
+
+
+                <p>
+
+                    Online scientific discussions and knowledge-sharing
+                    sessions connecting researchers, scientists,
+                    engineers and Early Career Researchers across
+                    computational science, artificial intelligence,
+                    healthcare and interdisciplinary research.
+
+                </p>
+
+
+            </div>
+
+
+        </article>
+
+
+    </div>
+
 
 </section>
+
 
 <!-- ======================================================
      CERTIFICATE VALIDATION
@@ -1715,93 +1959,126 @@ footer a:hover {
     id="certificate-validation"
     class="reveal">
 
-```
-<div class="certificate-section">
 
-    <div class="certificate-inner">
+    <div class="certificate-section">
 
-        <div class="certificate-label">
-            Official ICRI-STE Certification
+
+        <div class="certificate-inner">
+
+
+            <div class="certificate-label">
+
+                Official ICRI-STE Certification
+
+            </div>
+
+
+            <h2>
+
+                Certificate Validation Portal
+
+            </h2>
+
+
+            <p>
+
+                Verify certificates issued through ICRI-STE scientific
+                events, research training programmes and associated
+                research activities using the official online
+                certificate verification register.
+
+            </p>
+
+
+            <a
+                class="validation-button"
+                href="certificates.html">
+
+                Open Certificate Verification Portal
+
+            </a>
+
+
         </div>
 
-        <h2>
-            Certificate Validation Portal
-        </h2>
-
-        <p>
-            Verify certificates issued through ICRI-STE scientific
-            events, research training programmes and associated
-            research activities using the official online
-            certificate verification register.
-        </p>
-
-
-        <a
-            class="validation-button"
-            href="certificates.html">
-
-            Open Certificate Verification Portal
-
-        </a>
-
-    </div>
-
-</div>
-
-
-<!-- INFORMATION CARDS -->
-
-<div class="info-grid">
-
-    <div class="info-card">
-
-        <h3>
-            Certificate ID
-        </h3>
-
-        <p>
-            Use the unique Certificate ID printed on the
-            certificate to retrieve the corresponding public
-            verification record.
-        </p>
 
     </div>
 
 
-    <div class="info-card">
+    <!-- ==================================================
+         INFORMATION CARDS
+    ================================================== -->
 
-        <h3>
-            Online Verification
-        </h3>
+    <div class="info-grid">
 
-        <p>
-            Certificate records can be checked online through
-            the ICRI-STE certificate verification portal.
-        </p>
+
+        <div class="info-card">
+
+            <h3>
+
+                Certificate ID
+
+            </h3>
+
+
+            <p>
+
+                Use the unique Certificate ID printed on the
+                certificate to retrieve the corresponding public
+                verification record.
+
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <h3>
+
+                Online Verification
+
+            </h3>
+
+
+            <p>
+
+                Certificate records can be checked online through
+                the ICRI-STE certificate verification portal.
+
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <h3>
+
+                Public Information
+
+            </h3>
+
+
+            <p>
+
+                The verification portal displays only the public
+                information available in the official certificate
+                register.
+
+            </p>
+
+        </div>
+
 
     </div>
 
-
-    <div class="info-card">
-
-        <h3>
-            Public Information
-        </h3>
-
-        <p>
-            The verification portal displays only the public
-            information available in the official certificate
-            register.
-        </p>
-
-    </div>
-
-</div>
-```
 
 </section>
 
+
 </main>
+
 
 <!-- ======================================================
      FOOTER
@@ -1809,41 +2086,55 @@ footer a:hover {
 
 <footer>
 
-```
-<div class="footer-title">
-    International Council for Research & Innovation in STE
-</div>
 
-<div class="footer-subtitle">
-    ICRI-STE Scientific Events & Research Training
-</div>
+    <div class="footer-title">
 
-<p>
-    International Scientific Events • Research Training •
-    Early Career Researcher Development
-</p>
+        International Council for Research & Innovation in STE
 
-<div class="footer-divider"></div>
+    </div>
 
-<p>
-    © 2026 ICRI-STE. All rights reserved.
-</p>
 
-<p>
+    <div class="footer-subtitle">
 
-    <a
-        href="https://icriste.com/"
-        target="_blank"
-        rel="noopener">
+        ICRI-STE Scientific Events & Research Training
 
-        Official ICRI-STE Website
+    </div>
 
-    </a>
 
-</p>
-```
+    <p>
+
+        International Scientific Events • Research Training •
+        Early Career Researcher Development
+
+    </p>
+
+
+    <div class="footer-divider"></div>
+
+
+    <p>
+
+        © 2026 ICRI-STE. All rights reserved.
+
+    </p>
+
+
+    <p>
+
+        <a
+            href="https://icriste.com/"
+            target="_blank"
+            rel="noopener">
+
+            Official ICRI-STE Website
+
+        </a>
+
+    </p>
+
 
 </footer>
+
 
 <!-- ======================================================
      SCROLL REVEAL
@@ -1854,6 +2145,7 @@ footer a:hover {
 document.addEventListener(
     "DOMContentLoaded",
     function () {
+
 
         const elements =
             document.querySelectorAll(
@@ -1873,6 +2165,7 @@ document.addEventListener(
             );
 
             return;
+
         }
 
 
@@ -1880,25 +2173,31 @@ document.addEventListener(
             new IntersectionObserver(
                 function (entries) {
 
+
                     entries.forEach(
                         function (entry) {
+
 
                             if (
                                 entry.isIntersecting
                             ) {
 
+
                                 entry.target
                                     .classList
                                     .add("visible");
+
 
                                 observer.unobserve(
                                     entry.target
                                 );
 
+
                             }
 
                         }
                     );
+
 
                 },
                 {
@@ -1912,10 +2211,12 @@ document.addEventListener(
                 observer.observe(element)
         );
 
+
     }
 );
 
 </script>
+
 
 </body>
 
