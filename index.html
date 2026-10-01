@@ -1,141 +1,356 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="1st Virtual International Symposium of CHI Lab Scientists & Early Career Researchers 2026">
-  <title>CHI Lab Symposium 2026 | ICRI-STE</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Programme and Events of the International Council for Research & Innovation in Science, Technology & Engineering (ICRI-STE).">
+
+    <title>Programme & Events | ICRI-STE</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f7fa;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #0b2d4d;
+            color: white;
+            padding: 35px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        header p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .section-title h2 {
+            font-size: 28px;
+            color: #0b2d4d;
+            margin-bottom: 8px;
+        }
+
+        .section-title p {
+            color: #666;
+        }
+
+        .programme,
+        .event {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .programme h3,
+        .event h3 {
+            color: #0b2d4d;
+            font-size: 21px;
+            margin-bottom: 10px;
+        }
+
+        .programme p,
+        .event p {
+            margin-bottom: 8px;
+        }
+
+        .event-date {
+            font-weight: bold;
+            color: #b05a00;
+        }
+
+        .event-type {
+            display: inline-block;
+            background: #eaf2f8;
+            color: #0b2d4d;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 9px 18px;
+            background: #0b2d4d;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .button:hover {
+            background: #174d78;
+        }
+
+        footer {
+            margin-top: 50px;
+            background: #0b2d4d;
+            color: white;
+            text-align: center;
+            padding: 25px 20px;
+            font-size: 14px;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 26px;
+            }
+
+            .section-title h2 {
+                font-size: 24px;
+            }
+
+            .programme,
+            .event {
+                padding: 20px;
+            }
+        }
+    </style>
 </head>
+
 <body>
-<header class="site-header">
-  <div class="container nav-wrap">
-    <a class="brand" href="index.html" aria-label="CHI Lab Symposium home">
-      <img src="assets/CHI-Lab.png" alt="CHI Lab logo">
-      <span class="brand-divider"></span>
-      <img class="icri-logo" src="assets/ICRI-STE-Logo.png" alt="ICRI-STE logo">
-    </a>
-    <button class="menu-toggle" aria-label="Open navigation">☰</button>
-    <nav class="nav">
-      <a class="active" href="index.html">Home</a>
-      <a href="symposium.html">Symposium</a>
-      <a href="research.html">Research</a>
-      <a href="publications.html">Publications</a>
-      <a href="posters.html">Posters</a>
-      <a href="submit.html">Submit</a>
-      <a href="icri-ste.html">ICRI-STE</a>
-    </nav>
-  </div>
+
+<header>
+    <h1>Programme & Events</h1>
+    <p>
+        International Council for Research & Innovation in
+        Science, Technology & Engineering (ICRI-STE)
+    </p>
 </header>
 
-<main>
-  <section class="hero">
-    <div class="container hero-grid">
-      <div class="hero-copy">
-        <span class="eyebrow">VIRTUAL INTERNATIONAL SYMPOSIUM • 2026</span>
-        <h1>1st Virtual International Symposium of <span>CHI Lab Scientists & Early Career Researchers</span></h1>
-        <p class="lead">A virtual research forum bringing together CHI Lab scientists and Early Career Researchers to share computational healthcare research, emerging ideas, reproducible work, and scientific collaboration.</p>
-        <div class="hero-actions">
-          <a class="btn primary" href="submit.html">Submit a Paper / Poster</a>
-          <a class="btn secondary" href="symposium.html">Explore Symposium</a>
-        </div>
-        <div class="hero-meta">
-          <div><strong>2026</strong><span>Symposium Year</span></div>
-          <div><strong>Virtual</strong><span>International Format</span></div>
-          <div><strong>CHI Lab</strong><span>Scientific Community</span></div>
-        </div>
-      </div>
-      <div class="hero-visual">
-        <div class="logo-card">
-          <img src="assets/CHI-Lab.png" alt="Computational Healthcare Intelligence Lab">
-        </div>
-        <div class="orbit-card">
-          <span>AI</span><span>Genomics</span><span>Systems Biology</span><span>Biomedical AI</span><span>Digital Health</span><span>Research</span>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <section class="section">
-    <div class="container">
-      <div class="section-heading">
-        <span class="eyebrow">ABOUT THE EVENT</span>
-        <h2>A research space for sharing, learning and collaboration</h2>
-        <p>The symposium website provides a central place for researchers and ECRs to explore the event, research themes, scientific contributions, and submission routes.</p>
-      </div>
-      <div class="cards three">
-        <article class="card">
-          <div class="icon">01</div>
-          <h3>Scientific Research</h3>
-          <p>Present computational and interdisciplinary work across healthcare, biomedical systems, AI, machine learning, data science and related research areas.</p>
-        </article>
-        <article class="card">
-          <div class="icon">02</div>
-          <h3>Early Career Researchers</h3>
-          <p>Highlight emerging researchers, research prototypes, reproducible experiments, literature-driven projects and collaborative scientific development.</p>
-        </article>
-        <article class="card">
-          <div class="icon">03</div>
-          <h3>International Collaboration</h3>
-          <p>Connect scientists and researchers through a virtual platform designed to support communication, knowledge exchange and future collaboration.</p>
-        </article>
-      </div>
-    </div>
-  </section>
+<main class="container">
 
-  <section class="section section-dark">
-    <div class="container split">
-      <div>
-        <span class="eyebrow light">RESEARCH FOCUS</span>
-        <h2>Computational Healthcare Intelligence</h2>
-        <p>CHI Lab brings together computational science, artificial intelligence, data-driven methods and biomedical research. The symposium can showcase work spanning multi-omics, computational biology, medical AI, cancer research, federated learning, intelligent systems and related areas.</p>
-      </div>
-      <div class="topic-list">
-        <span>Artificial Intelligence</span>
-        <span>Machine Learning</span>
-        <span>Computational Biology</span>
-        <span>Biomedical AI</span>
-        <span>Multi-Omics</span>
-        <span>Cancer Research</span>
-        <span>Federated Learning</span>
-        <span>Scientific ML</span>
-      </div>
-    </div>
-  </section>
+    <!-- =========================
+         PROGRAMMES
+    ========================== -->
 
-  <section class="section">
-    <div class="container callout">
-      <div>
-        <span class="eyebrow">CALL FOR CONTRIBUTIONS</span>
-        <h2>Share your research with the CHI Lab community</h2>
-        <p>Use the dedicated submission forms for research papers and scientific posters.</p>
-      </div>
-      <a class="btn primary" href="submit.html">Submission Portal</a>
-    </div>
-  </section>
+    <section id="programmes">
+
+        <div class="section-title">
+            <h2>Programmes</h2>
+            <p>
+                Research, training, innovation and scientific development programmes
+                of ICRI-STE.
+            </p>
+        </div>
+
+
+        <div class="programme">
+            <h3>CSE – AI/ML: Intelligent Computational Modelling</h3>
+
+            <p>
+                A research programme focused on computational modelling,
+                artificial intelligence, machine learning and interdisciplinary
+                scientific computing.
+            </p>
+
+            <a href="https://icriste.com/"
+               class="button"
+               target="_blank">
+                Programme Information
+            </a>
+        </div>
+
+
+        <div class="programme">
+            <h3>Scientific Machine Learning (SciML)</h3>
+
+            <p>
+                Research and development activities integrating scientific
+                knowledge, mathematical modelling and machine learning for
+                advanced computational discovery.
+            </p>
+
+            <a href="https://icriste.com/"
+               class="button"
+               target="_blank">
+                Programme Information
+            </a>
+        </div>
+
+
+        <div class="programme">
+            <h3>Computational Healthcare Intelligence (CHI)</h3>
+
+            <p>
+                An interdisciplinary research programme focused on computational
+                healthcare, systems biology, biomedical AI, machine learning,
+                intelligent biomedical systems and data-driven healthcare research.
+            </p>
+
+            <a href="https://icriste.com/computational-healthcare-intelligence-lab-chi-lab/"
+               class="button"
+               target="_blank">
+                CHI Lab
+            </a>
+        </div>
+
+
+        <div class="programme">
+            <h3>Intelligent Innovation in AI</h3>
+
+            <p>
+                A programme supporting AI research, prototype development,
+                applied machine learning and innovation-oriented computational
+                projects.
+            </p>
+
+            <a href="https://icriste.com/"
+               class="button"
+               target="_blank">
+                Programme Information
+            </a>
+        </div>
+
+
+        <div class="programme">
+            <h3>STEM Exploration & Outreach</h3>
+
+            <p>
+                Educational and outreach activities designed to encourage
+                scientific exploration, computational thinking, innovation and
+                interdisciplinary STEM learning.
+            </p>
+
+            <a href="https://icriste.com/"
+               class="button"
+               target="_blank">
+                Programme Information
+            </a>
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         EVENTS
+    ========================== -->
+
+    <section id="events">
+
+        <div class="section-title">
+            <h2>Events</h2>
+            <p>
+                Conferences, symposia, seminars, workshops and scientific meetings.
+            </p>
+        </div>
+
+
+        <div class="event">
+
+            <span class="event-type">
+                INTERNATIONAL SYMPOSIUM
+            </span>
+
+            <h3>
+                1st Virtual International Symposium of CHI Lab
+                Scientists & Early Career Researchers 2026
+            </h3>
+
+            <p>
+                <span class="event-date">October 2026</span>
+            </p>
+
+            <p>
+                A virtual international scientific symposium bringing together
+                CHI Lab scientists and Early Career Researchers to present
+                research, prototypes and interdisciplinary computational
+                healthcare studies.
+            </p>
+
+            <a href="https://partnerships2024.github.io/"
+               class="button"
+               target="_blank">
+                Symposium Website
+            </a>
+
+        </div>
+
+
+        <!-- Add future events below -->
+
+        <div class="event">
+
+            <span class="event-type">
+                UPCOMING EVENT
+            </span>
+
+            <h3>
+                Scientific Seminar / Webinar
+            </h3>
+
+            <p>
+                <span class="event-date">
+                    Date to be announced
+                </span>
+            </p>
+
+            <p>
+                Details of upcoming ICRI-STE scientific seminars, webinars and
+                research events will be published here.
+            </p>
+
+        </div>
+
+
+    </section>
+
 </main>
 
-<footer class="footer">
-  <div class="container footer-grid">
-    <div>
-      <img src="assets/CHI-Lab.png" alt="CHI Lab" class="footer-chi">
-      <p>1st Virtual International Symposium of CHI Lab Scientists & Early Career Researchers 2026</p>
-    </div>
-    <div>
-      <h4>Navigation</h4>
-      <a href="symposium.html">Symposium</a>
-      <a href="research.html">Research</a>
-      <a href="submit.html">Submit</a>
-      <a href="icri-ste.html">ICRI-STE</a>
-    </div>
-    <div>
-      <h4>Official Organization</h4>
-      <a href="https://icriste.com/" target="_blank" rel="noopener">ICRI-STE Website ↗</a>
-      <p>International Council for Research & Innovation in Science, Technology & Engineering</p>
-    </div>
-  </div>
-  <div class="copyright">© 2026 CHI Lab / ICRI-STE. Symposium website.</div>
+
+<footer>
+
+    <p>
+        © 2026 International Council for Research & Innovation in
+        Science, Technology & Engineering (ICRI-STE)
+    </p>
+
+    <p>
+        <a href="https://icriste.com/" target="_blank">
+            https://icriste.com/
+        </a>
+    </p>
+
 </footer>
-<script src="script.js"></script>
+
 </body>
 </html>
+```
