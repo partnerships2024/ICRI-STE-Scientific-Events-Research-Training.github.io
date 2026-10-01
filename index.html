@@ -8,21 +8,65 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <meta name="description"
-    content="ICRI-STE Scientific Events Portal — International Symposia, Scientific Seminars, Research Training, Webinars, Early Career Researcher Development and Certificate Validation.">
+content="ICRI-STE Scientific Events Portal — International Symposia, Scientific Seminars, Research Training, Webinars, Early Career Researcher Development and Certificate Validation.">
 
 <meta name="author"
-    content="International Council for Research & Innovation in Science, Technology & Engineering (ICRI-STE)">
+content="International Council for Research & Innovation in Science, Technology & Engineering (ICRI-STE)">
 
 <meta name="theme-color"
-    content="#082b49">
+content="#071f35">
 
-<title>Scientific Events | ICRI-STE</title>
+<title>Scientific Events & Research Training | ICRI-STE</title>
 
 
 <style>
 
 /* =========================================================
-   GLOBAL
+   DESIGN SYSTEM
+========================================================= */
+
+:root {
+
+    --navy-950: #061a2b;
+    --navy-900: #071f35;
+    --navy-800: #0b3557;
+    --navy-700: #104b73;
+    --navy-600: #17638f;
+
+    --gold-500: #d59b32;
+    --gold-400: #e8c36d;
+    --gold-300: #f1d99a;
+
+    --white: #ffffff;
+
+    --bg: #f4f7fa;
+    --bg-soft: #edf2f6;
+
+    --text: #1c2733;
+    --text-soft: #5f6d7b;
+    --text-muted: #788594;
+
+    --border: #dfe6ed;
+
+    --shadow-sm:
+        0 4px 18px rgba(8, 35, 58, 0.05);
+
+    --shadow-md:
+        0 10px 32px rgba(8, 35, 58, 0.08);
+
+    --shadow-lg:
+        0 18px 48px rgba(8, 35, 58, 0.12);
+
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 20px;
+
+    --max-width: 1180px;
+}
+
+
+/* =========================================================
+   RESET
 ========================================================= */
 
 * {
@@ -38,6 +82,10 @@ html {
 body {
 
     font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
         Arial,
         Helvetica,
         sans-serif;
@@ -45,13 +93,19 @@ body {
     background:
         linear-gradient(
             180deg,
-            #f7f9fc 0%,
-            #eef3f8 100%
+            #f8fafc 0%,
+            var(--bg) 100%
         );
 
-    color: #202020;
+    color: var(--text);
 
     line-height: 1.65;
+
+    -webkit-font-smoothing: antialiased;
+}
+
+img {
+    max-width: 100%;
 }
 
 a {
@@ -65,53 +119,96 @@ a {
 
 
 /* =========================================================
-   TOP INSTITUTIONAL BAR
+   ACCESSIBILITY
+========================================================= */
+
+:focus-visible {
+
+    outline:
+        3px solid var(--gold-400);
+
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   TOP BAR
 ========================================================= */
 
 .top-bar {
 
-    background: #061f35;
+    background:
+        var(--navy-950);
 
-    color: rgba(255,255,255,0.88);
-
-    font-size: 12px;
+    color:
+        rgba(255,255,255,0.78);
 
     border-bottom:
         1px solid rgba(255,255,255,0.08);
+
+    font-size: 12px;
 }
 
 .top-bar-inner {
 
-    max-width: 1200px;
+    max-width:
+        var(--max-width);
 
     margin: auto;
 
-    padding: 9px 22px;
+    padding:
+        8px 24px;
 
     display: flex;
 
+    align-items: center;
+
     justify-content: space-between;
+
+    gap: 20px;
+}
+
+.top-bar-left {
+
+    display: flex;
 
     align-items: center;
 
-    gap: 20px;
+    gap: 9px;
+}
+
+.top-bar-dot {
+
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background:
+        var(--gold-500);
+
+    flex-shrink: 0;
 }
 
 .top-bar a {
 
     color: #ffffff;
 
-    font-weight: 600;
+    font-weight: 700;
+
+    transition:
+        color 0.2s ease;
 }
 
 .top-bar a:hover {
 
-    color: #d59b32;
+    color:
+        var(--gold-400);
 }
 
 
 /* =========================================================
-   HEADER
+   INSTITUTIONAL HEADER
 ========================================================= */
 
 header {
@@ -120,28 +217,35 @@ header {
 
     overflow: hidden;
 
-    background:
-        radial-gradient(
-            circle at 85% 20%,
-            rgba(213,155,50,0.16),
-            transparent 30%
-        ),
-        linear-gradient(
-            135deg,
-            #082b49,
-            #0d426b 65%,
-            #12577f
-        );
-
     color: #ffffff;
 
-    text-align: center;
+    background:
 
-    padding: 52px 20px 68px;
+        radial-gradient(
+            circle at 82% 20%,
+            rgba(213,155,50,0.15),
+            transparent 27%
+        ),
+
+        radial-gradient(
+            circle at 10% 90%,
+            rgba(23,99,143,0.28),
+            transparent 32%
+        ),
+
+        linear-gradient(
+            135deg,
+            var(--navy-950) 0%,
+            var(--navy-800) 58%,
+            var(--navy-700) 100%
+        );
 
     border-bottom:
-        4px solid #d59b32;
+        3px solid var(--gold-500);
 }
+
+
+/* Decorative grid */
 
 header::before {
 
@@ -149,77 +253,104 @@ header::before {
 
     position: absolute;
 
-    width: 300px;
-    height: 300px;
+    inset: 0;
 
-    border-radius: 50%;
+    opacity: 0.16;
 
-    border:
-        1px solid rgba(255,255,255,0.08);
+    background-image:
 
-    top: -160px;
-    left: -100px;
+        linear-gradient(
+            rgba(255,255,255,0.06) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,0.06) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        55px 55px;
+
+    mask-image:
+        linear-gradient(
+            90deg,
+            transparent,
+            black,
+            transparent
+        );
 }
 
-header::after {
 
-    content: "";
+/* =========================================================
+   HEADER INNER
+========================================================= */
 
-    position: absolute;
-
-    width: 420px;
-    height: 420px;
-
-    border-radius: 50%;
-
-    border:
-        1px solid rgba(255,255,255,0.06);
-
-    right: -180px;
-    bottom: -240px;
-}
-
-.header-content {
+.header-inner {
 
     position: relative;
 
     z-index: 2;
 
-    max-width: 1050px;
+    max-width:
+        var(--max-width);
+
+    min-height:
+        280px;
 
     margin: auto;
+
+    padding:
+        42px 24px 52px;
+
+    display: grid;
+
+    grid-template-columns:
+        330px 1fr;
+
+    align-items: center;
+
+    gap: 65px;
 }
 
 
 /* =========================================================
-   ICRI-STE HORIZONTAL LOGO
+   LOGO — TOP LEFT
 ========================================================= */
+
+.logo-area {
+
+    align-self: start;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: flex-start;
+
+    padding-top: 3px;
+}
 
 .logo-mark {
 
-    width: 320px;
+    width: 315px;
 
-    max-width: 80vw;
-
-    height: 110px;
-
-    margin: 0 auto 22px;
+    height: 105px;
 
     display: flex;
 
     align-items: center;
 
-    justify-content: center;
+    justify-content: flex-start;
 
     background: transparent;
 
     border: none;
 
-    border-radius: 0;
-
     padding: 0;
 
-    box-shadow: none;
+    margin: 0;
 }
 
 .logo-mark img {
@@ -230,56 +361,142 @@ header::after {
 
     object-fit: contain;
 
-    object-position: center;
+    object-position: left center;
 
     display: block;
 
     background: transparent;
+
+    filter:
+        drop-shadow(
+            0 7px 18px
+            rgba(0,0,0,0.14)
+        );
 }
 
 
 /* =========================================================
-   HEADER TEXT
+   HEADER CONTENT
 ========================================================= */
+
+.header-content {
+
+    max-width:
+        760px;
+
+    text-align:
+        left;
+}
 
 .logo-title {
 
-    font-size: 13px;
+    display: inline-flex;
 
-    font-weight: 700;
+    align-items: center;
 
-    letter-spacing: 2px;
+    gap: 9px;
 
-    text-transform: uppercase;
+    color:
+        var(--gold-400);
 
-    margin-bottom: 14px;
+    font-size: 11px;
 
-    color: #e8c36d;
+    font-weight: 800;
+
+    letter-spacing:
+        1.8px;
+
+    text-transform:
+        uppercase;
+
+    margin-bottom:
+        12px;
+}
+
+.logo-title::before {
+
+    content: "";
+
+    width: 27px;
+
+    height: 2px;
+
+    background:
+        var(--gold-500);
 }
 
 header h1 {
 
     font-size:
-        clamp(32px, 5vw, 48px);
+        clamp(34px, 5vw, 52px);
 
-    line-height: 1.15;
+    line-height:
+        1.08;
 
-    font-weight: 800;
+    letter-spacing:
+        -1px;
 
-    margin-bottom: 14px;
+    font-weight:
+        800;
+
+    margin-bottom:
+        17px;
 }
 
 header p {
 
-    max-width: 820px;
+    max-width:
+        730px;
 
-    margin: auto;
+    color:
+        rgba(255,255,255,0.84);
 
-    font-size: 16px;
+    font-size:
+        16px;
 
-    line-height: 1.75;
+    line-height:
+        1.8;
+}
 
-    opacity: 0.92;
+
+/* =========================================================
+   HEADER BADGES
+========================================================= */
+
+.header-badges {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 9px;
+
+    margin-top: 23px;
+}
+
+.header-badge {
+
+    padding:
+        7px 12px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.16);
+
+    border-radius:
+        30px;
+
+    background:
+        rgba(255,255,255,0.055);
+
+    color:
+        rgba(255,255,255,0.88);
+
+    font-size:
+        11px;
+
+    font-weight:
+        700;
 }
 
 
@@ -296,69 +513,104 @@ nav {
     z-index: 1000;
 
     background:
-        rgba(255,255,255,0.96);
+        rgba(255,255,255,0.94);
 
-    backdrop-filter: blur(10px);
+    backdrop-filter:
+        blur(14px);
+
+    -webkit-backdrop-filter:
+        blur(14px);
 
     border-bottom:
-        1px solid #e4e8ed;
+        1px solid var(--border);
 
     box-shadow:
-        0 4px 16px
-        rgba(0,0,0,0.06);
+        0 5px 20px
+        rgba(8,35,58,0.06);
 }
 
 .nav-container {
 
-    max-width: 1150px;
+    max-width:
+        var(--max-width);
+
+    min-height:
+        58px;
 
     margin: auto;
 
-    padding: 11px 20px;
+    padding:
+        7px 24px;
 
     display: flex;
 
-    justify-content: center;
-
     align-items: center;
 
-    gap: 6px;
+    justify-content: flex-end;
 
-    flex-wrap: wrap;
+    gap: 5px;
 }
 
 nav a {
 
-    color: #0b3557;
+    position: relative;
 
-    font-size: 13px;
+    color:
+        var(--navy-800);
 
-    font-weight: 700;
+    font-size:
+        12px;
 
-    padding: 9px 16px;
+    font-weight:
+        750;
 
-    border-radius: 6px;
+    padding:
+        10px 15px;
+
+    border-radius:
+        7px;
 
     transition:
-        background 0.25s,
-        color 0.25s,
-        transform 0.25s;
+        color 0.2s ease,
+        background 0.2s ease;
 }
 
 nav a:hover {
 
-    background: #0b3557;
+    color:
+        var(--navy-700);
 
-    color: #ffffff;
-
-    transform: translateY(-1px);
+    background:
+        #edf3f7;
 }
 
 nav a.active {
 
-    background: #0b3557;
+    color:
+        var(--navy-900);
 
-    color: #ffffff;
+    background:
+        #edf3f7;
+}
+
+nav a.active::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 15px;
+    right: 15px;
+
+    bottom: 2px;
+
+    height: 2px;
+
+    background:
+        var(--gold-500);
+
+    border-radius:
+        4px;
 }
 
 
@@ -368,198 +620,345 @@ nav a.active {
 
 .container {
 
-    max-width: 1120px;
+    max-width:
+        var(--max-width);
 
     margin: auto;
 
     padding:
-        65px 20px 75px;
+        75px 24px 85px;
 }
 
 section {
 
-    margin-bottom: 72px;
+    margin-bottom:
+        82px;
 }
 
 
 /* =========================================================
-   SECTION HEADINGS
+   SECTION HEADING
 ========================================================= */
 
 .section-heading {
 
-    text-align: center;
+    max-width:
+        850px;
 
-    margin-bottom: 42px;
+    margin:
+        0 auto 45px;
+
+    text-align:
+        center;
 }
 
 .section-heading .small-title {
 
-    color: #b17b1e;
+    display: inline-flex;
 
-    font-size: 12px;
+    align-items: center;
 
-    font-weight: 800;
+    gap: 10px;
 
-    text-transform: uppercase;
+    color:
+        #a87318;
 
-    letter-spacing: 2px;
+    font-size:
+        11px;
 
-    margin-bottom: 9px;
+    font-weight:
+        850;
+
+    letter-spacing:
+        2px;
+
+    text-transform:
+        uppercase;
+
+    margin-bottom:
+        10px;
+}
+
+.section-heading .small-title::before,
+.section-heading .small-title::after {
+
+    content: "";
+
+    width: 22px;
+
+    height: 1px;
+
+    background:
+        var(--gold-500);
 }
 
 .section-heading h2 {
 
-    color: #0b3557;
+    color:
+        var(--navy-800);
 
     font-size:
-        clamp(26px, 4vw, 34px);
+        clamp(27px, 4vw, 37px);
 
-    line-height: 1.25;
+    line-height:
+        1.2;
 
-    margin-bottom: 12px;
+    letter-spacing:
+        -0.4px;
+
+    margin-bottom:
+        13px;
 }
 
 .section-heading p {
 
-    max-width: 820px;
+    max-width:
+        790px;
 
-    margin: auto;
+    margin:
+        auto;
 
-    color: #667085;
+    color:
+        var(--text-soft);
 
-    font-size: 15px;
+    font-size:
+        15px;
+
+    line-height:
+        1.8;
 }
 
 
 /* =========================================================
-   EVENT DIAGRAM
+   DIAGRAM
 ========================================================= */
 
 .event-diagram {
 
-    max-width: 1000px;
+    position: relative;
+
+    max-width:
+        1040px;
 
     margin:
-        0 auto 42px;
+        0 auto 45px;
 
-    background: #ffffff;
+    background:
+        #ffffff;
 
     border:
-        1px solid #e1e7ed;
+        1px solid var(--border);
 
-    border-radius: 14px;
+    border-radius:
+        var(--radius-lg);
 
-    padding: 18px;
+    padding:
+        15px;
 
     box-shadow:
-        0 6px 22px
-        rgba(15,35,60,0.07);
+        var(--shadow-md);
 
-    text-align: center;
+    overflow:
+        hidden;
+}
+
+.event-diagram::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 3px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--navy-800),
+            var(--gold-500),
+            var(--navy-700)
+        );
 }
 
 .event-diagram img {
 
-    width: 100%;
+    width:
+        100%;
 
-    max-width: 950px;
+    display:
+        block;
 
-    height: auto;
-
-    display: block;
-
-    margin: 0 auto;
-
-    border-radius: 9px;
+    border-radius:
+        11px;
 }
 
 .event-diagram-caption {
 
-    margin-top: 13px;
+    padding:
+        13px 8px 3px;
 
-    color: #667085;
+    text-align:
+        center;
 
-    font-size: 12px;
+    color:
+        var(--text-muted);
 
-    line-height: 1.6;
+    font-size:
+        11px;
 
-    font-weight: 600;
+    font-weight:
+        700;
+
+    letter-spacing:
+        0.2px;
 }
 
 
 /* =========================================================
-   EVENT INTRO STRIP
+   OVERVIEW CARDS
 ========================================================= */
 
 .event-overview {
 
-    display: grid;
+    display:
+        grid;
 
     grid-template-columns:
         repeat(3, 1fr);
 
-    gap: 16px;
+    gap:
+        18px;
 
-    margin-bottom: 35px;
+    margin-bottom:
+        35px;
 }
 
 .overview-card {
 
-    background: #ffffff;
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    background:
+        #ffffff;
 
     border:
-        1px solid #e3e8ee;
+        1px solid var(--border);
 
-    border-radius: 10px;
+    border-radius:
+        var(--radius-md);
 
-    padding: 20px;
+    padding:
+        24px 20px;
 
-    text-align: center;
+    text-align:
+        center;
 
     box-shadow:
-        0 4px 16px
-        rgba(15,35,60,0.05);
+        var(--shadow-sm);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.overview-card:hover {
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        var(--shadow-md);
+}
+
+.overview-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    bottom: 0;
+    left: 25%;
+
+    width: 50%;
+
+    height: 2px;
+
+    background:
+        var(--gold-500);
+
+    transform:
+        scaleX(0);
+
+    transition:
+        transform 0.25s ease;
+}
+
+.overview-card:hover::after {
+
+    transform:
+        scaleX(1);
 }
 
 .overview-number {
 
-    color: #0b3557;
+    display:
+        block;
 
-    font-size: 27px;
+    color:
+        var(--navy-800);
 
-    font-weight: 800;
+    font-size:
+        29px;
 
-    display: block;
+    font-weight:
+        850;
 
-    margin-bottom: 2px;
+    line-height:
+        1;
+
+    margin-bottom:
+        7px;
 }
 
 .overview-label {
 
-    color: #687386;
+    color:
+        var(--text-muted);
 
-    font-size: 12px;
+    font-size:
+        11px;
 
-    font-weight: 700;
+    font-weight:
+        800;
 
-    text-transform: uppercase;
+    text-transform:
+        uppercase;
 
-    letter-spacing: 0.8px;
+    letter-spacing:
+        0.8px;
 }
 
 
 /* =========================================================
-   EVENTS
+   EVENTS LIST
 ========================================================= */
 
 .events {
 
-    display: flex;
+    display:
+        flex;
 
-    flex-direction: column;
+    flex-direction:
+        column;
 
-    gap: 24px;
+    gap:
+        22px;
 }
 
 
@@ -569,29 +968,35 @@ section {
 
 .event-card {
 
-    position: relative;
+    position:
+        relative;
 
-    overflow: hidden;
-
-    background: #ffffff;
-
-    border:
-        1px solid #e3e8ee;
-
-    border-radius: 14px;
-
-    padding: 28px;
-
-    display: grid;
+    display:
+        grid;
 
     grid-template-columns:
         145px 1fr;
 
-    gap: 28px;
+    gap:
+        30px;
+
+    overflow:
+        hidden;
+
+    background:
+        #ffffff;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        var(--radius-md);
+
+    padding:
+        29px;
 
     box-shadow:
-        0 6px 22px
-        rgba(15,35,60,0.07);
+        var(--shadow-sm);
 
     transition:
         transform 0.25s ease,
@@ -603,7 +1008,8 @@ section {
 
     content: "";
 
-    position: absolute;
+    position:
+        absolute;
 
     left: 0;
     top: 0;
@@ -611,7 +1017,11 @@ section {
 
     width: 4px;
 
-    background: #d59b32;
+    background:
+        var(--navy-800);
+
+    transition:
+        background 0.25s ease;
 }
 
 .event-card:hover {
@@ -620,147 +1030,183 @@ section {
         translateY(-4px);
 
     box-shadow:
-        0 12px 32px
-        rgba(15,35,60,0.11);
+        var(--shadow-lg);
 
-    border-color: #d7dee6;
+    border-color:
+        #ccd7e1;
+}
+
+.event-card:hover::before {
+
+    background:
+        var(--gold-500);
 }
 
 
 /* =========================================================
-   FEATURED EVENT
+   FEATURED
 ========================================================= */
 
 .event-card.featured {
 
     border:
-        1px solid #d7b45c;
+        1px solid #d9bf83;
 
     background:
         linear-gradient(
             135deg,
-            #ffffff,
-            #fbfcfe
+            #ffffff 0%,
+            #fbfcfd 100%
         );
+}
+
+.event-card.featured::before {
+
+    background:
+        var(--gold-500);
 }
 
 .featured-label {
 
-    position: absolute;
+    position:
+        absolute;
 
-    top: 15px;
+    top:
+        18px;
 
-    right: 18px;
+    right:
+        20px;
 
-    background: #d59b32;
+    padding:
+        5px 11px;
 
-    color: #ffffff;
+    border-radius:
+        30px;
 
-    padding: 5px 10px;
+    background:
+        var(--gold-500);
 
-    border-radius: 20px;
+    color:
+        #ffffff;
 
-    font-size: 10px;
+    font-size:
+        9px;
 
-    font-weight: 800;
+    font-weight:
+        850;
 
-    letter-spacing: 0.8px;
+    letter-spacing:
+        0.9px;
 
-    text-transform: uppercase;
+    text-transform:
+        uppercase;
 }
 
 
 /* =========================================================
-   EVENT DATE
+   DATE BOX
 ========================================================= */
 
 .event-date {
 
-    align-self: start;
+    align-self:
+        start;
 
-    text-align: center;
+    min-height:
+        128px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+    padding:
+        18px 10px;
+
+    border-radius:
+        11px;
+
+    color:
+        #ffffff;
 
     background:
         linear-gradient(
             145deg,
-            #0b3557,
-            #0d4c75
+            var(--navy-800),
+            var(--navy-600)
         );
 
-    color: #ffffff;
-
-    border-radius: 10px;
-
-    padding: 19px 10px;
-
-    min-height: 125px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: center;
-
     box-shadow:
-        0 7px 18px
+        0 8px 20px
         rgba(11,53,87,0.16);
 }
 
 .event-date .day {
 
-    display: block;
+    font-size:
+        31px;
 
-    font-size: 30px;
+    font-weight:
+        850;
 
-    font-weight: 800;
-
-    line-height: 1;
+    line-height:
+        1;
 }
 
 .event-date .month {
 
-    display: block;
+    margin-top:
+        7px;
 
-    font-size: 12px;
+    font-size:
+        11px;
 
-    font-weight: 800;
+    font-weight:
+        850;
 
-    text-transform: uppercase;
+    letter-spacing:
+        1.3px;
 
-    letter-spacing: 1.3px;
-
-    margin-top: 7px;
+    text-transform:
+        uppercase;
 }
 
 .event-date .year {
 
-    display: block;
+    margin-top:
+        3px;
 
-    font-size: 12px;
+    font-size:
+        11px;
 
-    opacity: 0.78;
-
-    margin-top: 3px;
+    opacity:
+        0.7;
 }
-
-
-/* =========================================================
-   TBA DATE
-========================================================= */
 
 .event-date.tba {
 
     background:
         linear-gradient(
             145deg,
-            #536577,
-            #718090
+            #566a7b,
+            #718191
         );
 }
 
 .event-date.tba .day {
 
-    font-size: 20px;
+    font-size:
+        19px;
+
+    letter-spacing:
+        0.5px;
 }
 
 
@@ -770,63 +1216,94 @@ section {
 
 .event-type {
 
-    display: inline-flex;
+    display:
+        inline-flex;
 
-    align-items: center;
+    align-items:
+        center;
 
-    gap: 6px;
+    gap:
+        7px;
 
-    background: #eef4f8;
+    margin-bottom:
+        10px;
 
-    color: #0b426b;
+    padding:
+        6px 11px;
 
-    font-size: 10px;
+    border-radius:
+        30px;
 
-    font-weight: 800;
+    background:
+        #edf4f8;
 
-    letter-spacing: 0.9px;
+    color:
+        var(--navy-700);
 
-    padding: 6px 11px;
+    font-size:
+        9px;
 
-    border-radius: 20px;
+    font-weight:
+        850;
 
-    margin-bottom: 11px;
+    letter-spacing:
+        0.8px;
 
-    text-transform: uppercase;
+    text-transform:
+        uppercase;
 }
 
 .event-type::before {
 
     content: "";
 
-    width: 6px;
-    height: 6px;
+    width:
+        6px;
 
-    border-radius: 50%;
+    height:
+        6px;
 
-    background: #d59b32;
+    border-radius:
+        50%;
+
+    background:
+        var(--gold-500);
 }
 
 .event-card h3 {
 
-    color: #0b3557;
+    color:
+        var(--navy-800);
 
-    font-size: 21px;
+    font-size:
+        21px;
 
-    line-height: 1.35;
+    line-height:
+        1.35;
 
-    margin-bottom: 10px;
+    font-weight:
+        800;
 
-    padding-right: 70px;
+    margin-bottom:
+        10px;
+
+    padding-right:
+        75px;
 }
 
 .event-card p {
 
-    color: #596574;
+    max-width:
+        800px;
 
-    font-size: 14px;
+    color:
+        var(--text-soft);
 
-    line-height: 1.75;
+    font-size:
+        13.5px;
+
+    line-height:
+        1.78;
 }
 
 
@@ -836,49 +1313,65 @@ section {
 
 .event-actions {
 
-    display: flex;
+    display:
+        flex;
 
-    flex-wrap: wrap;
+    flex-wrap:
+        wrap;
 
-    gap: 10px;
+    gap:
+        9px;
 
-    margin-top: 18px;
+    margin-top:
+        18px;
 }
 
 .event-button {
 
-    display: inline-flex;
+    display:
+        inline-flex;
 
-    align-items: center;
+    align-items:
+        center;
 
-    justify-content: center;
+    justify-content:
+        center;
 
-    background: #0b3557;
+    min-height:
+        40px;
 
-    color: #ffffff;
-
-    padding: 10px 17px;
-
-    border-radius: 6px;
-
-    font-size: 12px;
-
-    font-weight: 700;
+    padding:
+        9px 16px;
 
     border:
-        1px solid #0b3557;
+        1px solid var(--navy-800);
+
+    border-radius:
+        7px;
+
+    background:
+        var(--navy-800);
+
+    color:
+        #ffffff;
+
+    font-size:
+        11px;
+
+    font-weight:
+        800;
 
     transition:
-        background 0.25s,
-        transform 0.25s,
-        border-color 0.25s;
+        all 0.2s ease;
 }
 
 .event-button:hover {
 
-    background: #b17b1e;
+    background:
+        var(--gold-500);
 
-    border-color: #b17b1e;
+    border-color:
+        var(--gold-500);
 
     transform:
         translateY(-1px);
@@ -886,20 +1379,26 @@ section {
 
 .event-button.secondary {
 
-    background: #ffffff;
+    background:
+        #ffffff;
 
-    color: #0b3557;
+    color:
+        var(--navy-800);
 
-    border-color: #cbd5df;
+    border-color:
+        #cbd5df;
 }
 
 .event-button.secondary:hover {
 
-    background: #0b3557;
+    background:
+        var(--navy-800);
 
-    color: #ffffff;
+    color:
+        #ffffff;
 
-    border-color: #0b3557;
+    border-color:
+        var(--navy-800);
 }
 
 
@@ -909,40 +1408,88 @@ section {
 
 .certificate-section {
 
-    position: relative;
+    position:
+        relative;
 
-    overflow: hidden;
+    overflow:
+        hidden;
+
+    border-radius:
+        var(--radius-lg);
+
+    padding:
+        55px 35px;
+
+    color:
+        #ffffff;
 
     background:
+
+        radial-gradient(
+            circle at 85% 25%,
+            rgba(213,155,50,0.18),
+            transparent 28%
+        ),
+
         linear-gradient(
             135deg,
-            #082b49,
-            #0d426b
+            var(--navy-950),
+            var(--navy-800)
         );
 
-    border-radius: 16px;
-
-    padding: 48px 38px;
-
-    color: #ffffff;
-
     box-shadow:
-        0 12px 35px
-        rgba(8,43,73,0.15);
+        var(--shadow-lg);
+}
+
+.certificate-section::before {
+
+    content: "";
+
+    position:
+        absolute;
+
+    width:
+        250px;
+
+    height:
+        250px;
+
+    right:
+        -90px;
+
+    bottom:
+        -120px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.09);
+
+    border-radius:
+        50%;
 }
 
 .certificate-section::after {
 
-    content: "✓";
+    content:
+        "✓";
 
-    position: absolute;
+    position:
+        absolute;
 
-    right: 40px;
-    top: 20px;
+    right:
+        38px;
 
-    font-size: 150px;
+    top:
+        18px;
 
-    font-weight: 900;
+    font-size:
+        150px;
+
+    line-height:
+        1;
+
+    font-weight:
+        900;
 
     color:
         rgba(255,255,255,0.035);
@@ -950,80 +1497,119 @@ section {
 
 .certificate-inner {
 
-    position: relative;
+    position:
+        relative;
 
-    z-index: 2;
+    z-index:
+        2;
 
-    max-width: 850px;
+    max-width:
+        820px;
 
-    margin: auto;
+    margin:
+        auto;
 
-    text-align: center;
+    text-align:
+        center;
 }
 
 .certificate-label {
 
-    color: #e8c36d;
+    color:
+        var(--gold-400);
 
-    font-size: 12px;
+    font-size:
+        10px;
 
-    font-weight: 800;
+    font-weight:
+        850;
 
-    letter-spacing: 1.7px;
+    letter-spacing:
+        1.8px;
 
-    text-transform: uppercase;
+    text-transform:
+        uppercase;
 
-    margin-bottom: 9px;
+    margin-bottom:
+        9px;
 }
 
 .certificate-inner h2 {
 
     font-size:
-        clamp(25px, 4vw, 34px);
+        clamp(27px, 4vw, 36px);
 
-    margin-bottom: 12px;
+    line-height:
+        1.2;
+
+    margin-bottom:
+        13px;
 }
 
 .certificate-inner p {
 
+    max-width:
+        720px;
+
+    margin:
+        auto;
+
     color:
-        rgba(255,255,255,0.84);
+        rgba(255,255,255,0.82);
 
-    font-size: 15px;
+    font-size:
+        14px;
 
-    line-height: 1.75;
+    line-height:
+        1.8;
 }
 
 .validation-button {
 
-    display: inline-flex;
+    display:
+        inline-flex;
 
-    align-items: center;
+    align-items:
+        center;
 
-    justify-content: center;
+    justify-content:
+        center;
 
-    margin-top: 23px;
+    margin-top:
+        24px;
 
-    background: #d59b32;
+    padding:
+        12px 21px;
 
-    color: #ffffff;
+    border:
+        1px solid var(--gold-500);
 
-    padding: 12px 24px;
+    border-radius:
+        7px;
 
-    border-radius: 6px;
+    background:
+        var(--gold-500);
 
-    font-size: 13px;
+    color:
+        #ffffff;
 
-    font-weight: 800;
+    font-size:
+        11px;
+
+    font-weight:
+        850;
 
     transition:
-        background 0.25s,
-        transform 0.25s;
+        all 0.2s ease;
 }
 
 .validation-button:hover {
 
-    background: #b17b1e;
+    background:
+        #b17b1e;
+
+    border-color:
+        #b17b1e;
 
     transform:
         translateY(-2px);
@@ -1031,53 +1617,113 @@ section {
 
 
 /* =========================================================
-   INFORMATION GRID
+   INFORMATION CARDS
 ========================================================= */
 
 .info-grid {
 
-    display: grid;
+    display:
+        grid;
 
     grid-template-columns:
         repeat(3, 1fr);
 
-    gap: 18px;
+    gap:
+        18px;
 
-    margin-top: 30px;
+    margin-top:
+        22px;
 }
 
 .info-card {
 
-    background: #ffffff;
+    background:
+        #ffffff;
 
     border:
-        1px solid #e2e7ed;
+        1px solid var(--border);
 
-    border-radius: 10px;
+    border-radius:
+        var(--radius-md);
 
-    padding: 23px;
+    padding:
+        24px;
 
     box-shadow:
-        0 4px 15px
-        rgba(15,35,60,0.05);
+        var(--shadow-sm);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.info-card:hover {
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        var(--shadow-md);
+}
+
+.info-card-icon {
+
+    width:
+        34px;
+
+    height:
+        34px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    margin-bottom:
+        14px;
+
+    border-radius:
+        8px;
+
+    background:
+        #edf4f8;
+
+    color:
+        var(--navy-800);
+
+    font-size:
+        15px;
+
+    font-weight:
+        900;
 }
 
 .info-card h3 {
 
-    color: #0b3557;
+    color:
+        var(--navy-800);
 
-    font-size: 16px;
+    font-size:
+        15px;
 
-    margin-bottom: 7px;
+    margin-bottom:
+        7px;
 }
 
 .info-card p {
 
-    color: #667085;
+    color:
+        var(--text-soft);
 
-    font-size: 13px;
+    font-size:
+        12.5px;
 
-    line-height: 1.7;
+    line-height:
+        1.75;
 }
 
 
@@ -1088,73 +1734,106 @@ section {
 footer {
 
     background:
-        linear-gradient(
-            135deg,
-            #061f35,
-            #082b49
-        );
+        var(--navy-950);
 
-    color: #ffffff;
+    color:
+        #ffffff;
 
-    text-align: center;
+    border-top:
+        3px solid var(--gold-500);
+}
 
-    padding: 42px 20px;
+.footer-inner {
+
+    max-width:
+        var(--max-width);
+
+    margin:
+        auto;
+
+    padding:
+        42px 24px 30px;
+
+    text-align:
+        center;
 }
 
 .footer-title {
 
-    font-size: 18px;
+    font-size:
+        17px;
 
-    font-weight: 800;
+    font-weight:
+        800;
 
-    margin-bottom: 8px;
+    margin-bottom:
+        7px;
 }
 
 .footer-subtitle {
 
-    color: #e8c36d;
+    color:
+        var(--gold-400);
 
-    font-size: 12px;
+    font-size:
+        10px;
 
-    font-weight: 700;
+    font-weight:
+        800;
 
-    letter-spacing: 1px;
+    letter-spacing:
+        1.5px;
 
-    text-transform: uppercase;
+    text-transform:
+        uppercase;
 
-    margin-bottom: 10px;
+    margin-bottom:
+        11px;
 }
 
 footer p {
 
-    font-size: 13px;
+    color:
+        rgba(255,255,255,0.68);
 
-    opacity: 0.82;
+    font-size:
+        12px;
 
-    margin: 5px 0;
+    margin:
+        5px 0;
 }
 
 footer a {
 
-    color: #ffffff;
+    color:
+        #ffffff;
 
-    font-weight: 600;
+    font-weight:
+        700;
+
+    transition:
+        color 0.2s ease;
 }
 
 footer a:hover {
 
-    color: #d59b32;
+    color:
+        var(--gold-400);
 }
 
 .footer-divider {
 
-    width: 55px;
+    width:
+        48px;
 
-    height: 2px;
+    height:
+        2px;
 
-    background: #d59b32;
+    margin:
+        19px auto;
 
-    margin: 20px auto;
+    background:
+        var(--gold-500);
 }
 
 
@@ -1164,7 +1843,8 @@ footer a:hover {
 
 .reveal {
 
-    opacity: 0;
+    opacity:
+        0;
 
     transform:
         translateY(18px);
@@ -1176,7 +1856,8 @@ footer a:hover {
 
 .reveal.visible {
 
-    opacity: 1;
+    opacity:
+        1;
 
     transform:
         translateY(0);
@@ -1187,13 +1868,24 @@ footer a:hover {
    TABLET
 ========================================================= */
 
-@media (max-width: 850px) {
+@media (max-width: 900px) {
 
-    .event-overview,
-    .info-grid {
+    .header-inner {
 
         grid-template-columns:
-            1fr 1fr;
+            260px 1fr;
+
+        gap:
+            38px;
+    }
+
+    .logo-mark {
+
+        width:
+            255px;
+
+        height:
+            90px;
     }
 
     .event-card {
@@ -1201,16 +1893,16 @@ footer a:hover {
         grid-template-columns:
             120px 1fr;
 
-        gap: 20px;
+        gap:
+            22px;
     }
 
-    .logo-mark {
+    .event-overview,
+    .info-grid {
 
-        width: 280px;
-
-        height: 95px;
+        grid-template-columns:
+            repeat(2, 1fr);
     }
-
 }
 
 
@@ -1218,79 +1910,184 @@ footer a:hover {
    MOBILE
 ========================================================= */
 
-@media (max-width: 680px) {
+@media (max-width: 700px) {
 
     .top-bar-inner {
 
-        justify-content: center;
-
-        text-align: center;
-    }
-
-    .top-bar-inner span {
-
-        display: none;
-    }
-
-    header {
+        justify-content:
+            center;
 
         padding:
-            42px 18px 55px;
+            8px 15px;
+    }
+
+    .top-bar-left span {
+
+        font-size:
+            10px;
+    }
+
+    .top-bar-inner > a {
+
+        display:
+            none;
     }
 
 
-    /* LARGE HORIZONTAL LOGO */
+    /* Header becomes stacked */
+
+    .header-inner {
+
+        min-height:
+            auto;
+
+        padding:
+            30px 18px 42px;
+
+        display:
+            flex;
+
+        flex-direction:
+            column;
+
+        align-items:
+            flex-start;
+
+        gap:
+            18px;
+    }
+
+
+    /* Logo remains top-left */
+
+    .logo-area {
+
+        width:
+            100%;
+
+        padding:
+            0;
+    }
 
     .logo-mark {
 
-        width: 250px;
+        width:
+            245px;
 
-        max-width: 88vw;
-
-        height: 82px;
-
-        margin-bottom: 18px;
-
-        padding: 0;
-
-        background: transparent;
-
-        border: none;
-
-        box-shadow: none;
+        height:
+            78px;
     }
 
+    .header-content {
+
+        width:
+            100%;
+
+        text-align:
+            left;
+    }
 
     .logo-title {
 
-        font-size: 10px;
+        font-size:
+            9px;
 
-        letter-spacing: 1.3px;
+        letter-spacing:
+            1.2px;
+    }
 
-        line-height: 1.5;
+    header h1 {
+
+        font-size:
+            32px;
+
+        letter-spacing:
+            -0.5px;
+    }
+
+    header p {
+
+        font-size:
+            14px;
+    }
+
+    .header-badges {
+
+        margin-top:
+            17px;
     }
 
 
+    /* Navigation */
+
     .nav-container {
 
-        padding: 9px 10px;
+        justify-content:
+            center;
 
-        gap: 3px;
+        padding:
+            7px 9px;
+
+        gap:
+            2px;
     }
 
     nav a {
 
-        font-size: 11px;
+        font-size:
+            10px;
 
         padding:
-            7px 10px;
+            8px 9px;
     }
+
+    nav a.active::after {
+
+        left:
+            9px;
+
+        right:
+            9px;
+    }
+
+
+    /* Main */
 
     .container {
 
         padding:
-            45px 15px 55px;
+            52px 15px 60px;
     }
+
+    section {
+
+        margin-bottom:
+            62px;
+    }
+
+
+    /* Headings */
+
+    .section-heading {
+
+        margin-bottom:
+            32px;
+    }
+
+    .section-heading h2 {
+
+        font-size:
+            27px;
+    }
+
+    .section-heading p {
+
+        font-size:
+            13.5px;
+    }
+
+
+    /* Overview */
 
     .event-overview,
     .info-grid {
@@ -1299,54 +2096,95 @@ footer a:hover {
             1fr;
     }
 
+
+    /* Events */
+
     .event-card {
 
         grid-template-columns:
             1fr;
 
-        padding: 24px;
+        gap:
+            17px;
 
-        gap: 18px;
+        padding:
+            23px;
     }
 
     .event-date {
 
-        max-width: 130px;
+        width:
+            125px;
 
-        min-height: 105px;
+        min-height:
+            103px;
     }
 
     .event-card h3 {
 
-        padding-right: 0;
+        padding-right:
+            0;
 
-        font-size: 19px;
+        font-size:
+            19px;
+    }
+
+    .event-card p {
+
+        font-size:
+            13px;
     }
 
     .featured-label {
 
-        top: 12px;
-        right: 12px;
+        top:
+            13px;
+
+        right:
+            13px;
     }
+
+
+    /* Certificate */
 
     .certificate-section {
 
         padding:
-            38px 22px;
+            42px 22px;
     }
+
+    .certificate-section::after {
+
+        font-size:
+            110px;
+
+        right:
+            15px;
+    }
+
+    .certificate-inner h2 {
+
+        font-size:
+            27px;
+    }
+
+
+    /* Diagram */
 
     .event-diagram {
 
-        padding: 10px;
+        padding:
+            9px;
 
-        border-radius: 10px;
+        border-radius:
+            12px;
     }
 
     .event-diagram-caption {
 
-        font-size: 11px;
+        font-size:
+            10px;
     }
-
 }
 
 
@@ -1356,46 +2194,68 @@ footer a:hover {
 
 @media (max-width: 450px) {
 
+    .logo-mark {
+
+        width:
+            220px;
+
+        height:
+            70px;
+    }
+
     header h1 {
 
-        font-size: 27px;
+        font-size:
+            28px;
     }
 
     header p {
 
-        font-size: 14px;
+        font-size:
+            13.5px;
     }
 
-    .section-heading h2 {
+    .header-badge {
 
-        font-size: 25px;
+        font-size:
+            9px;
     }
 
+    .nav-container {
 
-    .logo-mark {
-
-        width: 220px;
-
-        max-width: 90vw;
-
-        height: 72px;
+        flex-wrap:
+            wrap;
     }
 
+    nav a {
+
+        font-size:
+            9px;
+
+        padding:
+            7px 8px;
+    }
 
     .event-actions {
 
-        flex-direction: column;
+        flex-direction:
+            column;
 
-        align-items: stretch;
+        align-items:
+            stretch;
     }
 
     .event-button {
 
-        width: 100%;
-
-        text-align: center;
+        width:
+            100%;
     }
 
+    .certificate-section {
+
+        padding:
+            35px 18px;
+    }
 }
 
 
@@ -1407,7 +2267,8 @@ footer a:hover {
 
     html {
 
-        scroll-behavior: auto;
+        scroll-behavior:
+            auto;
     }
 
     *,
@@ -1423,7 +2284,6 @@ footer a:hover {
         transition-duration:
             0.01ms !important;
     }
-
 }
 
 </style>
@@ -1442,9 +2302,15 @@ footer a:hover {
 
     <div class="top-bar-inner">
 
-        <span>
-            International Scientific Events & Research Training
-        </span>
+        <div class="top-bar-left">
+
+            <span class="top-bar-dot"></span>
+
+            <span>
+                International Scientific Events & Research Training
+            </span>
+
+        </div>
 
         <a
             href="https://icriste.com/"
@@ -1461,49 +2327,75 @@ footer a:hover {
 
 
 <!-- ======================================================
-     HEADER
+     INSTITUTIONAL HEADER
 ====================================================== -->
 
 <header>
 
-    <div class="header-content">
+    <div class="header-inner">
 
 
-        <!-- ==================================================
-             HORIZONTAL ICRI-STE LOGO
-        =================================================== -->
+        <!-- LOGO — TOP LEFT -->
 
-        <div class="logo-mark">
+        <div class="logo-area">
 
-            <img
-                src="assets/ICRI-STE-Logo.png"
-                alt="International Council for Research & Innovation in STE (ICRI-STE) Logo">
+            <div class="logo-mark">
 
-        </div>
+                <img
+                    src="assets/ICRI-STE-Logo.png"
+                    alt="International Council for Research & Innovation in STE (ICRI-STE) Logo">
 
-
-        <div class="logo-title">
-
-            International Council for Research & Innovation in STE
+            </div>
 
         </div>
 
 
-        <h1>
+        <!-- HEADER CONTENT -->
 
-            Scientific Events & Research Training
+        <div class="header-content">
 
-        </h1>
+            <div class="logo-title">
+
+                International Council for Research & Innovation in STE
+
+            </div>
 
 
-        <p>
+            <h1>
 
-            International scientific symposia, seminars, research
-            training programmes, webinars and Early Career Researcher
-            development activities organised through ICRI-STE.
+                Scientific Events &amp;<br>
+                Research Training
 
-        </p>
+            </h1>
 
+
+            <p>
+
+                International scientific symposia, seminars,
+                research training programmes, webinars and
+                Early Career Researcher development activities
+                organised through ICRI-STE.
+
+            </p>
+
+
+            <div class="header-badges">
+
+                <span class="header-badge">
+                    International Events
+                </span>
+
+                <span class="header-badge">
+                    Research Training
+                </span>
+
+                <span class="header-badge">
+                    Early Career Researchers
+                </span>
+
+            </div>
+
+        </div>
 
     </div>
 
@@ -1575,7 +2467,7 @@ footer a:hover {
 
         <h2>
 
-            Scientific Events & Research Training
+            Scientific Events &amp; Research Training
 
         </h2>
 
@@ -1592,14 +2484,14 @@ footer a:hover {
 
 
     <!-- ==================================================
-         PICTORIAL REPRESENTATION
+         FRAMEWORK DIAGRAM
     ================================================== -->
 
     <div class="event-diagram">
 
         <img
             src="assets/diagram_1.png"
-            alt="ICRI-STE Scientific Events and Research Training">
+            alt="ICRI-STE Scientific Events, Research Training and Early Career Researcher Development Framework">
 
         <div class="event-diagram-caption">
 
@@ -1651,25 +2543,22 @@ footer a:hover {
             </span>
 
             <span class="overview-label">
-                Seminar & Webinar Series
+                Seminar &amp; Webinar Series
             </span>
 
         </div>
-
 
     </div>
 
 
     <!-- ==================================================
-         EVENTS
+         EVENT LIST
     ================================================== -->
 
     <div class="events">
 
 
-        <!-- ==================================================
-             EVENT 01
-        ================================================== -->
+        <!-- EVENT 01 -->
 
         <article class="event-card featured">
 
@@ -1705,7 +2594,8 @@ footer a:hover {
                 <h3>
 
                     1st Virtual International Symposium of
-                    CHI Lab Scientists & Early Career Researchers 2026
+                    CHI Lab Scientists &amp; Early Career
+                    Researchers 2026
 
                 </h3>
 
@@ -1749,9 +2639,7 @@ footer a:hover {
         </article>
 
 
-        <!-- ==================================================
-             EVENT 02
-        ================================================== -->
+        <!-- EVENT 02 -->
 
         <article class="event-card">
 
@@ -1827,9 +2715,7 @@ footer a:hover {
         </article>
 
 
-        <!-- ==================================================
-             EVENT 03
-        ================================================== -->
+        <!-- EVENT 03 -->
 
         <article class="event-card">
 
@@ -1878,9 +2764,7 @@ footer a:hover {
         </article>
 
 
-        <!-- ==================================================
-             EVENT 04
-        ================================================== -->
+        <!-- EVENT 04 -->
 
         <article class="event-card">
 
@@ -1904,13 +2788,13 @@ footer a:hover {
             <div>
 
                 <span class="event-type">
-                    Research & Innovation Webinar
+                    Research &amp; Innovation Webinar
                 </span>
 
 
                 <h3>
 
-                    Research & Innovation Webinar Series
+                    Research &amp; Innovation Webinar Series
 
                 </h3>
 
@@ -1946,9 +2830,7 @@ footer a:hover {
 
     <div class="certificate-section">
 
-
         <div class="certificate-inner">
-
 
             <div class="certificate-label">
 
@@ -1966,10 +2848,10 @@ footer a:hover {
 
             <p>
 
-                Verify certificates issued through ICRI-STE scientific
-                events, research training programmes and associated
-                research activities using the official online
-                certificate verification register.
+                Verify certificates issued through ICRI-STE
+                scientific events, research training programmes
+                and associated research activities using the
+                official online certificate verification register.
 
             </p>
 
@@ -1982,20 +2864,21 @@ footer a:hover {
 
             </a>
 
-
         </div>
 
     </div>
 
 
-    <!-- ==================================================
-         INFORMATION CARDS
-    ================================================== -->
+    <!-- INFORMATION CARDS -->
 
     <div class="info-grid">
 
 
         <div class="info-card">
+
+            <div class="info-card-icon">
+                ID
+            </div>
 
             <h3>
                 Certificate ID
@@ -2014,6 +2897,10 @@ footer a:hover {
 
         <div class="info-card">
 
+            <div class="info-card-icon">
+                ✓
+            </div>
+
             <h3>
                 Online Verification
             </h3>
@@ -2029,6 +2916,10 @@ footer a:hover {
 
 
         <div class="info-card">
+
+            <div class="info-card-icon">
+                i
+            </div>
 
             <h3>
                 Public Information
@@ -2047,7 +2938,6 @@ footer a:hover {
 
     </div>
 
-
 </section>
 
 
@@ -2060,50 +2950,54 @@ footer a:hover {
 
 <footer>
 
-    <div class="footer-title">
+    <div class="footer-inner">
 
-        International Council for Research & Innovation in STE
+        <div class="footer-title">
+
+            International Council for Research &amp; Innovation in STE
+
+        </div>
+
+
+        <div class="footer-subtitle">
+
+            ICRI-STE Scientific Events &amp; Research Training
+
+        </div>
+
+
+        <p>
+
+            International Scientific Events • Research Training •
+            Early Career Researcher Development
+
+        </p>
+
+
+        <div class="footer-divider"></div>
+
+
+        <p>
+
+            © 2026 ICRI-STE. All rights reserved.
+
+        </p>
+
+
+        <p>
+
+            <a
+                href="https://icriste.com/"
+                target="_blank"
+                rel="noopener">
+
+                Official ICRI-STE Website
+
+            </a>
+
+        </p>
 
     </div>
-
-
-    <div class="footer-subtitle">
-
-        ICRI-STE Scientific Events & Research Training
-
-    </div>
-
-
-    <p>
-
-        International Scientific Events • Research Training •
-        Early Career Researcher Development
-
-    </p>
-
-
-    <div class="footer-divider"></div>
-
-
-    <p>
-
-        © 2026 ICRI-STE. All rights reserved.
-
-    </p>
-
-
-    <p>
-
-        <a
-            href="https://icriste.com/"
-            target="_blank"
-            rel="noopener">
-
-            Official ICRI-STE Website
-
-        </a>
-
-    </p>
 
 </footer>
 
@@ -2118,11 +3012,8 @@ document.addEventListener(
     "DOMContentLoaded",
     function () {
 
-
         const elements =
-            document.querySelectorAll(
-                ".reveal"
-            );
+            document.querySelectorAll(".reveal");
 
 
         if (
@@ -2131,34 +3022,28 @@ document.addEventListener(
 
             elements.forEach(
                 element =>
-                    element.classList.add(
-                        "visible"
-                    )
+                    element.classList.add("visible")
             );
 
             return;
-
         }
 
 
         const observer =
             new IntersectionObserver(
-                function (entries) {
 
+                function (entries) {
 
                     entries.forEach(
                         function (entry) {
-
 
                             if (
                                 entry.isIntersecting
                             ) {
 
-
                                 entry.target
                                     .classList
                                     .add("visible");
-
 
                                 observer.unobserve(
                                     entry.target
@@ -2169,11 +3054,12 @@ document.addEventListener(
                         }
                     );
 
-
                 },
+
                 {
                     threshold: 0.12
                 }
+
             );
 
 
@@ -2181,7 +3067,6 @@ document.addEventListener(
             element =>
                 observer.observe(element)
         );
-
 
     }
 );
