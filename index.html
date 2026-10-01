@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-          content="ICRI-STE Events — International Symposia, Scientific Seminars, Research Training, Webinars and Early Career Researcher Development">
+          content="ICRI-STE Events — International Symposia, Scientific Seminars, Research Training, Webinars, Early Career Researcher Development and Certificate Validation">
 
     <meta name="author"
           content="International Council for Research & Innovation in Science, Technology & Engineering (ICRI-STE)">
@@ -79,7 +79,7 @@
         }
 
         header p {
-            max-width: 820px;
+            max-width: 850px;
             margin: auto;
             font-size: 16px;
             opacity: 0.92;
@@ -103,14 +103,14 @@
         }
 
         .nav-container {
-            max-width: 1100px;
+            max-width: 1150px;
             margin: auto;
 
             display: flex;
             justify-content: center;
             align-items: center;
 
-            gap: 10px;
+            gap: 8px;
 
             padding: 12px 20px;
         }
@@ -121,7 +121,7 @@
             font-size: 14px;
             font-weight: 600;
 
-            padding: 8px 18px;
+            padding: 8px 16px;
 
             border-radius: 5px;
 
@@ -150,7 +150,7 @@
         ============================== */
 
         section {
-            margin-bottom: 50px;
+            margin-bottom: 60px;
         }
 
         .section-heading {
@@ -177,7 +177,7 @@
         }
 
         .section-heading p {
-            max-width: 780px;
+            max-width: 800px;
             margin: auto;
             color: #666;
             font-size: 15px;
@@ -305,10 +305,20 @@
             font-size: 15px;
         }
 
+
+        /* ==============================
+           BUTTONS
+        ============================== */
+
+        .event-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
         .event-button {
             display: inline-block;
-
-            margin-top: 15px;
 
             background: #0b3557;
 
@@ -326,6 +336,72 @@
         }
 
         .event-button:hover {
+            background: #b17b1e;
+        }
+
+        .event-button.secondary {
+            background: #b17b1e;
+        }
+
+        .event-button.secondary:hover {
+            background: #0b3557;
+        }
+
+
+        /* ==============================
+           CERTIFICATE PORTAL
+        ============================== */
+
+        .validation-card {
+            background: #ffffff;
+
+            border-radius: 12px;
+
+            padding: 38px 35px;
+
+            text-align: center;
+
+            box-shadow:
+                0 4px 20px
+                rgba(0,0,0,0.08);
+
+            border-top: 4px solid #d59b32;
+        }
+
+        .validation-card h3 {
+            color: #0b3557;
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .validation-card p {
+            max-width: 760px;
+            margin: 0 auto;
+            color: #555;
+            font-size: 15px;
+        }
+
+        .validation-button {
+            display: inline-block;
+
+            margin-top: 20px;
+
+            background: #0b3557;
+
+            color: #ffffff;
+
+            padding: 12px 24px;
+
+            border-radius: 6px;
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+            transition: 0.25s;
+        }
+
+        .validation-button:hover {
             background: #b17b1e;
         }
 
@@ -383,6 +459,7 @@
 
             .nav-container {
                 gap: 2px;
+                flex-wrap: wrap;
             }
 
             nav a {
@@ -412,16 +489,25 @@
                 font-size: 25px;
             }
 
-            .nav-container {
-                flex-wrap: wrap;
-            }
-
             .container {
                 padding: 40px 15px;
             }
 
             .event-card {
                 padding: 22px;
+            }
+
+            .validation-card {
+                padding: 30px 20px;
+            }
+
+            .event-actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .event-button {
+                text-align: center;
             }
 
         }
@@ -467,13 +553,15 @@
             Events
         </a>
 
+        <a href="#certificate-validation">
+            Certificate Validation
+        </a>
+
         <a
             href="https://icriste.com/"
             target="_blank"
             rel="noopener">
-
             ICRI-STE
-
         </a>
 
     </div>
@@ -518,7 +606,7 @@
 
 
             <!-- ==========================================
-                 EVENT 01
+                 EVENT 01 — CHI LAB SYMPOSIUM
             =========================================== -->
 
             <article class="event-card">
@@ -555,15 +643,31 @@
                         Early Career Researchers.
                     </p>
 
-                    <a
-                        class="event-button"
-                        href="https://partnerships2024.github.io/"
-                        target="_blank"
-                        rel="noopener">
 
-                        Visit Symposium Website
+                    <div class="event-actions">
 
-                    </a>
+                        <a
+                            class="event-button"
+                            href="https://partnerships2024.github.io/"
+                            target="_blank"
+                            rel="noopener">
+
+                            Visit Symposium Website
+
+                        </a>
+
+
+                        <a
+                            class="event-button secondary"
+                            href="https://partnerships2024.github.io/certificates.html"
+                            target="_blank"
+                            rel="noopener">
+
+                            Verify Certificates
+
+                        </a>
+
+                    </div>
 
                 </div>
 
@@ -571,7 +675,7 @@
 
 
             <!-- ==========================================
-                 EVENT 02
+                 EVENT 02 — RESEARCH TRAINING
             =========================================== -->
 
             <article class="event-card">
@@ -603,20 +707,37 @@
                         Structured research training for Early Career
                         Researchers covering research methodology,
                         scientific literature review, data analysis,
-                        computational research, AI and machine learning,
-                        scientific writing, research documentation,
-                        reproducibility and responsible research practices.
+                        computational research, artificial intelligence
+                        and machine learning, scientific writing,
+                        research documentation, reproducibility and
+                        responsible research practices.
                     </p>
 
-                    <a
-                        class="event-button"
-                        href="https://icriste.com/"
-                        target="_blank"
-                        rel="noopener">
 
-                        Learn More
+                    <div class="event-actions">
 
-                    </a>
+                        <a
+                            class="event-button"
+                            href="https://icriste.com/"
+                            target="_blank"
+                            rel="noopener">
+
+                            Learn More
+
+                        </a>
+
+
+                        <a
+                            class="event-button secondary"
+                            href="https://partnerships2024.github.io/certificates.html"
+                            target="_blank"
+                            rel="noopener">
+
+                            Certificate Validation
+
+                        </a>
+
+                    </div>
 
                 </div>
 
@@ -624,7 +745,7 @@
 
 
             <!-- ==========================================
-                 EVENT 03
+                 EVENT 03 — SCIENTIFIC SEMINAR
             =========================================== -->
 
             <article class="event-card">
@@ -665,7 +786,7 @@
 
 
             <!-- ==========================================
-                 EVENT 04
+                 EVENT 04 — WEBINAR
             =========================================== -->
 
             <article class="event-card">
@@ -697,14 +818,67 @@
                         Online research discussions and knowledge-sharing
                         sessions connecting researchers, scientists,
                         engineers and Early Career Researchers across
-                        computational science, AI, healthcare and
-                        interdisciplinary research.
+                        computational science, artificial intelligence,
+                        healthcare and interdisciplinary research.
                     </p>
 
                 </div>
 
             </article>
 
+
+        </div>
+
+    </section>
+
+
+    <!-- ==================================================
+         CERTIFICATE VALIDATION
+    ================================================== -->
+
+    <section id="certificate-validation">
+
+        <div class="section-heading">
+
+            <div class="small-title">
+                ICRI-STE Certification
+            </div>
+
+            <h2>
+                Certificate Validation Portal
+            </h2>
+
+            <p>
+                Verify certificates issued through ICRI-STE and the
+                Computational Healthcare Intelligence (CHI) Lab using
+                the official online certificate verification register.
+            </p>
+
+        </div>
+
+
+        <div class="validation-card">
+
+            <h3>
+                Official Certificate Verification
+            </h3>
+
+            <p>
+                Certificate holders, institutions and other authorised
+                parties can verify certificate records using the unique
+                Certificate ID displayed on the issued certificate.
+            </p>
+
+
+            <a
+                class="validation-button"
+                href="https://partnerships2024.github.io/certificates.html"
+                target="_blank"
+                rel="noopener">
+
+                Open Certificate Validation Portal
+
+            </a>
 
         </div>
 
@@ -727,6 +901,10 @@
     <p>
         International Council for Research & Innovation
         in Science, Technology & Engineering
+    </p>
+
+    <p>
+        Scientific Events • Research Training • Innovation
     </p>
 
     <p>
