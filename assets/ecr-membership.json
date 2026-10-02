@@ -33,7 +33,7 @@
     "division": "Health",
     "status": "Active",
     "issueDate": "05 March 2026",
-    "validUntil": "05 March 2027"
+    "validUntil": "05 March 2030"
   },
   {
     "reference": "ICRI-STE/R&D/RP/03/2026",
@@ -51,6 +51,24 @@
     "division": "Health",
     "status": "Active",
     "issueDate": "05 June 2025",
-    "validUntil": "05 June 2026"
+    "validUntil": "05 June 2030"
+  },
+  {
+    "reference": "ICRI-STE/R&D/RP/07/2026",
+    "name": "Dr. Maryam Nisar",
+    "membershipType": "Global Reseach Community, Principal Scientist (R3-B-PhD)",
+    "division": "Health",
+    "status": "Active",
+    "issueDate": "10 June 2025",
+    "validUntil": "10 June 2030"
+  },
+   {
+    "reference": "ICRI-STE/R&D/RP/07/2026",
+    "name": "Engg. Dr. Omar Zeb",
+    "membershipType": "Global Reseach Community, Principal Scientist (R3-B-PhD)",
+    "division": "Energy",
+    "status": "Active",
+    "issueDate": "10 April 2025",
+    "validUntil": "10 April 2030"
   }
 ]
