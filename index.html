@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,9 +12,9 @@
         content="ICRI-STE Scientific Events, Research Training, Early Career Researcher Development, Certificate Validation and ECR Membership Validation.">
 
     <meta name="author"
-        content="International Council for Research & Innovation in STE (ICRI-STE)">
+        content="International Council for Research &amp; Innovation in STE (ICRI-STE)">
 
-    <title>Scientific Events & Research Training | ICRI-STE</title>
+    <title>Scientific Events &amp; Research Training | ICRI-STE</title>
 
     <style>
 
@@ -1146,8 +1147,6 @@
             </div>
 
 
-            <!-- FEATURED EVENT -->
-
             <div class="featured-event">
 
                 <div class="featured-content">
@@ -1352,6 +1351,49 @@
                         class="validation-button">
                         Open Certificate Validation Portal
                     </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 CERTIFICATE SEARCH
+            ========================== -->
+
+            <div class="membership-portal" style="margin-top:22px;">
+
+                <div class="membership-search">
+
+                    <input
+                        type="text"
+                        id="certificate-reference"
+                        placeholder="Enter certificate reference, e.g. ICRI-STE/CHI/2026/0001"
+                        autocomplete="off"
+                        aria-label="Certificate Reference">
+
+                    <button
+                        type="button"
+                        id="verify-certificate">
+                        Verify
+                    </button>
+
+                </div>
+
+
+                <p class="membership-note">
+                    Enter the official certificate reference number
+                    issued by ICRI-STE. Only public certificate
+                    information is displayed.
+                </p>
+
+
+                <div id="certificate-result">
+
+                    <div class="result-message">
+                        Enter a certificate reference number to
+                        verify a certificate record.
+                    </div>
 
                 </div>
 
@@ -1693,20 +1735,22 @@
 
 
     <!-- =========================
-         ECR MEMBERSHIP VALIDATION
-         JAVASCRIPT
+         ECR MEMBERSHIP + CERTIFICATE
+         VALIDATION JAVASCRIPT
     ========================== -->
 
     <script>
+
+        /* =========================================================
+           ECR MEMBERSHIP VALIDATION
+           EXISTING CODE — KEPT INTACT
+        ========================================================= */
 
         const DATA_URL = "assets/ECR_Membership.joson";
 
         let membershipRecords = [];
 
 
-        /*
-         * Load membership database
-         */
         async function loadMembershipData() {
 
             const response = await fetch(
@@ -1730,10 +1774,6 @@
 
             const data = JSON.parse(text);
 
-
-            /*
-             * Accept several possible JSON structures.
-             */
 
             if (Array.isArray(data)) {
                 return data;
@@ -1760,11 +1800,6 @@
         }
 
 
-        /*
-         * Obtain membership reference number
-         * from possible JSON field names.
-         */
-
         function getReference(record) {
 
             return String(
@@ -1782,10 +1817,6 @@
 
         }
 
-
-        /*
-         * Retrieve a value using possible field aliases.
-         */
 
         function getValue(record, keys) {
 
@@ -1808,10 +1839,6 @@
 
         }
 
-
-        /*
-         * Determine status styling.
-         */
 
         function statusClass(status) {
 
@@ -1852,11 +1879,11 @@
         }
 
 
-        /*
-         * Safely create an element containing text.
-         */
-
-        function createRecordItem(label, value, extraClass = "") {
+        function createRecordItem(
+            label,
+            value,
+            extraClass = ""
+        ) {
 
             const item =
                 document.createElement("div");
@@ -1884,6 +1911,7 @@
 
 
             item.appendChild(strong);
+
             item.appendChild(span);
 
 
@@ -1891,10 +1919,6 @@
 
         }
 
-
-        /*
-         * Display membership record.
-         */
 
         function displayMembership(record) {
 
@@ -2006,6 +2030,7 @@
 
 
             header.appendChild(title);
+
             header.appendChild(referenceText);
 
 
@@ -2074,6 +2099,7 @@
 
 
             recordBox.appendChild(header);
+
             recordBox.appendChild(grid);
 
 
@@ -2081,10 +2107,6 @@
 
         }
 
-
-        /*
-         * Show messages safely.
-         */
 
         function showMessage(message) {
 
@@ -2103,6 +2125,7 @@
             messageBox.className =
                 "result-message";
 
+
             messageBox.textContent =
                 message;
 
@@ -2113,10 +2136,6 @@
 
         }
 
-
-        /*
-         * Verify membership reference.
-         */
 
         function verifyMembership() {
 
@@ -2166,64 +2185,694 @@
         }
 
 
+        /* =========================================================
+           CERTIFICATE VALIDATION
+           NEW FUNCTIONALITY
+        ========================================================= */
+
         /*
-         * Initial database loading.
+         * Certificate JSON database.
+         *
+         * If your actual file has another name, change ONLY
+         * the filename below.
          */
+
+        const CERTIFICATE_DATA_URL =
+            "assets/certificates.joson";
+
+
+        let certificateRecords = [];
+
+
+        /*
+         * Load certificate database.
+         */
+
+        async function loadCertificateData() {
+
+            const response =
+                await fetch(
+                    CERTIFICATE_DATA_URL,
+                    {
+                        cache: "no-store"
+                    }
+                );
+
+
+            if (!response.ok) {
+
+                throw new Error(
+                    `Unable to load certificate database (${response.status}).`
+                );
+
+            }
+
+
+            const text =
+                await response.text();
+
+
+            const data =
+                JSON.parse(text);
+
+
+            /*
+             * Support an array directly:
+             *
+             * [
+             *   {...},
+             *   {...}
+             * ]
+             */
+
+            if (Array.isArray(data)) {
+
+                return data;
+
+            }
+
+
+            /*
+             * Also support:
+             *
+             * {
+             *   "certificates": [...]
+             * }
+             */
+
+            if (
+                Array.isArray(
+                    data.certificates
+                )
+            ) {
+
+                return data.certificates;
+
+            }
+
+
+            /*
+             * Also support:
+             *
+             * {
+             *   "credentials": [...]
+             * }
+             */
+
+            if (
+                Array.isArray(
+                    data.credentials
+                )
+            ) {
+
+                return data.credentials;
+
+            }
+
+
+            /*
+             * Also support:
+             *
+             * {
+             *   "records": [...]
+             * }
+             */
+
+            if (
+                Array.isArray(
+                    data.records
+                )
+            ) {
+
+                return data.records;
+
+            }
+
+
+            return [];
+
+        }
+
+
+        /*
+         * Obtain certificate ID/reference.
+         *
+         * The function supports common field names
+         * so the JSON structure does not need to be changed.
+         */
+
+        function getCertificateReference(record) {
+
+            return String(
+
+                record.certificate_id ||
+                record.certificateId ||
+                record.certificateID ||
+                record.certificate_reference ||
+                record.certificateReference ||
+                record.reference ||
+                record.referenceNo ||
+                record.reference_no ||
+                record.refNo ||
+                record.id ||
+                ""
+
+            ).trim();
+
+        }
+
+
+        /*
+         * Get certificate information.
+         */
+
+        function getCertificateValue(
+            record,
+            keys
+        ) {
+
+            for (const key of keys) {
+
+                if (
+                    record[key] !== undefined &&
+                    record[key] !== null &&
+                    String(record[key]).trim() !== ""
+                ) {
+
+                    return record[key];
+
+                }
+
+            }
+
+
+            return "—";
+
+        }
+
+
+        /*
+         * Certificate status.
+         */
+
+        function certificateStatusClass(
+            status
+        ) {
+
+            const s =
+                String(status).toLowerCase();
+
+
+            if (
+                s.includes("active") ||
+                s.includes("verified") ||
+                s.includes("valid") ||
+                s.includes("issued")
+            ) {
+
+                return "status-valid";
+
+            }
+
+
+            if (
+                s.includes("expired")
+            ) {
+
+                return "status-expired";
+
+            }
+
+
+            if (
+                s.includes("revoked") ||
+                s.includes("invalid") ||
+                s.includes("cancelled") ||
+                s.includes("canceled")
+            ) {
+
+                return "status-invalid";
+
+            }
+
+
+            return "status-neutral";
+
+        }
+
+
+        /*
+         * Display verified certificate.
+         */
+
+        function displayCertificate(
+            record
+        ) {
+
+            const result =
+                document.getElementById(
+                    "certificate-result"
+                );
+
+
+            result.innerHTML = "";
+
+
+            const reference =
+                getCertificateReference(
+                    record
+                );
+
+
+            const holder =
+                getCertificateValue(
+                    record,
+                    [
+                        "certificate_holder",
+                        "certificateHolder",
+                        "holderName",
+                        "holder_name",
+                        "name",
+                        "fullName",
+                        "recipientName",
+                        "recipient_name"
+                    ]
+                );
+
+
+            const certificateTitle =
+                getCertificateValue(
+                    record,
+                    [
+                        "certificate_title",
+                        "certificateTitle",
+                        "title",
+                        "certificateType",
+                        "certificate_type",
+                        "type"
+                    ]
+                );
+
+
+            const event =
+                getCertificateValue(
+                    record,
+                    [
+                        "event",
+                        "eventName",
+                        "event_name",
+                        "programme",
+                        "program",
+                        "activity"
+                    ]
+                );
+
+
+            const issueDate =
+                getCertificateValue(
+                    record,
+                    [
+                        "issueDate",
+                        "issue_date",
+                        "dateOfIssue",
+                        "date_issued"
+                    ]
+                );
+
+
+            const status =
+                getCertificateValue(
+                    record,
+                    [
+                        "status",
+                        "certificateStatus",
+                        "certificate_status"
+                    ]
+                );
+
+
+            const validUntil =
+                getCertificateValue(
+                    record,
+                    [
+                        "validUntil",
+                        "valid_until",
+                        "expiryDate",
+                        "expiry_date",
+                        "validity",
+                        "valid_to"
+                    ]
+                );
+
+
+            const recordBox =
+                document.createElement("div");
+
+            recordBox.className =
+                "membership-record";
+
+
+            const header =
+                document.createElement("div");
+
+            header.className =
+                "record-header";
+
+
+            const title =
+                document.createElement("h3");
+
+            title.textContent =
+                "Certificate Verification Record";
+
+
+            const referenceText =
+                document.createElement("span");
+
+            referenceText.textContent =
+                reference;
+
+
+            header.appendChild(title);
+
+            header.appendChild(
+                referenceText
+            );
+
+
+            const grid =
+                document.createElement("div");
+
+            grid.className =
+                "record-grid";
+
+
+            grid.appendChild(
+                createRecordItem(
+                    "Certificate Reference",
+                    reference
+                )
+            );
+
+
+            grid.appendChild(
+                createRecordItem(
+                    "Certificate Holder",
+                    holder
+                )
+            );
+
+
+            grid.appendChild(
+                createRecordItem(
+                    "Certificate",
+                    certificateTitle
+                )
+            );
+
+
+            grid.appendChild(
+                createRecordItem(
+                    "Event / Programme",
+                    event
+                )
+            );
+
+
+            grid.appendChild(
+                createRecordItem(
+                    "Status",
+                    status,
+                    `status ${certificateStatusClass(status)}`
+                )
+            );
+
+
+            grid.appendChild(
+                createRecordItem(
+                    "Date of Issue",
+                    issueDate
+                )
+            );
+
+
+            grid.appendChild(
+                createRecordItem(
+                    "Valid Until",
+                    validUntil
+                )
+            );
+
+
+            recordBox.appendChild(
+                header
+            );
+
+
+            recordBox.appendChild(
+                grid
+            );
+
+
+            result.appendChild(
+                recordBox
+            );
+
+        }
+
+
+        /*
+         * Certificate validation message.
+         */
+
+        function showCertificateMessage(
+            message
+        ) {
+
+            const result =
+                document.getElementById(
+                    "certificate-result"
+                );
+
+
+            result.innerHTML = "";
+
+
+            const messageBox =
+                document.createElement("div");
+
+
+            messageBox.className =
+                "result-message";
+
+
+            messageBox.textContent =
+                message;
+
+
+            result.appendChild(
+                messageBox
+            );
+
+        }
+
+
+        /*
+         * Verify certificate reference.
+         */
+
+        function verifyCertificate() {
+
+            const input =
+                document.getElementById(
+                    "certificate-reference"
+                );
+
+
+            const reference =
+                input.value.trim();
+
+
+            if (!reference) {
+
+                showCertificateMessage(
+                    "Please enter a certificate reference number."
+                );
+
+                return;
+
+            }
+
+
+            /*
+             * Case-insensitive exact match.
+             */
+
+            const match =
+                certificateRecords.find(
+                    record =>
+                        getCertificateReference(
+                            record
+                        ).toLowerCase() ===
+                        reference.toLowerCase()
+                );
+
+
+            if (!match) {
+
+                showCertificateMessage(
+                    "No certificate record found for this reference."
+                );
+
+                return;
+
+            }
+
+
+            displayCertificate(
+                match
+            );
+
+        }
+
+
+        /* =========================================================
+           INITIALISE BOTH VALIDATION SYSTEMS
+        ========================================================= */
 
         document.addEventListener(
             "DOMContentLoaded",
             async function () {
 
-                const button =
+
+                /* -----------------------------------------
+                   ECR MEMBERSHIP VALIDATION
+                ----------------------------------------- */
+
+                const membershipButton =
                     document.getElementById(
                         "verify-membership"
                     );
 
 
-                const input =
+                const membershipInput =
                     document.getElementById(
                         "membership-reference"
                     );
 
 
-                button.addEventListener(
-                    "click",
-                    verifyMembership
-                );
+                if (
+                    membershipButton &&
+                    membershipInput
+                ) {
 
 
-                input.addEventListener(
-                    "keydown",
-                    function (event) {
+                    membershipButton.addEventListener(
+                        "click",
+                        verifyMembership
+                    );
 
-                        if (
-                            event.key === "Enter"
-                        ) {
 
-                            verifyMembership();
+                    membershipInput.addEventListener(
+                        "keydown",
+                        function (event) {
+
+                            if (
+                                event.key === "Enter"
+                            ) {
+
+                                verifyMembership();
+
+                            }
 
                         }
+                    );
+
+
+                    try {
+
+                        membershipRecords =
+                            await loadMembershipData();
+
+
+                    } catch (error) {
+
+                        console.error(
+                            error
+                        );
+
+
+                        showMessage(
+                            "The ECR membership validation service is currently unavailable."
+                        );
 
                     }
-                );
+
+                }
 
 
-                try {
+                /* -----------------------------------------
+                   CERTIFICATE VALIDATION
+                ----------------------------------------- */
 
-                    membershipRecords =
-                        await loadMembershipData();
-
-
-                } catch (error) {
-
-                    console.error(
-                        error
+                const certificateButton =
+                    document.getElementById(
+                        "verify-certificate"
                     );
 
 
-                    showMessage(
-                        "The ECR membership validation service is currently unavailable."
+                const certificateInput =
+                    document.getElementById(
+                        "certificate-reference"
                     );
+
+
+                if (
+                    certificateButton &&
+                    certificateInput
+                ) {
+
+
+                    certificateButton.addEventListener(
+                        "click",
+                        verifyCertificate
+                    );
+
+
+                    certificateInput.addEventListener(
+                        "keydown",
+                        function (event) {
+
+                            if (
+                                event.key === "Enter"
+                            ) {
+
+                                verifyCertificate();
+
+                            }
+
+                        }
+                    );
+
+
+                    try {
+
+                        certificateRecords =
+                            await loadCertificateData();
+
+
+                    } catch (error) {
+
+                        console.error(
+                            error
+                        );
+
+
+                        showCertificateMessage(
+                            "The certificate validation service is currently unavailable."
+                        );
+
+                    }
 
                 }
 
@@ -2236,3 +2885,4 @@
 </body>
 
 </html>
+```
