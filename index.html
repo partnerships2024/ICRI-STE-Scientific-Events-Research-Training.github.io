@@ -8,16 +8,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <meta name="description"
-content="ICRI-STE Scientific Events and Research Training Portal — International Symposia, Scientific Seminars, Research Training, Webinars, Early Career Researcher Development, Certificate and ECR Membership Validation.">
+content="ICRI-STE Scientific Events Portal — International Symposia, Scientific Seminars, Research Training, Webinars, Early Career Researcher Development and Certificate Validation.">
 
 <meta name="author"
 content="International Council for Research & Innovation in Science, Technology & Engineering (ICRI-STE)">
 
 <meta name="theme-color"
 content="#071f35">
-
-<meta name="robots"
-content="index, follow">
 
 <title>Scientific Events & Research Training | ICRI-STE</title>
 
@@ -65,9 +62,6 @@ content="index, follow">
     --radius-lg: 20px;
 
     --max-width: 1180px;
-
-    --transition:
-        0.25s ease;
 }
 
 
@@ -83,7 +77,6 @@ content="index, follow">
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 78px;
 }
 
 body {
@@ -109,12 +102,10 @@ body {
     line-height: 1.65;
 
     -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
 }
 
 img {
     max-width: 100%;
-    height: auto;
 }
 
 a {
@@ -136,48 +127,7 @@ a {
     outline:
         3px solid var(--gold-400);
 
-    outline-offset:
-        3px;
-}
-
-.skip-link {
-
-    position:
-        fixed;
-
-    left:
-        15px;
-
-    top:
-        -100px;
-
-    z-index:
-        9999;
-
-    padding:
-        10px 16px;
-
-    border-radius:
-        7px;
-
-    background:
-        var(--navy-950);
-
-    color:
-        #ffffff;
-
-    font-size:
-        12px;
-
-    font-weight:
-        800;
-
-    transition:
-        top 0.2s ease;
-}
-
-.skip-link:focus {
-    top: 15px;
+    outline-offset: 3px;
 }
 
 
@@ -196,8 +146,7 @@ a {
     border-bottom:
         1px solid rgba(255,255,255,0.08);
 
-    font-size:
-        12px;
+    font-size: 12px;
 }
 
 .top-bar-inner {
@@ -205,75 +154,56 @@ a {
     max-width:
         var(--max-width);
 
-    min-height:
-        38px;
-
-    margin:
-        auto;
+    margin: auto;
 
     padding:
-        7px 24px;
+        8px 24px;
 
-    display:
-        flex;
+    display: flex;
 
-    align-items:
-        center;
+    align-items: center;
 
-    justify-content:
-        space-between;
+    justify-content: space-between;
 
-    gap:
-        20px;
+    gap: 20px;
 }
 
 .top-bar-left {
 
-    display:
-        flex;
+    display: flex;
 
-    align-items:
-        center;
+    align-items: center;
 
-    gap:
-        9px;
+    gap: 9px;
 }
 
 .top-bar-dot {
 
-    width:
-        6px;
+    width: 6px;
+    height: 6px;
 
-    height:
-        6px;
-
-    border-radius:
-        50%;
+    border-radius: 50%;
 
     background:
         var(--gold-500);
 
-    flex-shrink:
-        0;
-
-    box-shadow:
-        0 0 0 3px rgba(213,155,50,0.10);
+    flex-shrink: 0;
 }
 
 .top-bar a {
 
-    color:
-        #ffffff;
+    color: #ffffff;
 
-    font-weight:
-        700;
+    font-weight: 700;
 
     transition:
-        color var(--transition);
+        color 0.2s ease;
 }
 
 .top-bar a:hover {
-    color: var(--gold-400);
+
+    color:
+        var(--gold-400);
 }
 
 
@@ -283,14 +213,11 @@ a {
 
 header {
 
-    position:
-        relative;
+    position: relative;
 
-    overflow:
-        hidden;
+    overflow: hidden;
 
-    color:
-        #ffffff;
+    color: #ffffff;
 
     background:
 
@@ -322,17 +249,13 @@ header {
 
 header::before {
 
-    content:
-        "";
+    content: "";
 
-    position:
-        absolute;
+    position: absolute;
 
-    inset:
-        0;
+    inset: 0;
 
-    opacity:
-        0.16;
+    opacity: 0.16;
 
     background-image:
 
@@ -357,9 +280,6 @@ header::before {
             black,
             transparent
         );
-
-    pointer-events:
-        none;
 }
 
 
@@ -369,11 +289,9 @@ header::before {
 
 .header-inner {
 
-    position:
-        relative;
+    position: relative;
 
-    z-index:
-        2;
+    z-index: 2;
 
     max-width:
         var(--max-width);
@@ -381,97 +299,73 @@ header::before {
     min-height:
         280px;
 
-    margin:
-        auto;
+    margin: auto;
 
     padding:
         42px 24px 52px;
 
-    display:
-        grid;
+    display: grid;
 
     grid-template-columns:
-        330px minmax(0, 1fr);
+        330px 1fr;
 
-    align-items:
-        center;
+    align-items: center;
 
-    gap:
-        65px;
+    gap: 65px;
 }
 
 
 /* =========================================================
-   LOGO
+   LOGO — TOP LEFT
 ========================================================= */
 
 .logo-area {
 
-    align-self:
-        start;
+    align-self: start;
 
-    display:
-        flex;
+    display: flex;
 
-    align-items:
-        flex-start;
+    align-items: flex-start;
 
-    justify-content:
-        flex-start;
+    justify-content: flex-start;
 
-    padding-top:
-        3px;
+    padding-top: 3px;
 }
 
 .logo-mark {
 
-    width:
-        315px;
+    width: 315px;
 
-    height:
-        105px;
+    height: 105px;
 
-    display:
-        flex;
+    display: flex;
 
-    align-items:
-        center;
+    align-items: center;
 
-    justify-content:
-        flex-start;
+    justify-content: flex-start;
 
-    background:
-        transparent;
+    background: transparent;
 
-    border:
-        none;
+    border: none;
 
-    padding:
-        0;
+    padding: 0;
 
-    margin:
-        0;
+    margin: 0;
 }
 
 .logo-mark img {
 
-    width:
-        100%;
+    width: 100%;
 
-    height:
-        100%;
+    height: 100%;
 
-    object-fit:
-        contain;
+    object-fit: contain;
 
-    object-position:
-        left center;
+    object-position: left center;
 
-    display:
-        block;
+    display: block;
 
-    background:
-        transparent;
+    background: transparent;
 
     filter:
         drop-shadow(
@@ -496,23 +390,18 @@ header::before {
 
 .logo-title {
 
-    display:
-        inline-flex;
+    display: inline-flex;
 
-    align-items:
-        center;
+    align-items: center;
 
-    gap:
-        9px;
+    gap: 9px;
 
     color:
         var(--gold-400);
 
-    font-size:
-        11px;
+    font-size: 11px;
 
-    font-weight:
-        800;
+    font-weight: 800;
 
     letter-spacing:
         1.8px;
@@ -526,20 +415,14 @@ header::before {
 
 .logo-title::before {
 
-    content:
-        "";
+    content: "";
 
-    width:
-        27px;
+    width: 27px;
 
-    height:
-        2px;
+    height: 2px;
 
     background:
         var(--gold-500);
-
-    flex-shrink:
-        0;
 }
 
 header h1 {
@@ -582,17 +465,13 @@ header p {
 
 .header-badges {
 
-    display:
-        flex;
+    display: flex;
 
-    flex-wrap:
-        wrap;
+    flex-wrap: wrap;
 
-    gap:
-        9px;
+    gap: 9px;
 
-    margin-top:
-        23px;
+    margin-top: 23px;
 }
 
 .header-badge {
@@ -601,7 +480,8 @@ header p {
         7px 12px;
 
     border:
-        1px solid rgba(255,255,255,0.16);
+        1px solid
+        rgba(255,255,255,0.16);
 
     border-radius:
         30px;
@@ -617,9 +497,6 @@ header p {
 
     font-weight:
         700;
-
-    backdrop-filter:
-        blur(5px);
 }
 
 
@@ -629,17 +506,14 @@ header p {
 
 nav {
 
-    position:
-        sticky;
+    position: sticky;
 
-    top:
-        0;
+    top: 0;
 
-    z-index:
-        1000;
+    z-index: 1000;
 
     background:
-        rgba(255,255,255,0.95);
+        rgba(255,255,255,0.94);
 
     backdrop-filter:
         blur(14px);
@@ -663,29 +537,23 @@ nav {
     min-height:
         58px;
 
-    margin:
-        auto;
+    margin: auto;
 
     padding:
         7px 24px;
 
-    display:
-        flex;
+    display: flex;
 
-    align-items:
-        center;
+    align-items: center;
 
-    justify-content:
-        flex-end;
+    justify-content: flex-end;
 
-    gap:
-        5px;
+    gap: 5px;
 }
 
 nav a {
 
-    position:
-        relative;
+    position: relative;
 
     color:
         var(--navy-800);
@@ -702,13 +570,9 @@ nav a {
     border-radius:
         7px;
 
-    white-space:
-        nowrap;
-
     transition:
-        color var(--transition),
-        background var(--transition),
-        transform var(--transition);
+        color 0.2s ease,
+        background 0.2s ease;
 }
 
 nav a:hover {
@@ -718,10 +582,6 @@ nav a:hover {
 
     background:
         #edf3f7;
-}
-
-nav a:active {
-    transform: translateY(1px);
 }
 
 nav a.active {
@@ -735,23 +595,16 @@ nav a.active {
 
 nav a.active::after {
 
-    content:
-        "";
+    content: "";
 
-    position:
-        absolute;
+    position: absolute;
 
-    left:
-        15px;
+    left: 15px;
+    right: 15px;
 
-    right:
-        15px;
+    bottom: 2px;
 
-    bottom:
-        2px;
-
-    height:
-        2px;
+    height: 2px;
 
     background:
         var(--gold-500);
@@ -762,7 +615,7 @@ nav a.active::after {
 
 
 /* =========================================================
-   ECR POLICY
+   ECR POLICY LINK
 ========================================================= */
 
 nav a.ecr-policy {
@@ -791,35 +644,6 @@ nav a.ecr-policy:hover {
 
 
 /* =========================================================
-   ECR MEMBERSHIP VALIDATION
-========================================================= */
-
-nav a.ecr-membership {
-
-    color:
-        var(--navy-800);
-
-    background:
-        #fffaf0;
-
-    border:
-        1px solid #e5cf9d;
-}
-
-nav a.ecr-membership:hover {
-
-    color:
-        #ffffff;
-
-    background:
-        var(--gold-500);
-
-    border-color:
-        var(--gold-500);
-}
-
-
-/* =========================================================
    MAIN
 ========================================================= */
 
@@ -828,15 +652,16 @@ nav a.ecr-membership:hover {
     max-width:
         var(--max-width);
 
-    margin:
-        auto;
+    margin: auto;
 
     padding:
         75px 24px 85px;
 }
 
 section {
-    margin-bottom: 82px;
+
+    margin-bottom:
+        82px;
 }
 
 
@@ -858,14 +683,11 @@ section {
 
 .section-heading .small-title {
 
-    display:
-        inline-flex;
+    display: inline-flex;
 
-    align-items:
-        center;
+    align-items: center;
 
-    gap:
-        10px;
+    gap: 10px;
 
     color:
         #a87318;
@@ -889,14 +711,11 @@ section {
 .section-heading .small-title::before,
 .section-heading .small-title::after {
 
-    content:
-        "";
+    content: "";
 
-    width:
-        22px;
+    width: 22px;
 
-    height:
-        1px;
+    height: 1px;
 
     background:
         var(--gold-500);
@@ -945,8 +764,7 @@ section {
 
 .event-diagram {
 
-    position:
-        relative;
+    position: relative;
 
     max-width:
         1040px;
@@ -975,23 +793,15 @@ section {
 
 .event-diagram::before {
 
-    content:
-        "";
+    content: "";
 
-    position:
-        absolute;
+    position: absolute;
 
-    top:
-        0;
+    top: 0;
+    left: 0;
+    right: 0;
 
-    left:
-        0;
-
-    right:
-        0;
-
-    height:
-        3px;
+    height: 3px;
 
     background:
         linear-gradient(
@@ -1082,8 +892,8 @@ section {
         var(--shadow-sm);
 
     transition:
-        transform var(--transition),
-        box-shadow var(--transition);
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
 .overview-card:hover {
@@ -1097,23 +907,16 @@ section {
 
 .overview-card::after {
 
-    content:
-        "";
+    content: "";
 
-    position:
-        absolute;
+    position: absolute;
 
-    bottom:
-        0;
+    bottom: 0;
+    left: 25%;
 
-    left:
-        25%;
+    width: 50%;
 
-    width:
-        50%;
-
-    height:
-        2px;
+    height: 2px;
 
     background:
         var(--gold-500);
@@ -1122,11 +925,13 @@ section {
         scaleX(0);
 
     transition:
-        transform var(--transition);
+        transform 0.25s ease;
 }
 
 .overview-card:hover::after {
-    transform: scaleX(1);
+
+    transform:
+        scaleX(1);
 }
 
 .overview-number {
@@ -1170,7 +975,7 @@ section {
 
 
 /* =========================================================
-   EVENTS
+   EVENTS LIST
 ========================================================= */
 
 .events {
@@ -1199,7 +1004,7 @@ section {
         grid;
 
     grid-template-columns:
-        145px minmax(0, 1fr);
+        145px 1fr;
 
     gap:
         30px;
@@ -1223,36 +1028,29 @@ section {
         var(--shadow-sm);
 
     transition:
-        transform var(--transition),
-        box-shadow var(--transition),
-        border-color var(--transition);
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
 }
 
 .event-card::before {
 
-    content:
-        "";
+    content: "";
 
     position:
         absolute;
 
-    left:
-        0;
+    left: 0;
+    top: 0;
+    bottom: 0;
 
-    top:
-        0;
-
-    bottom:
-        0;
-
-    width:
-        4px;
+    width: 4px;
 
     background:
         var(--navy-800);
 
     transition:
-        background var(--transition);
+        background 0.25s ease;
 }
 
 .event-card:hover {
@@ -1268,12 +1066,14 @@ section {
 }
 
 .event-card:hover::before {
-    background: var(--gold-500);
+
+    background:
+        var(--gold-500);
 }
 
 
 /* =========================================================
-   FEATURED EVENT
+   FEATURED
 ========================================================= */
 
 .event-card.featured {
@@ -1290,7 +1090,9 @@ section {
 }
 
 .event-card.featured::before {
-    background: var(--gold-500);
+
+    background:
+        var(--gold-500);
 }
 
 .featured-label {
@@ -1482,8 +1284,7 @@ section {
 
 .event-type::before {
 
-    content:
-        "";
+    content: "";
 
     width:
         6px;
@@ -1590,7 +1391,7 @@ section {
         800;
 
     transition:
-        all var(--transition);
+        all 0.2s ease;
 }
 
 .event-button:hover {
@@ -1671,8 +1472,7 @@ section {
 
 .certificate-section::before {
 
-    content:
-        "";
+    content: "";
 
     position:
         absolute;
@@ -1829,7 +1629,7 @@ section {
         850;
 
     transition:
-        all var(--transition);
+        all 0.2s ease;
 }
 
 .validation-button:hover {
@@ -1882,8 +1682,8 @@ section {
         var(--shadow-sm);
 
     transition:
-        transform var(--transition),
-        box-shadow var(--transition);
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
 .info-card:hover {
@@ -2041,11 +1841,13 @@ footer a {
         700;
 
     transition:
-        color var(--transition);
+        color 0.2s ease;
 }
 
 footer a:hover {
-    color: var(--gold-400);
+
+    color:
+        var(--gold-400);
 }
 
 .footer-divider {
@@ -2095,7 +1897,7 @@ footer a:hover {
    TABLET
 ========================================================= */
 
-@media (max-width: 1000px) {
+@media (max-width: 900px) {
 
     .header-inner {
 
@@ -2130,10 +1932,6 @@ footer a:hover {
         grid-template-columns:
             repeat(2, 1fr);
     }
-
-    .nav-container {
-        justify-content: center;
-    }
 }
 
 
@@ -2159,11 +1957,13 @@ footer a:hover {
     }
 
     .top-bar-inner > a {
-        display: none;
+
+        display:
+            none;
     }
 
 
-    /* Header */
+    /* Header becomes stacked */
 
     .header-inner {
 
@@ -2185,6 +1985,9 @@ footer a:hover {
         gap:
             18px;
     }
+
+
+    /* Logo remains top-left */
 
     .logo-area {
 
@@ -2255,7 +2058,7 @@ footer a:hover {
             7px 9px;
 
         gap:
-            3px;
+            2px;
     }
 
     nav a {
@@ -2389,7 +2192,9 @@ footer a:hover {
     }
 
     .certificate-inner h2 {
-        font-size: 27px;
+
+        font-size:
+            27px;
     }
 
 
@@ -2449,9 +2254,6 @@ footer a:hover {
 
         flex-wrap:
             wrap;
-
-        justify-content:
-            center;
     }
 
     nav a {
@@ -2493,7 +2295,9 @@ footer a:hover {
 @media (prefers-reduced-motion: reduce) {
 
     html {
-        scroll-behavior: auto;
+
+        scroll-behavior:
+            auto;
     }
 
     *,
@@ -2509,15 +2313,6 @@ footer a:hover {
         transition-duration:
             0.01ms !important;
     }
-
-    .reveal {
-
-        opacity:
-            1;
-
-        transform:
-            none;
-    }
 }
 
 </style>
@@ -2526,15 +2321,6 @@ footer a:hover {
 
 
 <body>
-
-
-<a
-    class="skip-link"
-    href="#main-content">
-
-    Skip to main content
-
-</a>
 
 
 <!-- ======================================================
@@ -2547,13 +2333,10 @@ footer a:hover {
 
         <div class="top-bar-left">
 
-            <span
-                class="top-bar-dot"
-                aria-hidden="true">
-            </span>
+            <span class="top-bar-dot"></span>
 
             <span>
-                International Scientific Events &amp; Research Training
+                International Scientific Events & Research Training
             </span>
 
         </div>
@@ -2561,7 +2344,7 @@ footer a:hover {
         <a
             href="https://icriste.com/"
             target="_blank"
-            rel="noopener noreferrer">
+            rel="noopener">
 
             Official ICRI-STE Website
 
@@ -2581,27 +2364,28 @@ footer a:hover {
     <div class="header-inner">
 
 
+        <!-- LOGO — TOP LEFT -->
+
         <div class="logo-area">
 
             <div class="logo-mark">
 
                 <img
                     src="assets/ICRI-STE-Logo.png"
-                    alt="International Council for Research & Innovation in STE (ICRI-STE) Logo"
-                    width="315"
-                    height="105"
-                    decoding="async">
+                    alt="International Council for Research & Innovation in STE (ICRI-STE) Logo">
 
             </div>
 
         </div>
 
 
+        <!-- HEADER CONTENT -->
+
         <div class="header-content">
 
             <div class="logo-title">
 
-                International Council for Research &amp; Innovation in STE
+                International Council for Research & Innovation in STE
 
             </div>
 
@@ -2651,7 +2435,7 @@ footer a:hover {
      NAVIGATION
 ====================================================== -->
 
-<nav aria-label="Primary navigation">
+<nav>
 
     <div class="nav-container">
 
@@ -2671,15 +2455,7 @@ footer a:hover {
         </a>
 
 
-        <a
-            href="ecr-membership.html"
-            class="ecr-membership"
-            aria-label="Open ECR Membership Validation Portal">
-
-            ECR Membership Validation
-
-        </a>
-
+        <!-- ECR POLICY -->
 
         <a
             href="https://docs.google.com/document/d/1HyDjADbe-Dy9n1VscD6MnNBXNusHPFBGFKmwU1M-Bok/edit?usp=sharing"
@@ -2696,7 +2472,7 @@ footer a:hover {
         <a
             href="https://icriste.com/"
             target="_blank"
-            rel="noopener noreferrer">
+            rel="noopener">
 
             ICRI-STE
 
@@ -2711,9 +2487,7 @@ footer a:hover {
      MAIN
 ====================================================== -->
 
-<main
-    id="main-content"
-    class="container">
+<main class="container">
 
 
 <!-- ======================================================
@@ -2722,8 +2496,7 @@ footer a:hover {
 
 <section
     id="events"
-    class="reveal"
-    aria-labelledby="events-title">
+    class="reveal">
 
 
     <div class="section-heading">
@@ -2735,7 +2508,7 @@ footer a:hover {
         </div>
 
 
-        <h2 id="events-title">
+        <h2>
 
             Scientific Events &amp; Research Training
 
@@ -2753,15 +2526,15 @@ footer a:hover {
     </div>
 
 
-    <!-- FRAMEWORK DIAGRAM -->
+    <!-- ==================================================
+         FRAMEWORK DIAGRAM
+    ================================================== -->
 
     <div class="event-diagram">
 
         <img
             src="assets/diagram_1.png"
-            alt="ICRI-STE Scientific Events, Research Training and Early Career Researcher Development Framework"
-            loading="lazy"
-            decoding="async">
+            alt="ICRI-STE Scientific Events, Research Training and Early Career Researcher Development Framework">
 
         <div class="event-diagram-caption">
 
@@ -2773,7 +2546,9 @@ footer a:hover {
     </div>
 
 
-    <!-- EVENT OVERVIEW -->
+    <!-- ==================================================
+         EVENT OVERVIEW
+    ================================================== -->
 
     <div class="event-overview">
 
@@ -2819,7 +2594,9 @@ footer a:hover {
     </div>
 
 
-    <!-- EVENT LIST -->
+    <!-- ==================================================
+         EVENT LIST
+    ================================================== -->
 
     <div class="events">
 
@@ -2883,7 +2660,7 @@ footer a:hover {
                         class="event-button"
                         href="https://partnerships2024.github.io/"
                         target="_blank"
-                        rel="noopener noreferrer">
+                        rel="noopener">
 
                         Visit Symposium Website
 
@@ -2959,7 +2736,7 @@ footer a:hover {
                         class="event-button"
                         href="https://icriste.com/"
                         target="_blank"
-                        rel="noopener noreferrer">
+                        rel="noopener">
 
                         Learn More
 
@@ -3091,8 +2868,7 @@ footer a:hover {
 
 <section
     id="certificate-validation"
-    class="reveal"
-    aria-labelledby="certificate-title">
+    class="reveal">
 
 
     <div class="certificate-section">
@@ -3106,7 +2882,7 @@ footer a:hover {
             </div>
 
 
-            <h2 id="certificate-title">
+            <h2>
 
                 Certificate Validation Portal
 
@@ -3143,12 +2919,8 @@ footer a:hover {
 
         <div class="info-card">
 
-            <div
-                class="info-card-icon"
-                aria-hidden="true">
-
+            <div class="info-card-icon">
                 ID
-
             </div>
 
             <h3>
@@ -3168,12 +2940,8 @@ footer a:hover {
 
         <div class="info-card">
 
-            <div
-                class="info-card-icon"
-                aria-hidden="true">
-
+            <div class="info-card-icon">
                 ✓
-
             </div>
 
             <h3>
@@ -3192,12 +2960,8 @@ footer a:hover {
 
         <div class="info-card">
 
-            <div
-                class="info-card-icon"
-                aria-hidden="true">
-
+            <div class="info-card-icon">
                 i
-
             </div>
 
             <h3>
@@ -3268,7 +3032,7 @@ footer a:hover {
             <a
                 href="https://icriste.com/"
                 target="_blank"
-                rel="noopener noreferrer">
+                rel="noopener">
 
                 Official ICRI-STE Website
 
@@ -3336,8 +3100,7 @@ document.addEventListener(
                 },
 
                 {
-                    threshold: 0.12,
-                    rootMargin: "0px 0px -30px 0px"
+                    threshold: 0.12
                 }
 
             );
@@ -3357,4 +3120,3 @@ document.addEventListener(
 </body>
 
 </html>
-
