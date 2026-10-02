@@ -2,10 +2,55 @@
   {
     "reference": "ICRI-STE/R&D/RP/06/2026",
     "name": "Ahmed Ben Khalfa",
-    "membershipType": "CHI Lab Research Community Member",
+    "membershipType": "CHI Lab Research Community Member ((ECR-1B-BS-Progress)",
     "division": "Health",
     "status": "Active",
     "issueDate": "02 October 2026",
-    "validUntil": "01 October 2027"
+    "validUntil": "02 October 2027"
+  },
+  {
+    "reference": "ICRI-STE/R&D/RP/05/2026",
+    "name": "Dr. Saima Ejaz",
+    "membershipType": "CHI Lab Research Community Member, Nominated now as Principal Scientist (R3-A-PhD)",
+    "division": "Health",
+    "status": "Active",
+    "issueDate": "08 September 2026",
+    "validUntil": "08 September 2030"
+  },
+  {
+    "reference": "ICRI-STE/R&D/RP/04/2026",
+    "name": "Md. Al-Mahfuz Chowdhury",
+    "membershipType": "CHI Lab Research Community Member (ECR-1C-BS)",
+    "division": "Health",
+    "status": "Active",
+    "issueDate": "20 September 2026",
+    "validUntil": "20 September 2027"
+  },
+  {
+    "reference": "ICRI-STE/R&D/RP/01/2026",
+    "name": "Zohaib Alam",
+    "membershipType": "CHI Lab Research Community Member, nominated now as Junior Scientist (R1-A-BS)",
+    "division": "Health",
+    "status": "Active",
+    "issueDate": "05 March 2026",
+    "validUntil": "05 December 2027"
+  },
+  {
+    "reference": "ICRI-STE/R&D/RP/03/2026",
+    "name": "Mahmuda Sristy",
+    "membershipType": "CHI Lab Research Community Member (ECR-1C-BS)",
+    "division": "Health",
+    "status": "Active",
+    "issueDate": "05 March 2026",
+    "validUntil": "05 December 2027"
+  },
+   {
+    "reference": "ICRI-STE/R&D/RP/01/2026",
+    "name": "Saddia Bano",
+    "membershipType": "CHI Lab Research Community Member, nominated now as Junior Scientist (R1-C-MS)",
+    "division": "Health",
+    "status": "Active",
+    "issueDate": "03 April 2025",
+    "validUntil": "03 April 2026"
   }
 ]
