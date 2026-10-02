@@ -2,7 +2,7 @@
   {
     "reference": "ICRI-STE/R&D/RP/06/2026",
     "name": "Ahmed Ben Khalfa",
-    "membershipType": "CHI Lab Research Community Member ((ECR-1B-BS-Progress)",
+    "membershipType": "Open Science-Early Carrier Reseacher, now nominated as CHI Lab Research Community Member (ECR-1B-BS-Progress)",
     "division": "Health",
     "status": "Active",
     "issueDate": "02 October 2026",
@@ -11,7 +11,7 @@
   {
     "reference": "ICRI-STE/R&D/RP/05/2026",
     "name": "Dr. Saima Ejaz",
-    "membershipType": "CHI Lab Research Community Member, Nominated now as Principal Scientist (R3-A-PhD)",
+    "membershipType": "Exective-Global Reseach Community, now nominated CHI Lab Research Community Member as Principal Scientist (R3-A-PhD)",
     "division": "Health",
     "status": "Active",
     "issueDate": "08 September 2026",
@@ -20,16 +20,16 @@
   {
     "reference": "ICRI-STE/R&D/RP/04/2026",
     "name": "Md. Al-Mahfuz Chowdhury",
-    "membershipType": "CHI Lab Research Community Member (ECR-1C-BS)",
+    "membershipType": "Open Science-Early Carrier Reseacher, now nominated as CHI Lab Research Community Member (ECR-1C-BS)",
     "division": "Health",
     "status": "Active",
     "issueDate": "20 September 2026",
     "validUntil": "20 September 2027"
   },
   {
-    "reference": "ICRI-STE/R&D/RP/01/2026",
+    "reference": "ICRI-STE/R&D/RP/02/2026",
     "name": "Zohaib Alam",
-    "membershipType": "CHI Lab Research Community Member, nominated now as Junior Scientist (R1-A-BS)",
+    "membershipType": "Open Science-Early Carrier Reseacher, now nominated as CHI Lab Research Community Member as Junior Scientist (R1-A-BS)",
     "division": "Health",
     "status": "Active",
     "issueDate": "05 March 2026",
@@ -63,12 +63,57 @@
     "validUntil": "10 June 2030"
   },
    {
-    "reference": "ICRI-STE/R&D/RP/07/2026",
+    "reference": "ICRI-STE/R&D/RP/08/2026",
     "name": "Engg. Dr. Omar Zeb",
     "membershipType": "Global Reseach Community, Principal Scientist (R3-B-PhD)",
     "division": "Energy",
     "status": "Active",
     "issueDate": "10 April 2025",
     "validUntil": "10 April 2030"
+  },
+  {
+    "reference": "ICRI-STE/R&D/RP/09/2026",
+    "name": "Mr. Atif Rehman",
+    "membershipType": "Global Reseach Community, Senior Scientist (R2-C-PhD Progress)",
+    "division": "Health",
+    "status": "Active",
+    "issueDate": "10 March 2025",
+    "validUntil": "10 March 2030"
+  },
+  {
+    "reference": "ICRI-STE/R&D/RP/10/2026",
+    "name": "Mr. Kashif Saleem",
+    "membershipType": "Exective-Global Research Community, now nominated as CHI Lab Research Community Member Senior Scientist (R2-B-PhD Progress)",
+    "division": "Health",
+    "status": "Active",
+    "issueDate": "10 March 2025",
+    "validUntil": "10 March 2030"
+  },
+   {
+    "reference": "ICRI-STE/R&D/RP/11/2026",
+    "name": "Engg. Huzaifah Abbas",
+    "membershipType": "Exective-Global Reseach Community, Senior Scientist (R2-A-MS)",
+    "division": "Health & Energy",
+    "status": "Active",
+    "issueDate": "05 Feb 2025",
+    "validUntil": "10 Feb 2030"
+  },
+  {
+    "reference": "ICRI-STE/R&D/RP/12/2026",
+    "name": "Engg. Ahsan Nawaz Jadoon",
+    "membershipType": "Exective-Global Reseach Community, Senior Scientist (R2-C-PhD Progress)",
+    "division": "Health & Energy",
+    "status": "Active",
+    "issueDate": "05 Feb 2025",
+    "validUntil": "10 Feb 2030"
+  },
+  {
+    "reference": "ICRI-STE/R&D/RP/13/2026",
+    "name": "Dr. Didar Murad",
+    "membershipType": "Exective-Global Reseach Community, now nominated as CHI Lab Research Community, Principal Scientist (R3-B-PhD) and Director CHI Lab",
+    "division": "Health",
+    "status": "Active",
+    "issueDate": "01 June 2024",
+    "validUntil": "---"
   }
 ]
