@@ -1313,7 +1313,7 @@ section {
         break-word;
 }
 
-.status-active {
+.status-valid {
 
     display:
         inline-flex;
@@ -1343,7 +1343,7 @@ section {
         850;
 }
 
-.status-active::before {
+.status-valid::before {
 
     content: "";
 
@@ -2226,8 +2226,8 @@ footer a:hover {
 
         <p class="form-description">
 
-            Enter the certificate ID or reference number printed on
-            the official ICRI-STE certificate.
+            Enter the certificate ID printed on the official
+            ICRI-STE certificate.
 
         </p>
 
@@ -2361,22 +2361,6 @@ footer a:hover {
                         <span
                             class="result-item-value"
                             id="resultProgramme"
-                        >
-                            —
-                        </span>
-
-                    </div>
-
-
-                    <div class="result-item">
-
-                        <span class="result-item-label">
-                            Issuing Organization
-                        </span>
-
-                        <span
-                            class="result-item-value"
-                            id="resultOrganization"
                         >
                             —
                         </span>
@@ -2682,16 +2666,24 @@ document.addEventListener(
         ================================================= */
 
         const referenceInput =
-            document.getElementById("referenceInput");
+            document.getElementById(
+                "referenceInput"
+            );
 
         const verifyButton =
-            document.getElementById("verifyButton");
+            document.getElementById(
+                "verifyButton"
+            );
 
         const statusMessage =
-            document.getElementById("statusMessage");
+            document.getElementById(
+                "statusMessage"
+            );
 
         const resultCard =
-            document.getElementById("resultCard");
+            document.getElementById(
+                "resultCard"
+            );
 
 
         /* =================================================
@@ -2699,10 +2691,14 @@ document.addEventListener(
         ================================================= */
 
         const resultReference =
-            document.getElementById("resultReference");
+            document.getElementById(
+                "resultReference"
+            );
 
         const resultName =
-            document.getElementById("resultName");
+            document.getElementById(
+                "resultName"
+            );
 
         const resultCertificateType =
             document.getElementById(
@@ -2712,11 +2708,6 @@ document.addEventListener(
         const resultProgramme =
             document.getElementById(
                 "resultProgramme"
-            );
-
-        const resultOrganization =
-            document.getElementById(
-                "resultOrganization"
             );
 
         const resultIssueDate =
@@ -2731,48 +2722,11 @@ document.addEventListener(
 
 
         /* =================================================
-           JSON FILE
+           CERTIFICATE JSON FILE
         ================================================= */
 
         const CERTIFICATE_DATA_URL =
             "assets/certificates.json";
-
-
-        /* =================================================
-           HTML ESCAPE
-        ================================================= */
-
-        function escapeHTML(value) {
-
-            if (
-                value === null ||
-                value === undefined
-            ) {
-                return "";
-            }
-
-            return String(value)
-                .replace(
-                    /&/g,
-                    "&amp;"
-                )
-                .replace(
-                    /</g,
-                    "&lt;"
-                )
-                .replace(
-                    />/g,
-                    "&gt;"
-                )
-                .replace(
-                    /"/g,
-                    "&quot;"
-                )
-                .replace(
-                    /'/g,
-                    "&#039;"
-                );
-        }
 
 
         /* =================================================
@@ -2781,7 +2735,9 @@ document.addEventListener(
 
         function resetResult() {
 
-            resultCard.classList.remove("show");
+            resultCard.classList.remove(
+                "show"
+            );
 
             statusMessage.className =
                 "status-message";
@@ -2799,9 +2755,6 @@ document.addEventListener(
                 "—";
 
             resultProgramme.textContent =
-                "—";
-
-            resultOrganization.textContent =
                 "—";
 
             resultIssueDate.textContent =
@@ -2838,35 +2791,30 @@ document.addEventListener(
             record
         ) {
 
-
             /*
-             * Certificate reference
+             * Certificate ID
              */
 
             resultReference.textContent =
                 record.certificate_id ||
-                record.reference ||
                 "—";
 
 
             /*
-             * Certificate holder
+             * Certificate Holder
              */
 
             resultName.textContent =
                 record.certificate_holder ||
-                record.name ||
                 "—";
 
 
             /*
-             * Certificate type
+             * Certificate Type
              */
 
             resultCertificateType.textContent =
                 record.certificate_type ||
-                record.certificateType ||
-                record.type ||
                 "—";
 
 
@@ -2875,59 +2823,45 @@ document.addEventListener(
              */
 
             resultProgramme.textContent =
-                record.programme ||
-                record.program ||
-                record.event ||
-                record.event_title ||
+                record.programme_event ||
                 "—";
 
 
             /*
-             * Issuing organization
-             */
-
-            resultOrganization.textContent =
-                record.issuing_organization ||
-                record.organization ||
-                record.issuer ||
-                "ICRI-STE";
-
-
-            /*
-             * Issue date
+             * Issue Date
              */
 
             resultIssueDate.textContent =
                 record.issue_date ||
-                record.issueDate ||
                 "—";
 
 
             /*
-             * Status
+             * Certificate Status
              */
 
-            const statusValue =
+            const status =
                 record.status ||
                 "—";
 
 
             if (
-                String(statusValue)
+                String(status)
                     .toLowerCase()
                     .trim() ===
-                "active"
+                "valid"
             ) {
 
                 resultStatus.innerHTML =
-                    '<span class="status-active">' +
-                    escapeHTML(statusValue) +
-                    '</span>';
+                    '<span class="status-valid">' +
+                    "Valid" +
+                    "</span>";
 
             } else {
 
                 resultStatus.textContent =
-                    statusValue;
+                    status;
+
             }
 
 
@@ -2948,7 +2882,7 @@ document.addEventListener(
 
 
             /*
-             * Scroll result into view
+             * Scroll to result
              */
 
             resultCard.scrollIntoView({
@@ -2965,16 +2899,19 @@ document.addEventListener(
 
         async function verifyCertificate() {
 
-
             const reference =
                 referenceInput.value.trim();
 
+
+            /*
+             * Reset previous result
+             */
 
             resetResult();
 
 
             /*
-             * Empty input
+             * Validate input
              */
 
             if (!reference) {
@@ -2991,7 +2928,7 @@ document.addEventListener(
 
 
             /*
-             * Button state
+             * Loading state
              */
 
             verifyButton.disabled =
@@ -3010,15 +2947,16 @@ document.addEventListener(
             try {
 
 
-                /*
-                 * Load certificate JSON
-                 */
+                /* =========================================
+                   LOAD JSON
+                ========================================= */
 
                 const response =
                     await fetch(
                         CERTIFICATE_DATA_URL,
                         {
-                            cache: "no-store"
+                            cache:
+                                "no-store"
                         }
                     );
 
@@ -3028,28 +2966,32 @@ document.addEventListener(
                     throw new Error(
                         "Certificate register could not be loaded."
                     );
+
                 }
 
 
-                /*
-                 * Parse JSON
-                 */
+                /* =========================================
+                   PARSE JSON
+                ========================================= */
 
                 const records =
                     await response.json();
 
 
-                if (!Array.isArray(records)) {
+                if (
+                    !Array.isArray(records)
+                ) {
 
                     throw new Error(
                         "Invalid certificate register format."
                     );
+
                 }
 
 
-                /*
-                 * Normalize user input
-                 */
+                /* =========================================
+                   NORMALIZE INPUT
+                ========================================= */
 
                 const normalizedReference =
                     reference
@@ -3057,45 +2999,33 @@ document.addEventListener(
                         .trim();
 
 
-                /*
-                 * Find certificate
-                 *
-                 * Supports:
-                 * certificate_id
-                 * reference
-                 */
+                /* =========================================
+                   FIND CERTIFICATE
+                ========================================= */
 
                 const record =
                     records.find(
                         function (item) {
 
-                            if (!item) {
-                                return false;
-                            }
-
-
-                            const certificateID =
-                                item.certificate_id ||
-                                item.reference ||
-                                "";
-
-
                             return (
-                                String(
-                                    certificateID
-                                )
-                                .toLowerCase()
-                                .trim() ===
-                                normalizedReference
+                                item &&
+                                typeof
+                                    item.certificate_id
+                                    ===
+                                    "string" &&
+                                item.certificate_id
+                                    .toLowerCase()
+                                    .trim() ===
+                                    normalizedReference
                             );
 
                         }
                     );
 
 
-                /*
-                 * Certificate not found
-                 */
+                /* =========================================
+                   NOT FOUND
+                ========================================= */
 
                 if (!record) {
 
@@ -3108,9 +3038,9 @@ document.addEventListener(
                 }
 
 
-                /*
-                 * Certificate found
-                 */
+                /* =========================================
+                   FOUND
+                ========================================= */
 
                 displayCertificate(
                     record
@@ -3118,7 +3048,6 @@ document.addEventListener(
 
 
             } catch (error) {
-
 
                 console.error(
                     "Certificate verification error:",
@@ -3134,7 +3063,6 @@ document.addEventListener(
 
             } finally {
 
-
                 verifyButton.disabled =
                     false;
 
@@ -3147,7 +3075,7 @@ document.addEventListener(
 
 
         /* =================================================
-           BUTTON
+           BUTTON EVENT
         ================================================= */
 
         verifyButton.addEventListener(
