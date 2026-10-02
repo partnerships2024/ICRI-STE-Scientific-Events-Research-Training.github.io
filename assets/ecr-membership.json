@@ -33,7 +33,7 @@
     "division": "Health",
     "status": "Active",
     "issueDate": "05 March 2026",
-    "validUntil": "05 December 2027"
+    "validUntil": "05 March 2027"
   },
   {
     "reference": "ICRI-STE/R&D/RP/03/2026",
@@ -41,8 +41,8 @@
     "membershipType": "CHI Lab Research Community Member (ECR-1C-BS)",
     "division": "Health",
     "status": "Active",
-    "issueDate": "05 March 2026",
-    "validUntil": "05 December 2027"
+    "issueDate": "10 August 2026",
+    "validUntil": "10 August 2027"
   },
    {
     "reference": "ICRI-STE/R&D/RP/01/2026",
@@ -50,7 +50,7 @@
     "membershipType": "CHI Lab Research Community Member, nominated now as Junior Scientist (R1-C-MS)",
     "division": "Health",
     "status": "Active",
-    "issueDate": "03 April 2025",
-    "validUntil": "03 April 2026"
+    "issueDate": "05 June 2025",
+    "validUntil": "05 June 2026"
   }
 ]
