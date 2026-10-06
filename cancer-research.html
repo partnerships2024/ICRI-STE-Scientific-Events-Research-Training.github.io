@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="ICRI-STE Cancer Research and Data Sources — official research resources and data repositories.">
+<meta name="author" content="International Council for Research & Innovation in STE (ICRI-STE)">
+<meta name="theme-color" content="#071f35">
+<title>ICRI-STE | Cancer Research &amp; Data Sources</title>
+<style>
+:root{
+  --navy:#071f35;--navy2:#0b3557;--blue:#17638f;--gold:#d59b32;
+  --gold2:#f1d99a;--white:#fff;--paper:#f5f8fb;--ink:#243746;
+  --muted:#667b8c;--line:#dfe7ed;--shadow:0 18px 50px rgba(6,26,43,.12);--radius:18px;--max:1240px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--ink);background:var(--paper);line-height:1.65}
+a{text-decoration:none;color:inherit}
+.container{width:min(var(--max),calc(100% - 40px));margin:auto}
+.utility{background:var(--navy);color:#dce9f2;min-height:36px;display:flex;align-items:center;font-size:12px}
+.utility .container{display:flex;justify-content:space-between;gap:20px;align-items:center}
+.utility-right{display:flex;gap:18px}
+.utility a:hover{color:var(--gold2)}
+.site-header{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.header-main{min-height:86px;display:flex;align-items:center;justify-content:space-between;gap:28px}
+.brand{display:flex;align-items:center;gap:15px;min-width:250px}
+.brand img{width:175px;height:auto}
+.brand-copy{border-left:1px solid var(--line);padding-left:15px}
+.brand-copy strong{display:block;color:var(--navy);font-size:14px;line-height:1.25}
+.brand-copy span{display:block;color:var(--muted);font-size:11px;margin-top:4px}
+.nav{display:flex;align-items:center;justify-content:flex-end;gap:3px;flex-wrap:wrap}
+.nav a{padding:9px 10px;border-radius:8px;color:var(--navy2);font-size:12px;font-weight:700;transition:.2s}
+.nav a:hover,.nav a.active{background:#edf3f7}
+.menu-btn{display:none;border:0;background:var(--navy);color:#fff;border-radius:9px;padding:9px 12px;cursor:pointer}
+.hero{position:relative;overflow:hidden;color:#fff;background:radial-gradient(circle at 78% 20%,rgba(23,99,143,.55),transparent 35%),linear-gradient(120deg,#061a2b,#0b3557 58%,#104b73)}
+.hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:48px 48px;mask-image:linear-gradient(to bottom,black,transparent)}
+.hero-inner{position:relative;min-height:410px;padding:72px 0;display:flex;align-items:center}
+.hero-kicker{color:var(--gold2);font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;margin-bottom:16px}
+.hero h1{font-size:clamp(42px,5.2vw,68px);line-height:1.02;letter-spacing:-1.5px;max-width:900px}
+.hero h1 span{color:var(--gold2)}
+.hero-lead{margin-top:22px;color:#d9e7f0;font-size:17px;max-width:850px}
+section{padding:78px 0}
+.section-head{text-align:center;max-width:850px;margin:0 auto 42px}
+.eyebrow{font-size:11px;font-weight:900;color:var(--gold);letter-spacing:2px;text-transform:uppercase;margin-bottom:8px}
+.section-head h2{font-size:36px;line-height:1.18;color:var(--navy)}
+.section-head p{color:var(--muted);margin-top:12px}
+.resource-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:28px;box-shadow:0 8px 28px rgba(6,26,43,.06);transition:.22s}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.card-num{width:40px;height:40px;border-radius:10px;background:var(--navy);color:var(--gold2);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:12px;margin-bottom:18px}
+.card h3{font-size:19px;color:var(--navy);margin-bottom:9px}
+.card p{font-size:13px;color:var(--muted);margin-bottom:18px}
+.link{color:var(--blue);font-size:12px;font-weight:900}
+.link:hover{color:var(--gold)}
+.resource-url{display:block;background:#eef4f8;border:1px solid var(--line);border-radius:10px;padding:12px;font-size:12px;color:var(--blue);word-break:break-word;margin-top:15px}
+.note{font-size:11px;color:var(--muted);margin-top:18px;text-align:center}
+.band{background:linear-gradient(135deg,#071f35,#0b3557);color:#fff;border-radius:20px;padding:42px}
+.band h2{font-size:30px}.band p{color:#d6e4ed;max-width:850px;margin-top:10px}
+footer{background:var(--navy);color:#c5d4de;margin-top:20px}
+.footer-main{padding:48px 0;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px}
+.footer-brand img{width:155px;filter:brightness(0) invert(1)}
+.footer-brand p{font-size:12px;color:#aebfca;max-width:390px;margin-top:15px}
+.footer-col h4{color:#fff;font-size:12px;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px}
+.footer-col a{display:block;font-size:12px;color:#aebfca;margin:7px 0}
+.footer-col a:hover{color:var(--gold2)}
+.copyright{border-top:1px solid rgba(255,255,255,.08);text-align:center;padding:15px;font-size:10px;color:#91a5b2}
+.status{background:#fff5dc;border:1px solid #ecd69f;color:#815d19;border-radius:10px;padding:11px 14px;font-size:12px;margin-top:22px}
+@media(max-width:1050px){.brand-copy{display:none}.nav a{font-size:11px;padding:8px 7px}.resource-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:760px){.utility .container{justify-content:center}.utility-right{display:none}.header-main{min-height:72px}.menu-btn{display:block}.nav{display:none;position:absolute;left:0;right:0;top:72px;background:#fff;border-bottom:1px solid var(--line);padding:12px 20px;box-shadow:0 15px 30px rgba(6,26,43,.1)}.nav.open{display:flex;flex-direction:column;align-items:stretch}.nav a{text-align:center}.hero-inner{min-height:auto;padding:58px 0}.hero h1{font-size:43px}.resource-grid{grid-template-columns:1fr}.footer-main{grid-template-columns:1fr}section{padding:65px 0}}
+@media(max-width:460px){.container{width:min(var(--max),calc(100% - 28px))}.hero h1{font-size:37px}.band{padding:25px}}
+</style>
+</head>
+<body>
+<div class="utility"><div class="container">
+  <div>International Council for Research &amp; Innovation in STE (ICRI-STE)</div>
+  <div class="utility-right"><a href="https://icriste.com/" target="_blank" rel="noopener">ICRI-STE</a><a href="index.html">Main Portal</a></div>
+</div></div>
+
+<header class="site-header"><div class="container header-main">
+  <a href="index.html" class="brand"><img src="assets/ICRI-STE-Logo.png" alt="ICRI-STE Logo"><div class="brand-copy"><strong>Scientific Events &amp; Research Training</strong><span>Research · Innovation · ECR Development</span></div></a>
+  <button class="menu-btn" id="menu-btn" aria-label="Open navigation">☰ Menu</button>
+  <nav class="nav" id="main-nav" aria-label="Main navigation">
+    <a href="index.html#events">Events</a><a href="index.html#research">Research</a><a href="cancer-research.html" class="active">Cancer Research &amp; Data Sources</a><a href="index.html#ecr">ECR</a><a href="index.html#certificate-validation">Validation</a><a href="index.html#research-ethics-benefits">Governance</a>
+    <a href="research-concept-note.html">Concept Note</a><a href="evaluator-portal.html">Evaluators</a><a href="ecr-membership.html">ECR Membership</a>
+  </nav>
+</div></header>
+
+<main>
+<section class="hero"><div class="container hero-inner">
+  <div>
+    <div class="hero-kicker">ICRI-STE Cancer Research Framework</div>
+    <h1>Cancer Research <span>&amp;</span> Data Sources</h1>
+    <p class="hero-lead">A dedicated research gateway for accessing official cancer research resources, computational projects and data-source repositories developed within the ICRI-STE research ecosystem.</p>
+    <div class="status">Research resource directory · Official source links · Research use</div>
+  </div>
+</div></section>
+
+<section>
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Official Cancer Research</div>
+      <h2>Research Repositories &amp; Data Sources</h2>
+      <p>This page is populated from the dedicated Cancer Research &amp; Data Sources resource file in the <code>assets</code> directory.</p>
+    </div>
+    <div id="resources" class="resource-grid">
+      <div class="card"><div class="card-num">01</div><h3>Loading Resource</h3><p>Loading official cancer research resources...</p></div>
+    </div>
+    <p class="note">Resources are presented as provided in the official ICRI-STE resource file. External repositories open in a new browser tab.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container"><div class="band">
+    <h2>Research Resource Access</h2>
+    <p>Use the official repository links above to explore cancer research projects, computational resources and associated research materials. This page does not modify or host external repository content.</p>
+  </div></div>
+</section>
+</main>
+
+<footer><div class="container footer-main">
+  <div class="footer-brand"><img src="assets/ICRI-STE-Logo.png" alt="ICRI-STE Logo"><p>Scientific Events · Research Training · Early Career Researcher Development · Research Governance · Cancer Research Resources</p></div>
+  <div class="footer-col"><h4>Platforms</h4><a href="index.html#events">Scientific Events</a><a href="index.html#research">Research &amp; Innovation</a><a href="cancer-research.html">Cancer Research &amp; Data Sources</a><a href="index.html#ecr">ECR Development</a></div>
+  <div class="footer-col"><h4>Research Portals</h4><a href="research-concept-note.html">Research Concept Note</a><a href="evaluator-portal.html">Evaluators Portal</a><a href="ecr-membership.html">ECR Membership</a><a href="https://icriste.com/" target="_blank" rel="noopener">icriste.com</a></div>
+</div><div class="copyright">© 2026 International Council for Research &amp; Innovation in STE (ICRI-STE). All rights reserved.</div></footer>
+
+<script>
+const DATA_URL="assets/Cancer_Research_Data_Sources.joson";
+const menuBtn=document.getElementById("menu-btn"),mainNav=document.getElementById("main-nav");
+if(menuBtn)menuBtn.addEventListener("click",()=>mainNav.classList.toggle("open"));
+document.querySelectorAll("#main-nav a").forEach(a=>a.addEventListener("click",()=>mainNav.classList.remove("open")));
+
+async function loadResources(){
+  const response=await fetch(DATA_URL,{cache:"no-store"});
+  if(!response.ok)throw new Error("Unable to load cancer research resources.");
+  const data=JSON.parse(await response.text());
+  if(Array.isArray(data))return data;
+  if(Array.isArray(data.resources))return data.resources;
+  if(Array.isArray(data.links))return data.links;
+  return[];
+}
+function renderResources(resources){
+  const container=document.getElementById("resources");container.innerHTML="";
+  if(!resources.length){container.innerHTML='<div class="card"><div class="card-num">01</div><h3>No Resources Available</h3><p>No cancer research resources are currently listed.</p></div>';return;}
+  let n=0;
+  resources.forEach(resource=>{
+    Object.entries(resource).forEach(([title,url])=>{
+      n++;
+      const card=document.createElement("article");card.className="card";
+      card.innerHTML='<div class="card-num">'+String(n).padStart(2,"0")+'</div>';
+      const h=document.createElement("h3");h.textContent=title;
+      const p=document.createElement("p");p.textContent="Official cancer research repository and resource source.";
+      const a=document.createElement("a");a.className="resource-url";a.href=String(url);a.target="_blank";a.rel="noopener noreferrer";a.textContent=String(url);
+      const l=document.createElement("a");l.className="link";l.href=String(url);l.target="_blank";l.rel="noopener noreferrer";l.textContent="Open Official Research Repository →";
+      card.append(h,p,a,l);container.appendChild(card);
+    });
+  });
+}
+document.addEventListener("DOMContentLoaded",async()=>{
+  try{renderResources(await loadResources())}
+  catch(e){console.error(e);document.getElementById("resources").innerHTML='<div class="card"><div class="card-num">!</div><h3>Resource Service Unavailable</h3><p>The Cancer Research &amp; Data Sources resource file could not be loaded.</p></div>'}
+});
+</script>
+</body>
+</html>
