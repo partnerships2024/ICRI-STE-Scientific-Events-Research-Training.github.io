@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Associated companies within the ICRI-STE research and innovation ecosystem.">
+  <meta name="theme-color" content="#071f35">
+  <title>Associated Companies | ICRI-STE</title>
+  <style>
+    :root{--navy:#071f35;--navy2:#0b3557;--blue:#17638f;--gold:#d59b32;--gold2:#f1d99a;--paper:#f5f8fb;--ink:#243746;--muted:#667b8c;--line:#dfe7ed;--shadow:0 18px 50px rgba(6,26,43,.12);--radius:18px;--max:1120px}
+    *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:Inter,Segoe UI,Arial,sans-serif;background:var(--paper);color:var(--ink);line-height:1.65}a{text-decoration:none;color:inherit}.container{width:min(var(--max),calc(100% - 40px));margin:auto}
+    .utility{background:var(--navy);color:#dce9f2;padding:9px 0;font-size:12px}.utility .container{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+    header{background:rgba(255,255,255,.97);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5;backdrop-filter:blur(12px)}.header{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-weight:900;color:var(--navy);font-size:17px;line-height:1.25}.brand span{display:block;color:var(--muted);font-size:11px;letter-spacing:.8px;margin-top:5px}.nav{display:flex;gap:9px;align-items:center;flex-wrap:wrap}.nav a{font-size:12px;font-weight:800;color:var(--navy2);padding:9px 12px;border-radius:8px}.nav a:hover,.nav .active{background:#fff4d8}
+    .hero{background:radial-gradient(circle at 80% 20%,rgba(23,99,143,.55),transparent 35%),linear-gradient(120deg,#061a2b,#0b3557 60%,#104b73);color:white;padding:78px 0 84px;position:relative;overflow:hidden}.eyebrow{color:var(--gold2);font-size:11px;font-weight:900;letter-spacing:2px;text-transform:uppercase}.hero h1{font-size:clamp(38px,6vw,64px);line-height:1.08;letter-spacing:-1px;max-width:800px;margin:15px 0 20px}.hero p{max-width:720px;color:#d9e7f0;font-size:17px}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{display:inline-block;padding:12px 17px;border-radius:9px;font-size:12px;font-weight:900}.btn-primary{background:var(--gold);color:var(--navy)}.btn-light{border:1px solid #ffffff55;color:#fff}
+    main{padding:64px 0 80px}.section-head{text-align:center;max-width:760px;margin:0 auto 34px}.section-head .eyebrow{color:#a87518}.section-head h2{font-size:clamp(27px,4vw,38px);color:var(--navy);line-height:1.2;margin:8px 0 12px}.section-head p{color:var(--muted)}
+    .company-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:20px}.company-card{background:white;border:1px solid var(--line);border-radius:17px;padding:28px;box-shadow:0 8px 28px rgba(6,26,43,.06);transition:.2s;display:flex;flex-direction:column;min-height:270px}.company-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}.company-mark{width:48px;height:48px;border-radius:13px;background:var(--navy);color:var(--gold2);display:grid;place-items:center;font-size:13px;font-weight:900;margin-bottom:20px}.company-card h3{color:var(--navy);font-size:21px;line-height:1.3;margin-bottom:10px}.company-card p{font-size:13px;color:var(--muted);margin-bottom:22px}.company-card .visit{margin-top:auto;display:inline-flex;align-items:center;gap:8px;color:var(--blue);font-size:12px;font-weight:900}.company-card .visit:hover{color:#a87518}.message{background:white;border:1px solid var(--line);border-radius:12px;padding:18px;color:var(--muted);text-align:center}.back-link{display:inline-block;margin-top:28px;color:var(--blue);font-size:13px;font-weight:800}
+    footer{background:var(--navy);color:#c5d4de;padding:26px 0;font-size:12px}footer .container{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}footer a{color:var(--gold2)}
+    @media(max-width:680px){.header{padding:14px 0;align-items:flex-start;flex-direction:column}.nav{gap:4px}.hero{padding:58px 0}.hero p{font-size:15px}}
+  </style>
+</head>
+<body>
+  <div class="utility"><div class="container"><span>International Council for Research &amp; Innovation in STE</span><span>Research · Innovation · Collaboration</span></div></div>
+  <header><div class="container header">
+    <a class="brand" href="index.html">ICRI-STE<span>SCIENTIFIC RESEARCH &amp; INNOVATION</span></a>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="index.html#research">Research</a>
+      <a class="active" href="associated-companies.html">Associated Companies</a>
+    </nav>
+  </div></header>
+  <section class="hero"><div class="container">
+    <div class="eyebrow">Innovation Ecosystem · Company Directory</div>
+    <h1>Associated Companies</h1>
+    <p>Discover independent ventures and technology organisations associated with the broader research and innovation ecosystem. Visit each company’s official website to learn more about its mission and activities.</p>
+    <div class="hero-actions"><a class="btn btn-primary" href="#company-directory">Explore Directory ↓</a><a class="btn btn-light" href="index.html">Return to ICRI-STE</a></div>
+  </div></section>
+  <main id="company-directory"><div class="container">
+    <div class="section-head"><div class="eyebrow">Company Directory</div><h2>Explore Our Associated Companies</h2><p>Company details and official links are loaded from the directory data file in the assets folder.</p></div>
+    <div id="company-list" class="company-grid"><div class="message">Loading associated companies…</div></div>
+    <a class="back-link" href="index.html">← Back to ICRI-STE main website</a>
+  </div></main>
+  <footer><div class="container"><span>© 2026 International Council for Research &amp; Innovation in STE (ICRI-STE).</span><a href="https://icriste.com/" target="_blank" rel="noopener noreferrer">icriste.com ↗</a></div></footer>
+  <script>
+    const DATA_URL = "assets/Companies.joson";
+    const list = document.getElementById("company-list");
+    function showMessage(message){list.innerHTML="";const el=document.createElement("div");el.className="message";el.style.gridColumn="1/-1";el.textContent=message;list.appendChild(el);}
+    function companyName(url){
+      try{const host=new URL(url).hostname.replace(/^www\./,"");if(host.includes("TerraNexa"))return "TerraNexa Intelligence, LLC";return host;}
+      catch(e){return "Associated Company";}
+    }
+    function renderCompanies(records){
+      list.innerHTML="";
+      if(!records.length){showMessage("No associated companies are currently listed.");return;}
+      records.forEach((record,index)=>{
+        const url=record["Companies link"]||record.companyLink||record.url||record.link;
+        if(!url)return;
+        const card=document.createElement("article");card.className="company-card";
+        const mark=document.createElement("div");mark.className="company-mark";mark.textContent=String(index+1).padStart(2,"0");
+        const title=document.createElement("h3");title.textContent=record.name||record.companyName||companyName(url);
+        const description=document.createElement("p");description.textContent=record.description||"Explore the company’s official website for information about its focus, services, and innovation activities.";
+        const link=document.createElement("a");link.className="visit";link.href=url;link.target="_blank";link.rel="noopener noreferrer";link.textContent="Visit Official Website ↗";
+        card.append(mark,title,description,link);list.appendChild(card);
+      });
+      if(!list.children.length)showMessage("The company directory has no valid website links yet.");
+    }
+    fetch(DATA_URL,{cache:"no-store"}).then(response=>{if(!response.ok)throw new Error("Directory unavailable");return response.json();})
+      .then(data=>renderCompanies(Array.isArray(data)?data:(data.companies||data.records||[])))
+      .catch(()=>showMessage("The company directory is currently unavailable. Please check that assets/Companies.joson is present and valid JSON."));
+  </script>
+</body>
+</html>
