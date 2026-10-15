@@ -1,0 +1,18 @@
+[
+  {
+    "certificate_id": "ICRI-STE/CHI/2026/0001",
+    "certificate_holder": "Zohaib Alam",
+    "certificate_type": "Certificate of Achievement",
+    "programme_event": "Early Career Researcher Training Programme (8 Months)",
+    "issue_date": "15 October 2026",
+    "status": "Valid"
+  },
+  {
+    "certificate_id": "ICRI-STE/CHI/2026/0002",
+    "certificate_holder": "Example Early Career Researcher",
+    "certificate_type": "Certificate of Presentation",
+    "programme_event": "CHI Lab Symposium 2026",
+    "issue_date": "30 September 2026",
+    "status": "Valid"
+  }
+]
