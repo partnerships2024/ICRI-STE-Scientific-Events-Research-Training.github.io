@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Official certificate verification portal of ICRI-STE and the Computational Healthcare Intelligence Lab (CHI Lab).">
+<meta name="theme-color" content="#071f35">
+<title>Certificate Verification | ICRI-STE · CHI Lab</title>
+<style>
+:root{--navy:#071f35;--navy2:#0b3557;--blue:#17638f;--gold:#d59b32;--gold2:#f1d99a;--paper:#f5f8fb;--ink:#243746;--muted:#667b8c;--line:#dfe7ed;--shadow:0 18px 50px rgba(6,26,43,.12);--radius:18px;--max:1180px}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:Inter,"Segoe UI",Arial,sans-serif;background:var(--paper);color:var(--ink);line-height:1.65}a{text-decoration:none;color:inherit}.container{width:min(var(--max),calc(100% - 36px));margin:auto}
+.utility{background:var(--navy);color:#dce9f2;font-size:12px;padding:7px 0}.utility .container{display:flex;justify-content:space-between;gap:15px;align-items:center}.utility a:hover{color:var(--gold2)}
+header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}.header{min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:14px;min-width:0}.brand img{width:150px;height:auto;max-height:58px;object-fit:contain}.brand-copy{border-left:1px solid var(--line);padding-left:14px}.brand-copy strong{display:block;color:var(--navy);font-size:13px;line-height:1.3}.brand-copy span{display:block;color:var(--muted);font-size:11px;margin-top:4px}
+nav{display:flex;align-items:center;gap:7px}nav a{font-size:12px;font-weight:750;color:var(--navy2);padding:10px 12px;border-radius:9px;transition:.2s}nav a:hover{background:#edf3f7}nav .active{background:var(--navy);color:#fff}.menu{display:none;border:0;background:var(--navy);color:white;padding:10px 13px;border-radius:9px;font-weight:800;cursor:pointer}
+.hero{position:relative;overflow:hidden;background:radial-gradient(circle at 80% 15%,rgba(23,99,143,.5),transparent 34%),linear-gradient(120deg,#061a2b,#0b3557 60%,#104b73);color:white;text-align:center;padding:66px 20px 88px}.hero:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:42px 42px;mask-image:linear-gradient(to bottom,black,transparent)}.hero-inner{position:relative}.eyebrow{color:var(--gold2);font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:900;margin-bottom:12px}.hero h1{font-size:clamp(34px,5vw,54px);line-height:1.1;letter-spacing:-1px;margin-bottom:14px}.hero p{max-width:760px;margin:auto;color:#d9e7f0;font-size:15px}
+main{max-width:900px;margin:-43px auto 78px;padding:0 18px;position:relative}.panel{background:white;border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:clamp(22px,4vw,42px)}.panel h2{text-align:center;color:var(--navy);font-size:25px}.intro{text-align:center;color:var(--muted);font-size:14px;margin:8px 0 25px}.search{display:flex;gap:10px}.search input{flex:1;min-width:0;border:1px solid #cdd9e2;border-radius:10px;padding:14px 16px;font:inherit;outline:none}.search input:focus{border-color:var(--blue);box-shadow:0 0 0 4px rgba(23,99,143,.09)}.search button{border:0;border-radius:10px;padding:0 20px;background:var(--gold);color:var(--navy);font-weight:900;cursor:pointer;min-height:49px}.search button:hover{filter:brightness(.96)}.example{text-align:center;color:var(--muted);font-size:12px;margin-top:12px}.example code{background:#eef3f7;border-radius:5px;padding:4px 7px;color:var(--navy2)}#result{display:none;margin-top:28px}.result-head{padding:18px 20px;border-radius:11px 11px 0 0;display:flex;align-items:center;gap:13px;font-weight:850}.result-head.valid{background:#eaf8f0;color:#176b3a;border:1px solid #b9e4ca}.result-head.invalid{background:#fff0f0;color:#a32929;border:1px solid #efc0c0}.result-head.neutral{background:#eef4f8;color:var(--navy2);border:1px solid var(--line)}.status-icon{width:34px;height:34px;flex:0 0 34px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:currentColor;color:white;font-size:18px}.status-icon span{color:white}.result-sub{font-size:12px;font-weight:450;margin-top:2px}.details{border:1px solid var(--line);border-top:0;border-radius:0 0 11px 11px;overflow:hidden}.detail-row{display:grid;grid-template-columns:220px 1fr;gap:15px;padding:14px 19px;border-bottom:1px solid #edf1f4}.detail-row:last-child{border-bottom:0}.label{font-size:12px;font-weight:800;color:#617284}.value{font-size:14px;color:var(--ink);overflow-wrap:anywhere}.value.id{font-family:Consolas,monospace;color:var(--blue);font-weight:800}.notice{margin-top:27px;background:#f5f8fb;border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:9px;padding:17px 19px;color:var(--muted);font-size:12px}.notice strong{color:var(--navy)}.back-row{text-align:center;margin-top:22px}.back-row a{color:var(--blue);font-weight:800;font-size:13px}.back-row a:hover{color:var(--gold)}footer{background:var(--navy);color:#aebfca;text-align:center;padding:34px 20px;font-size:12px}footer strong{color:white}footer a{color:var(--gold2)}
+@media(max-width:900px){.brand img{width:125px}.brand-copy{display:none}nav{gap:2px}nav a{padding:9px 8px;font-size:11px}}
+@media(max-width:700px){.utility .container{justify-content:center;text-align:center}.utility .utility-links{display:none}.header{min-height:72px}.menu{display:block}nav{display:none;position:absolute;left:0;right:0;top:72px;background:#fff;border-bottom:1px solid var(--line);padding:12px 18px 18px;box-shadow:0 15px 30px rgba(6,26,43,.1);flex-direction:column;align-items:stretch}nav.open{display:flex}nav a{text-align:center;font-size:13px}.hero{padding:55px 18px 75px}.search{flex-direction:column}.search button{width:100%}.detail-row{grid-template-columns:1fr;gap:4px}.container{width:calc(100% - 28px)}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="utility"><div class="container"><span>International Council for Research &amp; Innovation in STE (ICRI-STE)</span><span class="utility-links"><a href="https://icriste.com/" target="_blank" rel="noopener">ICRI-STE Main Website ↗</a></span></div></div>
+<header><div class="container header"><a class="brand" href="index.html" aria-label="ICRI-STE home"><img src="assets/ICRI-STE-Logo.png" alt="ICRI-STE Logo"><span class="brand-copy"><strong>Scientific Events &amp; Research Training</strong><span>Research · Innovation · ECR Development</span></span></a><button class="menu" id="menu" aria-expanded="false" aria-controls="nav">☰ Explore</button><nav id="nav" aria-label="Main navigation"><a href="index.html">Home</a><a href="index.html#events">Events</a><a href="index.html#research">Research</a><a href="index.html#ecr">ECR Community</a><a class="active" href="certificates.html" aria-current="page">Certificate Verification</a></nav></div></header>
+<section class="hero"><div class="hero-inner"><div class="eyebrow">ICRI-STE · CHI Lab Credentials</div><h1>Certificate Verification</h1><p>Check the certificate reference against the public ICRI-STE / CHI Lab verification register. The details below are displayed directly from the published certificate record.</p></div></section>
+<main><section class="panel"><h2>Verify a Certificate</h2><p class="intro">Enter the Certificate ID exactly as printed on the certificate.</p><form id="verify-form" class="search"><input id="certificateId" type="text" placeholder="e.g. ICRI-STE/CHI/2026/0001" autocomplete="off" aria-label="Certificate ID" required><button type="submit">Verify Certificate</button></form><div class="example">Example: <code>ICRI-STE/CHI/2026/0001</code></div><div id="result" aria-live="polite"></div><div class="notice"><strong>Official Verification Notice</strong><br>This portal displays public verification fields held in the certificate register. A record marked “Valid” is listed as valid in that register at the time of lookup.</div><div class="back-row"><a href="index.html">← Return to the ICRI-STE portal</a></div></section></main>
+<footer><p><strong>Computational Healthcare Intelligence (CHI) Lab</strong></p><p>International Council for Research &amp; Innovation in STE (ICRI-STE)</p><p style="margin-top:10px">© 2026 ICRI-STE. All rights reserved.</p></footer>
+<script>
+"use strict";
+let certificates=[];
+const result=document.getElementById("result");
+const input=document.getElementById("certificateId");
+function escapeHTML(value){return String(value??"—").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/\"/g,"&quot;").replace(/'/g,"&#039;");}
+function showMessage(message,type="invalid",heading="Certificate Not Verified"){
+  result.style.display="block";
+  const symbol=type==="valid"?"✓":type==="neutral"?"i":"!";
+  result.innerHTML=`<div class="result-head ${type}"><div class="status-icon"><span>${symbol}</span></div><div>${escapeHTML(heading)}<div class="result-sub">${escapeHTML(message)}</div></div></div>`;
+}
+function detailRow(label,value,isId=false){return `<div class="detail-row"><div class="label">${escapeHTML(label)}</div><div class="value${isId?" id":""}">${escapeHTML(value)}</div></div>`;}
+function getId(record){return String(record.certificate_id??record.certificateId??record.certificateID??record.certificate_reference??record.reference??"").trim();}
+function showCertificate(c){
+  const status=String(c.status??"").trim();
+  const isValid=status.toLowerCase()==="valid";
+  const type=isValid?"valid":(["invalid","revoked","cancelled","canceled","expired"].includes(status.toLowerCase())?"invalid":"neutral");
+  const heading=isValid?"Certificate Verified":type==="invalid"?"Certificate Status Notice":"Certificate Record Found";
+  const explanation=isValid?"This certificate is listed as valid in the official verification register.":type==="invalid"?"A matching record was found, but it is not listed as valid.":"A matching record was found. Please review the status shown below.";
+  result.style.display="block";
+  result.innerHTML=`<div class="result-head ${type}"><div class="status-icon"><span>${isValid?"✓":type==="invalid"?"!":"i"}</span></div><div>${heading}<div class="result-sub">${escapeHTML(explanation)}</div></div></div><div class="details">${detailRow("Certificate ID",getId(c),true)}${detailRow("Certificate Holder",c.certificate_holder)}${detailRow("Certificate Type",c.certificate_type)}${detailRow("Programme / Event",c.programme_event)}${detailRow("Issue Date",c.issue_date)}${detailRow("Status",status||"Not specified")}</div>`;
+}
+function verifyCertificate(updateUrl=true){
+  const entered=input.value.trim();
+  if(!entered){showMessage("Please enter a Certificate ID.");return;}
+  const certificate=certificates.find(c=>getId(c).toLowerCase()===entered.toLowerCase());
+  if(!certificate){if(updateUrl)history.replaceState(null,"",window.location.pathname);showMessage("No certificate record was found for the Certificate ID provided.");return;}
+  if(updateUrl)history.replaceState(null,"",window.location.pathname+"?id="+encodeURIComponent(getId(certificate)));
+  showCertificate(certificate);
+}
+async function loadCertificates(){
+  try{
+    if(window.location.protocol==="file:")throw new Error("This page was opened as a local file. Please use your hosted website or a local web server.");
+    const response=await fetch("assets/certificates.json",{cache:"no-store"});
+    if(!response.ok)throw new Error(`Certificate register request failed (${response.status}).`);
+    const data=await response.json();
+    certificates=Array.isArray(data)?data:Array.isArray(data.certificates)?data.certificates:Array.isArray(data.records)?data.records:[];
+    if(!certificates.length)throw new Error("The JSON file loaded but contains no certificate records.");
+    const id=new URLSearchParams(window.location.search).get("id");
+    if(id){input.value=id;verifyCertificate(false);}
+  }catch(error){
+    console.error("Certificate register loading error:",error);
+    showMessage(error.message||"The certificate register is temporarily unavailable. Check that assets/certificates.json is published beside this page.","invalid","Verification Register Unavailable");
+  }
+}
+document.getElementById("verify-form").addEventListener("submit",event=>{event.preventDefault();verifyCertificate();});
+const menu=document.getElementById("menu"),nav=document.getElementById("nav");
+menu.addEventListener("click",()=>{const open=nav.classList.toggle("open");menu.setAttribute("aria-expanded",String(open));});
+nav.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{nav.classList.remove("open");menu.setAttribute("aria-expanded","false");}));
+loadCertificates();
+</script>
+</body>
+</html>
