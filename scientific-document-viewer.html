@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="ICRI-STE Scientific Document Viewer for research manuscripts, PDF and Word documents.">
+<title>Scientific Document Viewer | ICRI-STE</title>
+<style>
+:root{--navy:#071f35;--navy2:#0b3557;--blue:#17638f;--gold:#d59b32;--paper:#f5f8fb;--ink:#243746;--muted:#667b8c;--line:#dfe7ed;--shadow:0 18px 50px rgba(6,26,43,.12)}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--ink);line-height:1.6}a{text-decoration:none;color:inherit}.container{width:min(1240px,calc(100% - 40px));margin:auto}
+.utility{background:var(--navy);color:#dce9f2;padding:9px 0;font-size:12px}.utility .container{display:flex;justify-content:space-between;gap:16px}.utility a:hover{color:#f1d99a}
+header{background:white;border-bottom:1px solid var(--line);padding:15px 0}.head{display:flex;justify-content:space-between;align-items:center;gap:20px}.brand{display:flex;align-items:center;gap:14px}.brand img{width:150px;max-height:58px;object-fit:contain}.brand-copy{border-left:1px solid var(--line);padding-left:14px}.brand-copy strong{display:block;font-size:14px;color:var(--navy)}.brand-copy small{color:var(--muted)}
+.btn{display:inline-block;background:var(--navy);color:white;border-radius:10px;padding:11px 17px;font-size:13px;font-weight:750;border:1px solid var(--navy)}.btn:hover{background:var(--blue)}.btn.gold{background:var(--gold);color:var(--navy);border-color:var(--gold)}.btn.outline{background:white;color:var(--navy);border-color:var(--line)}
+.hero{background:linear-gradient(120deg,#061a2b,#0b3557 58%,#104b73);color:white;padding:52px 0}.eyebrow{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#f1d99a;font-weight:800}.hero h1{font-size:clamp(30px,4vw,48px);line-height:1.2;margin:10px 0}.hero p{color:#d9e7f0;max-width:760px;margin:0}
+main{padding:35px 0 70px}.panel{background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);padding:26px;margin-bottom:24px}.panel h2{margin:0 0 8px;color:var(--navy);font-size:23px}.muted{color:var(--muted);font-size:13px}.documents{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:13px;margin-top:18px}.doc{border:1px solid var(--line);border-radius:12px;padding:17px;text-align:left;background:#fff;cursor:pointer;color:var(--ink);font:inherit}.doc:hover,.doc.active{border-color:var(--blue);background:#f0f6fa}.doc strong{display:block;color:var(--navy)}.doc small{color:var(--muted)}.doc .kind{display:inline-block;font-size:11px;font-weight:800;color:#835e18;background:#fff5dc;padding:3px 7px;border-radius:5px;margin-bottom:9px}
+.toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:16px 0}.viewer{width:100%;height:75vh;min-height:450px;border:1px solid var(--line);border-radius:10px;background:#f0f3f6}.notice{padding:16px;background:#f3f7fa;border-left:4px solid var(--gold);border-radius:6px;color:var(--navy2);font-size:13px}.hidden{display:none}footer{background:var(--navy);color:#aebfca;text-align:center;padding:24px;font-size:12px}
+@media(max-width:650px){.head{align-items:flex-start;flex-direction:column}.panel{padding:18px}.viewer{height:65vh}.utility .container{flex-direction:column;gap:2px}}
+</style>
+</head>
+<body>
+<div class="utility"><div class="container"><span>International Council for Research &amp; Innovation in STE (ICRI-STE)</span><a href="https://icriste.com/" target="_blank" rel="noopener noreferrer">ICRI-STE</a></div></div>
+<header><div class="container head"><a class="brand" href="index.html"><img src="assets/ICRI-STE-Logo.png" alt="ICRI-STE Logo"><span class="brand-copy"><strong>Scientific Events &amp; Research Training</strong><small>Research · Innovation · ECR Development</small></span></a><a class="btn outline" href="index.html">← Back to Home</a></div></header>
+<section class="hero"><div class="container"><div class="eyebrow">ICRI-STE Research Resources</div><h1>Scientific Document Viewer</h1><p>Access research manuscripts, scientific reports, review materials and training documents.</p></div></section>
+<main class="container"><section class="panel"><h2>Document Library</h2><p class="muted">Select a document below. Add your PDF or Word files to the <code>documents/</code> folder and update the document list in this HTML file.</p><div id="document-list" class="documents"></div></section>
+<section class="panel"><h2 id="document-title">Select a document</h2><p id="document-description" class="muted">The selected document will appear here.</p><div class="toolbar"><a id="open-file" class="btn" href="#" target="_blank" rel="noopener noreferrer">Open Document</a><a id="download-file" class="btn outline" href="#" download>Download File</a><a id="overleaf-link" class="btn gold hidden" href="#" target="_blank" rel="noopener noreferrer">Open in Overleaf</a></div><div id="pdf-area" class="hidden"><iframe id="pdf-frame" class="viewer" title="Scientific PDF Document" loading="lazy"></iframe></div><div id="word-area" class="notice hidden">Word documents are provided as downloadable files. Use <strong>Open Document</strong> or <strong>Download File</strong> to access this document. For an in-page preview, also upload a PDF version.</div><div id="empty-area" class="notice">Choose a document above to begin.</div><p class="muted">PDF viewing depends on browser support. Password-protected PDFs may prompt for a password or fail to display in an embedded frame. Files published on GitHub Pages are publicly accessible.</p></section></main>
+<footer>© 2026 International Council for Research &amp; Innovation in STE (ICRI-STE). All rights reserved.</footer>
+<script>
+// EDIT THIS LIST to match the actual filenames in your documents/ folder.
+// Set overleaf to your project's appropriate sharing link, or leave it empty.
+const documents = [
+  {title:"Research Manuscript (PDF)",type:"pdf",file:"documents/research-manuscript.pdf",description:"Scientific manuscript for review and reading.",overleaf:""},
+  {title:"Research Report (Word)",type:"docx",file:"documents/research-report.docx",description:"Editable Word research document.",overleaf:""}
+];
+const list=document.getElementById('document-list');
+function selectDocument(doc,index){
+  document.querySelectorAll('.doc').forEach((el,i)=>el.classList.toggle('active',i===index));
+  document.getElementById('document-title').textContent=doc.title;
+  document.getElementById('document-description').textContent=doc.description||'';
+  const open=document.getElementById('open-file'),download=document.getElementById('download-file');
+  open.href=doc.file;download.href=doc.file;
+  const ol=document.getElementById('overleaf-link');ol.classList.toggle('hidden',!doc.overleaf);if(doc.overleaf)ol.href=doc.overleaf;
+  const isPdf=doc.type.toLowerCase()==='pdf';
+  document.getElementById('pdf-area').classList.toggle('hidden',!isPdf);
+  document.getElementById('word-area').classList.toggle('hidden',isPdf);
+  document.getElementById('empty-area').classList.add('hidden');
+  document.getElementById('pdf-frame').src=isPdf?doc.file+'#toolbar=1':'';
+}
+documents.forEach((doc,i)=>{const button=document.createElement('button');button.type='button';button.className='doc';const kind=document.createElement('span');kind.className='kind';kind.textContent=doc.type.toUpperCase();const title=document.createElement('strong');title.textContent=doc.title;const desc=document.createElement('small');desc.textContent=doc.description||'';button.append(kind,title,desc);button.addEventListener('click',()=>selectDocument(doc,i));list.appendChild(button)});
+</script>
+</body>
+</html>
