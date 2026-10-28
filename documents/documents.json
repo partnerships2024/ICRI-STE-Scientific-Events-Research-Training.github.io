@@ -1,0 +1,4 @@
+[
+  {"id":"manuscript-1","title":"Research Manuscript (PDF)","type":"pdf","file":"documents/Symposium_Paper_1.pdf","description":"Scientific manuscript for review and reading.","overleaf":""},
+  {"id":"report-1","title":"Research Report (Word)","type":"docx","file":"documents/research-report.docx","description":"Word research document.","overleaf":""}
+]
