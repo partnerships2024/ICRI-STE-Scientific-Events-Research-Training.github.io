@@ -1,0 +1,26 @@
+ICRI-STE website package — asset placement
+=================================================
+
+Place the existing website assets folder alongside these HTML files, preserving filenames.
+
+Required assets referenced by the main index:
+- ICRI-STE-Logo.png
+- scientific-research.gif (optional; diagram_1.png is used as fallback)
+- diagram_1.png
+- Research_Ethics_Benefits.joson (as referenced by the supplied main index)
+- certificates.json
+- membership.json (or the filename configured in the existing index script)
+- all other image/data assets referenced by the original index.html
+
+Assets referenced by the new profile pages:
+- icri-mark.svg
+- Computational_Healthcare_Intelligence_(CHI)_Lab.jpeg
+- Intelligent_Energy_Systems_&_Sustainable_Technologies_(IESST)_Lab.jpeg
+- Environmental_Intelligence_&_Autonomous_Systems_(EIAS)_Lab.jpeg
+- BioNexa_Intelligence_LLC.jpeg
+- Enerlytix_Technologies_LLC.jpeg
+- TerraNexa_Intelligence_LLC.jpeg
+
+The supplied files contained HTML, not the binary image assets. The package therefore
+keeps the original relative assets/ references and includes this manifest rather than
+inventing or replacing image files.
